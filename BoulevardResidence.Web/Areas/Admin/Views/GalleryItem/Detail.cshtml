@@ -1,0 +1,24 @@
+﻿@model BoulevardResidence.Web.Areas.Admin.ViewModels.GalleryItem.GalleryItemDetailVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="sliderdetails">
+
+<h1> Gallery Details</h1>
+
+ <h2 class="header-fmi">Gallery Category Name: @Model.CategoryName</h2>
+
+<div>
+    <h4>Slider ID: @Model.Id</h4>
+
+    <img src="~/boulevardgallery/@Model.Image" class="img-fluid" alt="Slider Image">
+
+</div>
+
+<hr />
+
+  <a class="detail-back" asp-action="Index">Back to List</a>
+
+</div>
+

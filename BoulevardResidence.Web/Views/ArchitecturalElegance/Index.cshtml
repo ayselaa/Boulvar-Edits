@@ -1,0 +1,108 @@
+﻿@model ArchitecturalEleganceVM
+@{
+    ViewData["Title"] = "Index";
+    var oddIdBlogs = Model.ArchitecturalBlogs.Where(blog => blog.Id % 2 == 1).ToList();
+    var evenIdBlogs = Model.ArchitecturalBlogs.Where(blog => blog.Id % 2 == 0).ToList();
+}
+<main>
+    <section class="apartment-bg">
+        <div class="container container-items">
+            <div class="apartment-over-text">
+                @if (Model.LangCode == "en")
+                {
+                    <h1>ARCHITECTURAL &nbsp; ELEGANCE</h1>
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <h1>MEMARLIQ &nbsp; ZƏRİFLİK </h1>
+                }
+                else
+                {
+                    <h1>АРХИТЕКТУРНЫЙ &nbsp; ЭЛЕГАНТНОСТЬ </h1>
+                }
+            </div>
+            <div class="back-to-page">
+                <a href="index.html">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 8H1M1 8L8.125 1M1 8L8.125 15" stroke="white" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arch-Elegance Start-->
+    <section class="arch-elegance-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.Architecturals)
+                {
+                    @foreach (var items in item.ArchitecturalTranslates)
+                    {
+                        <div class="arch-elegance-title col-6">
+                            <h1>@items.Name</h1>
+                        </div>
+                        <div class="arch-elegance-info">
+                            <p>
+                                @items.Header
+                            </p>
+                        </div>
+                    }
+                }
+                <div class="arch-elegance-cards">
+                    @for (var i = 0; i < Math.Max(oddIdBlogs.Count, evenIdBlogs.Count); i++)
+                    {
+                        @if (i < oddIdBlogs.Count)
+                        {
+                            var item = oddIdBlogs[i];
+                            @foreach (var archblog in item.ArchitecturalBlogTranslates)
+                            {
+                                <div class="animation-element bounce-up">
+                                    <div class="arch-elegance-card subject">
+                                        <div class="arch-elegance-card-img col-lg-6 col-sm-12">
+                                            <img src="~/architecturalbloggallery/@item.Image" alt="card-img-alt">
+                                        </div>
+                                        <div class="arch-elegance-card-text card-text-design-1 col-lg-6 col-sm-12">
+                                            <h1>
+                                                @archblog.Name
+                                            </h1>
+                                            <p class="arch-elegance-card-body-text">
+                                                @archblog.Description
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        @if (i < evenIdBlogs.Count)
+                        {
+                            var item = evenIdBlogs[i];
+                            @foreach (var archblog in item.ArchitecturalBlogTranslates)
+                            {
+                                <div class="animation-element bounce-up">
+                                    <div class="arch-elegance-card subject">
+                                        <div class="arch-elegance-card-text card-text-design-1 col-lg-6 col-sm-12">
+                                            <h1>
+                                                @archblog.Name
+                                            </h1>
+                                            <p class="arch-elegance-card-body-text">
+                                                @archblog.Description
+                                            </p>
+                                        </div>
+                                        <div class="arch-elegance-card-img col-lg-6 col-sm-12">
+                                            <img src="~/architecturalbloggallery/@item.Image" alt="card-img-alt">
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Arch-Elegance End-->
+</main>
+

@@ -1,0 +1,132 @@
+﻿@model GalleryVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section class="apartment-bg">
+        <div class="container container-items">
+            <div class="apartment-over-text">
+                 @if (Model.LangCode == "en")
+                {
+                    <h1>GALLERY</h1>
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <h1>QALAREYA</h1>
+                }
+                else
+                {
+                    <h1>ГАЛЕРЕЯ</h1>
+                }
+            </div>
+            <div class="back-to-page">
+                <a asp-controller="Home" asp-action="Index">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 8H1M1 8L8.125 1M1 8L8.125 15" stroke="white" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--Gallery Start-->
+    <section class="gallery-secttion">
+        <div class="container">
+            <div class="gallery-between" style="padding: 2rem 0rem;">
+                <div class="gallery-title col-xl-5 col-lg-5 col-md-5 col-sm-7 col-xs-8">
+
+                     @if (Model.LangCode == "en")
+                    {
+                        <h1>
+                            CHECK OUT
+                            OUR GALLERY
+                        </h1>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <h1>
+                            YOXLA
+                            BİZİM QALEREYA
+                        </h1>
+                    }
+                    else
+                    {
+                        <h1>
+                            ПРОВЕРИТЬ
+                            НАША ГАЛЕРЕЯ
+                        </h1>
+                    }
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 d-flex text-center je-items" style="align-items: center;">
+                    <!-- Tabs navs -->
+                    <ul class="nav nav-tabs mb-3" id="ex1" role="tablist" style="gap: 1rem;">
+                        @foreach (var category in Model.GalleryCategories)
+                        {
+                            @foreach (var item in category.GalleryCategoryTranslates)
+                            {
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link@(category == Model.GalleryCategories.First() ? " active" : "") tab-item"
+                               style="padding: 6px 0px; margin-left: 2rem;"
+                               id="ex1-tab-@(category.Id)"
+                               data-mdb-toggle="tab"
+                               href="#ex1-tabs-@(category.Id)"
+                               role="tab"
+                               aria-controls="ex1-tabs-@(category.Id)"
+                               aria-selected="@(category == Model.GalleryCategories.First())">
+
+                                        @item.Tittle
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                    <!-- Tabs navs -->
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab-content" id="myTabContent">
+            @foreach (var category in Model.GalleryCategories)
+            {
+                <div class="tab-pane fade @(category == Model.GalleryCategories.First() ? "show active" : "")"
+              
+                 id="ex1-tabs-@(category.Id)"
+                 role="tabpanel"
+                 aria-labelledby="tab-@(category.Id)">
+                    <div id="carouselExampleControls@(category.Id)" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach (var galleryItem in Model.GalleryItems.Where(item => item.GalleryCategory?.Id == category.Id))
+                            {
+                                <div class="carousel-item @(galleryItem == Model.GalleryItems.First(item => item.GalleryCategory?.Id == category.Id) ? "active" : "")">
+                                    <img src="~/boulevardgallery/@galleryItem.Image" alt="Gallery Image" class="img-fluid">
+                                </div>
+                            }
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls@(category.Id)" data-bs-slide="prev">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="40" width="40" height="40" rx="20" transform="rotate(90 40 0)" fill="black" />
+                                <path d="M28 20H12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M20 28L12 20L20 12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls@(category.Id)" data-bs-slide="next">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="40" width="40" height="40" rx="20" transform="rotate(-90 0 40)" fill="black" />
+                                <path d="M12 20H27.9999" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M20 12.0001L28 20L20 28" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- Tabs content -->
+    </section>
+    <!--Gallery End-->
+</main>

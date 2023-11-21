@@ -1,0 +1,50 @@
+﻿@model GalleryCategoryCreateVM
+
+@{
+     ViewData["Title"] = "Create";
+}
+
+<div class="container">
+
+    <div class="entert-form">
+
+        <h1>Create Gallery Category</h1>
+
+        <form method="post" enctype="multipart/form-data" asp-action="Create">
+        
+            <div class="form-group  mt-2 mb-3">
+                <label class="labelstyle" for="translates[0].LangCode">Language Code</label>
+                <input type="text" id="translates[0].LangCode" name="Translates[0].LangCode" class="form-control addhoverinput" value="az" required>
+
+            </div>
+
+             <div class="form-group  mt-2 mb-3">
+                <label class="labelstyle" for="translates[0].Tittle">Tittle</label>
+                <textarea id="translates[0].Tittle" name="Translates[0].Tittle" class="form-control addhoverinput" required></textarea>
+             </div>
+
+            <div class="form-group  mt-2 mb-3">
+                <label class="labelstyle" for="translates[1].LangCode">Language Code</label>
+                <input type="text" id="translates[1].LangCode" name="Translates[1].LangCode" class="form-control addhoverinput" value="en" required>
+            </div>
+
+             <div class="form-group  mt-2 mb-3">
+                <label class="labelstyle" for="translates[1].Name">Tittle</label>
+                <textarea id="translates[1].Tittle" name="Translates[1].Tittle" class="form-control addhoverinput" required></textarea>
+             </div>
+
+            <div class="form-group  mt-2 mb-3">
+                <label class="labelstyle" for="translates[2].LangCode">Language Code</label>
+
+                <input type="text" id="translates[2].LangCode" name="Translates[2].LangCode" class="form-control addhoverinput" value="ru" required>
+            </div>
+
+              <div class="form-group  mt-2 mb-3">
+                <label class="labelstyle" for="translates[2].Tittle">Tittle</label>
+                <textarea id="translates[2].Tittle" name="Translates[2].Tittle" class="form-control addhoverinput" required></textarea>
+             </div>
+            <button type="submit" class="btn createbuttonn">Create</button>
+        </form>
+    </div>
+</div>
+

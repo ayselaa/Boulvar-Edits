@@ -1,0 +1,766 @@
+﻿@model BoulevardResidence.Service.DTOs.Aparments.GetAllApartmentDto
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<!-- Main Start-->
+<main>
+    <section class="apartment-bg">
+        <div class="container container-items">
+            <div class="apartment-over-text">
+                @if (Model.LangCode == "en")
+                {
+                    <h1>APARTMENTS</h1>
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <h1>MƏNZİLLƏR</h1>
+                }
+                else
+                {
+                    <h1>КВАРТИРЫ</h1>
+                }
+            </div>
+            <div class="back-to-page">
+                <a asp-controller="Home" asp-action="Index">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 8H1M1 8L8.125 1M1 8L8.125 15" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="table-section">
+        <div class="container flex-choose-aprt">
+            <div class="select-group">
+
+                <div class="dropdown-filter">
+                    @if (Model.LangCode == "en")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(1)">
+                            BUILDING
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(1)">
+
+                            BİNA
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(1)">
+
+                            ЗДАНИЕ
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    <div class="dropdown-content-item" id="myDropdown1">
+                        @foreach (var building in ViewBag.Buildings)
+                        {
+                            <div class="form-check p-form-chack">
+                                <label class="custom-checkbox">
+                                    <input building-data="@building" type="checkbox" class="building-checkbox">
+                                    <span class="custom-checkmark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.775 8.9998L1.925 6.1498L2.6375 5.4373L4.775 7.5748L9.3625 2.9873L10.075 3.6998L4.775 8.9998Z"
+                                              fill="#16244A" />
+                                        </svg>
+                                    </span>
+                                    @building
+                                </label>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+                <div class="dropdown-filter">
+                    @if (Model.LangCode == "en")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(2)">
+                            FLOOR <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(2)">
+                            MƏRTƏBƏ <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(2)">
+                            Этаж <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    <div class="dropdown-content-item" id="myDropdown2">
+                        @foreach (var floor in ViewBag.Floors)
+                        {
+                            <div class="form-check p-form-chack">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" class="floor-checkbox" floor-data="@floor">
+                                    <span class="custom-checkmark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.775 8.9998L1.925 6.1498L2.6375 5.4373L4.775 7.5748L9.3625 2.9873L10.075 3.6998L4.775 8.9998Z"
+                                              fill="#16244A" />
+                                        </svg>
+                                    </span>
+                                    @floor
+                                </label>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+                <div class="dropdown-filter">
+                    @if (Model.LangCode == "en")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(3)">
+                            ROOMS <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(3)">
+                            OTAQLAR <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(3)">
+                            Н <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    <div class="dropdown-content-item" id="myDropdown3">
+                        @foreach (var room in ViewBag.Rooms)
+                        {
+                            <div class="form-check p-form-chack">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" class="room-checkbox" room-data="@room">
+
+                                    <span class="custom-checkmark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.775 8.9998L1.925 6.1498L2.6375 5.4373L4.775 7.5748L9.3625 2.9873L10.075 3.6998L4.775 8.9998Z"
+                                              fill="#16244A" />
+                                        </svg>
+                                    </span>
+                                    @room
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="dropdown-filter">
+                    @if (Model.LangCode == "en")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(4)">
+                            THE FLOOR AREA <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(4)">
+                            MƏRTƏBƏ SAHƏSİ <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(4)">
+                            ПЛОЩАДЬ ПОЛА <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    <div class="dropdown-content-item" id="myDropdown4">
+                        <div class="filter-price">
+                            <div class="filter-price__flex-row">
+                                <div class="form-group" style="width: 50%;">
+                                    <input  id="rangeInput1" class="filter-price__field js-price-down" type="text" value="@ViewBag.MinFloorArea" />
+                                </div>
+                                <div class="form-group" style="width: 50%; text-align: right;">
+                                    <input id="rangeInput2" class="filter-price__field js-price-up" data-max="100000" type="text" value="@ViewBag.MaxFloorArea" />
+                                </div>
+                            </div>
+                            <div class="filter-price__slider js-price-range"></div>
+
+                        </div>
+
+                        <br>
+                        <div class="slider-controls-elements">
+                            <button class="js-clear-sliders">
+                                <svg width="22" height="22" viewBox="0 0 12 12" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.67375 3.4933C2.2817 2.44405 3.2502 1.65151 4.3991 1.26323C5.5479 0.87496 6.7986 0.91741 7.9185 1.38269C9.0383 1.84797 9.9509 2.70437 10.4863 3.7924C11.0217 4.8805 11.1434 6.126 10.8288 7.2972C10.5142 8.4683 9.7847 9.4852 8.7762 10.1585C7.7676 10.8318 6.5488 11.1156 5.3465 10.9571C4.1443 10.7986 3.0406 10.2086 2.241 9.2969C1.44138 8.3853 1.00034 7.2141 1 6.0014"
+                                          stroke="#CFC273" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M4.125 3.5015H1.625V1.00146" stroke="#CFC273" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button onclick="handleTest()" class="js-send-sliders">
+                                <svg width="22" height="22" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.3536 4.03558C10.5488 3.84028 10.5488 3.52368 10.3536 3.32838L7.1716 0.146453C6.9763 -0.0488175 6.6597 -0.0488175 6.4645 0.146453C6.2692 0.341713 6.2692 0.658293 6.4645 0.853583L9.2929 3.68198L6.4645 6.51038C6.2692 6.70568 6.2692 7.02228 6.4645 7.21748C6.6597 7.41278 6.9763 7.41278 7.1716 7.21748L10.3536 4.03558ZM0 4.18198H10V3.18198H0V4.18198Z" fill="white" />
+                                </svg>
+                            </button>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-filter">
+                    @if (Model.LangCode == "en")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(5)">
+                            FEATURES <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(5)">
+                            XÜSUSİYYƏTLƏRİ <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="dropdown-button" onclick="toggleDropdown(5)">
+                            ФУНКЦИИ <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    }
+                    <div class="dropdown-content-item" id="myDropdown5">
+
+                        @foreach (var feature in Model.Features)
+                        {
+                            @foreach (var item in feature.FeatureTranslates)
+                            {
+                                <div class="form-check p-form-chack">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="feature-checkbox" feature-data="@feature.Id">
+                                        <span class="custom-checkmark">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                                <path d="M4.775 8.9998L1.925 6.1498L2.6375 5.4373L4.775 7.5748L9.3625 2.9873L10.075 3.6998L4.775 8.9998Z"
+                                              fill="#16244A" />
+                                            </svg>
+                                        </span>
+                                        @*  @foreach (var item in feature.FeatureTranslates)
+                                {
+
+                                <span feature-data="@item.Name">@item.Name</span>
+                                }*@
+                                        @item.Name
+
+                                    </label>
+                                </div>
+                            }
+
+
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="apartments-found-filter">
+                @if (Model.LangCode == "en")
+                {
+                    <p><span class="ApartmentsFound"></span> APARTMENTS FOUND</p>
+                    <a class="resetFilter" style="cursor:pointer;"><i class="fa-solid fa-arrow-rotate-left"></i>RESET FILTER</a>
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <p><span class="ApartmentsFound"></span> MƏNZİL TAPILDI</p>
+                    <a class="resetFilter" style="cursor:pointer;"><i class="fa-solid fa-arrow-rotate-left"></i>FİLTRİ SIFIRLA</a>
+                }
+                else
+                {
+                    <p><span class="ApartmentsFound"></span> НАЙДЕНЫ КВАРТИРЫ</p>
+                    <a class="resetFilter" style="cursor:pointer;"><i class="fa-solid fa-arrow-rotate-left"></i>СБРОСИТЬ ФИЛЬТР</a>
+                }
+            </div>
+
+
+            <div class="table-container">
+                @if (Model.LangCode == "en")
+                {
+                    <div id="dataField"></div>
+                    @* <partial name="_ApartmentListPartial" model="Model.PaginateApartment" />*@
+
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <div id="dataField"></div>
+                    @*<partial name="_ApartmentListPartial" model="Model.PaginateApartment" />*@
+                }
+                else
+                {
+                    <div id="dataField"></div>
+                    @* <partial name="_ApartmentListPartial" model="Model.PaginateApartment" />*@
+                }
+                <div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination flex-pgnation" id="pagination">
+                            @* @for (int i = 1; i <= (int)Math.Ceiling(Math.Ceiling((double)Model.ApartmentCount) / 10); i++)
+                            {
+
+                            <li class="page-item active @(1 == i ? "disabled" : "")" id="@i"><a class="page-link" id="@i">@i</a></li>
+
+                            } *@
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+</main>
+<!-- Main End-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+@section Scripts{
+    <script asp-append-version="true">
+
+    let buildings = document.getElementsByClassName("building-checkbox");
+    let floors = document.getElementsByClassName("floor-checkbox");
+    let rooms = document.getElementsByClassName("room-checkbox");
+    let features = document.getElementsByClassName("feature-checkbox");
+
+    let buildingsArr = [];
+    let floorsArr = [];
+    let roomsArr = [];
+    let featureArr = [];
+    let page = 1;
+
+    let minvaluerange;
+    let maxvaluerange;
+    //let minvaluerange = document.getElementById('rangeInput1').value;
+    //let maxvaluerange = document.getElementById('rangeInput2').value;
+
+    //document.querySelector('.js-send-sliders').addEventListener('click', async function() {
+    //    // İki range input'un değerlerini alalım
+    //    //debugger;
+    //    alert("Clickrf")
+    //    let rangeInput1Value = document.getElementById('rangeInput1').value;
+    //    let rangeInput2Value = document.getElementById('rangeInput2').value;
+
+    //    // Değerleri console'a yazdıralım
+    //    //console.log('Range Input 1 Değeri:', rangeInput1Value);
+    //    minvaluerange = rangeInput1Value;
+    //    //console.log('Range Input 2 Değeri:', rangeInput2Value);
+    //    maxvaluerange = rangeInput2Value;
+
+
+    //    await updateData();
+    //});
+
+    
+const handleTest =()=> {
+        let rangeInput1Value = document.getElementById('rangeInput1').value;
+        let rangeInput2Value = document.getElementById('rangeInput2').value;
+        minvaluerange = rangeInput1Value;
+        maxvaluerange = rangeInput2Value;
+
+        //let response =  axios.get(`/Apartment/GetApartmentData?buildingsArr=${buildingsArr}&floorArr=${floorsArr}&roomArr=${roomsArr}&featureArr=${featureArr}&page=${page}&rangeInput1Value=${minvaluerange}&rangeInput2Value=${maxvaluerange}`);
+             
+
+        fetch(`/Apartment/GetApartmentData?buildingsArr=${buildingsArr}&floorArr=${floorsArr}&roomArr=${roomsArr}&featureArr=${featureArr}&page=${page}&rangeInput1Value=${rangeInput1Value}&rangeInput2Value=${rangeInput2Value}`)
+        .then(res=>res.json())
+            .then(response => {
+                console.log(response)
+                   var dataField = document.getElementById("dataField");
+        dataField.innerHTML = "";
+        // Assuming 'response.data' is an array of objects
+
+        Array.from(document.getElementsByClassName("ApartmentsFound")).forEach(p => {
+            p.innerHTML = response.total
+        })
+        response.apartments.forEach(function(obj) {
+
+
+            //foreach (var feat in item.ApartmentFeatures)
+            //            {
+            //                foreach (var items in feat?.Feature?.FeatureTranslates)
+            //                {
+            //
+            //                }
+
+            //            }
+            var tempDiv = document.createElement("div");
+
+            let apartmentFeatures = Array.from(obj.apartmentFeatures).map(item => {
+                return Array.from(item.feature.featureTranslates).map(item2 => {
+                    return `
+                                        <div class="img-fet">
+                                            <img src="/featurelogo/${item.feature.logo}" alt="img">
+                                            <div class="tooltip-sea">${item2.name}</div>
+                                        </div>`;
+                }).join('');
+            }).join('');
+
+
+            console.log(obj)
+
+let apartmentCard = `
+    <a class="tb-item" href="/Apartment/ApartmentDetail?id=${obj.id}">
+        <div class="table-item-info">
+            <div class="table-item-img">
+                <img src="/apartmentplangallery/${obj.apartmentPlan}" alt="img">
+            </div>
+
+            <div class="table-item-details3">
+                <div class="table-item-floor">
+                    <p>${obj.sectionName}</p>
+                    <span>${obj.floor} Floor</span>
+                </div>
+                <div class="table-item-rooms">
+                    <span>${obj.roomsAmount} Rooms</span>
+                </div>
+                <div class="table-item-area">
+                    <span>${obj.areaTotal} M &#178;</span>
+                </div>
+                <div id="${obj.id}" class="table-item-features">
+                    <!-- Features Content -->
+                </div>
+            </div>
+        </div>
+    </a>
+`;
+
+
+            tempDiv.innerHTML = apartmentCard;
+
+            //tempDiv.firstChild.firstChild.lastChild.appendChild(container)
+
+            //cosnole.log(tempDiv.firstChild.firstChild.lastChild)
+
+            //var name = obj.number; // Replace 'name' with the actual property you want to display
+            //var newElement = document.createElement("div");
+            //newElement.style.display = "inline";
+            //newElement.style.padding = "10px";
+            //newElement.textContent = name;
+
+            dataField.appendChild(tempDiv);
+
+            document.getElementById(obj.id).innerHTML = apartmentFeatures;
+
+        });
+
+
+
+        document.getElementById("pagination").innerHTML = "";
+        for (var i = 1; i <= Math.ceil(Math.ceil(response.total / 10)); i++) {
+            var listItem = document.createElement("li");
+            listItem.className = "page-item";
+
+
+
+
+            if (i === page) {
+                listItem.className += " active";
+                listItem.className += " disabled";
+            }
+
+
+
+            listItem.id = i;
+
+            var link = document.createElement("a");
+            link.className = "page-link";
+            link.id = i;
+            link.innerText = i;
+
+            listItem.appendChild(link);
+
+            // Assuming you have an element with id "pagination" where you want to append the list items
+            document.getElementById("pagination").appendChild(listItem);
+        }
+
+
+        var pageLinks = document.querySelectorAll('a.page-link');
+        // Add a click event listener to each anchor tag
+        pageLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Get and log the id attribute of the clicked anchor tag
+                var clickedLinkId = link.id;
+                page = clickedLinkId;
+                updateData().then(function() {
+
+                });
+
+                document.querySelectorAll('li').forEach(function(li) {
+                    li.classList.remove('disabled');
+                });
+
+                // Add the 'disabled' attribute to the li element with id='1'
+                var liWithId = document.getElementById(page.toString())
+                if (liWithId) {
+                    liWithId.classList.add('disabled');
+                }
+            });
+        });
+            })
+     
+}
+
+
+    Array.from(document.getElementsByClassName("resetFilter")).forEach((reset) => {
+        reset.addEventListener("click", () => {
+
+            Array.from(buildings).forEach(e => {
+                e.checked = false;
+            });
+
+            Array.from(floors).forEach(e => {
+                e.checked = false;
+            });
+
+            Array.from(rooms).forEach(e => {
+                e.checked = false;
+            });
+
+            buildingsArr = [];
+            floorsArr = [];
+            roomsArr = [];
+
+            updateData();
+        });
+    });
+    updateData();
+
+
+
+    var pageLinks = document.querySelectorAll('a.page-link');
+    // Add a click event listener to each anchor tag
+    pageLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            // Get and log the id attribute of the clicked anchor tag
+            var clickedLinkId = link.id;
+            page = clickedLinkId;
+            updateData().then(function() {
+
+            });
+
+            document.querySelectorAll('li').forEach(function(li) {
+                li.classList.remove('disabled');
+            });
+
+            // Add the 'disabled' attribute to the li element with id='1'
+            var liWithId = document.getElementById(page.toString())
+            if (liWithId) {
+                liWithId.classList.add('disabled');
+            }
+        });
+    });
+
+    Array.from(buildings).forEach((buildData) => {
+        buildData.addEventListener("click", async (e) => {
+            if (buildingsArr.includes(e.target.getAttribute("building-data"))) {
+                let index = buildingsArr.indexOf(e.target.getAttribute("building-data"));
+                if (index !== -1) {
+                    buildingsArr.splice(index, 1);
+                }
+            } else {
+                buildingsArr.push(e.target.getAttribute("building-data"));
+            }
+            page = 1;
+            await updateData();
+        });
+    });
+
+
+
+    Array.from(floors).forEach((floorData) => {
+        floorData.addEventListener("click", async (e) => {
+            if (floorsArr.includes(e.target.getAttribute("floor-data"))) {
+                let index = floorsArr.indexOf(e.target.getAttribute("floor-data"));
+                if (index !== -1) {
+                    floorsArr.splice(index, 1);
+                }
+            } else {
+                floorsArr.push(e.target.getAttribute("floor-data"));
+            }
+            page = 1;
+            await updateData();
+        });
+    });
+
+    Array.from(rooms).forEach((roomData) => {
+        roomData.addEventListener("click", async (e) => {
+            if (roomsArr.includes(e.target.getAttribute("room-data"))) {
+                let index = roomsArr.indexOf(e.target.getAttribute("room-data"));
+                if (index !== -1) {
+                    roomsArr.splice(index, 1);
+                }
+            } else {
+                roomsArr.push(e.target.getAttribute("room-data"));
+            }
+            page = 1;
+            await updateData();
+        });
+    });
+
+    Array.from(features).forEach((featureData) => {
+        featureData.addEventListener("click", async (e) => {
+            if (featureArr.includes(e.target.getAttribute("feature-data"))) {
+                let index = featureArr.indexOf(e.target.getAttribute("feature-data"));
+                if (index !== -1) {
+                    featureArr.splice(index, 1);
+                }
+            } else {
+                featureArr.push(e.target.getAttribute("feature-data"));
+            }
+            page = 1;
+            await updateData();
+        });
+    });
+
+
+
+    async function updateData() {
+
+            alert(minvaluerange)
+        let response = await axios.get(`/Apartment/GetApartmentData?buildingsArr=${buildingsArr}&floorArr=${floorsArr}&roomArr=${roomsArr}&featureArr=${featureArr}&page=${page}&rangeInput1Value=${minvaluerange}&rangeInput2Value=${maxvaluerange}`);
+        console.log(response)
+        var dataField = document.getElementById("dataField");
+        dataField.innerHTML = "";
+        // Assuming 'response.data' is an array of objects
+
+        console.log(response.data.apartments)
+        console.log(response.data.apartments.length)
+        Array.from(document.getElementsByClassName("ApartmentsFound")).forEach(p => {
+            p.innerHTML = response.data.total
+        })
+        response.data.apartments.forEach(function(obj) {
+
+
+            //foreach (var feat in item.ApartmentFeatures)
+            //            {
+            //                foreach (var items in feat?.Feature?.FeatureTranslates)
+            //                {
+            //
+            //                }
+
+            //            }
+            var tempDiv = document.createElement("div");
+
+            let apartmentFeatures = Array.from(obj.apartmentFeatures).map(item => {
+                return Array.from(item.feature.featureTranslates).map(item2 => {
+                    return `
+                                        <div class="img-fet">
+                                            <img src="/featurelogo/${item.feature.logo}" alt="img">
+                                            <div class="tooltip-sea">${item2.name}</div>
+                                        </div>`;
+                }).join('');
+            }).join('');
+
+
+            console.log(obj)
+
+            let apartmentCard = `
+                                                                                                <a class="tb-item" href="/Apartment/ApartmentDetail?id=${obj.id}">
+                                                                                                    <div class="table-item-info">
+                                                                                                        <div class="table-item-img">
+                                                                                                            <img src="/apartmentplangallery/${obj.apartmentPlan}" alt="img" >
+                                                                                                        </div>
+                                                                                                                <div class="table-item-details3">
+                                                                                                        <div class="table-item-floor">
+                                                                                                            <p>${obj.sectionName}</p>
+                                                                                                            <span>${obj.floor} Floor</span>
+
+                                                                                                        </div>
+                                                                                                        <div class="table-item-rooms">
+                                                                                                            <span>${obj.roomsAmount} Rooms</span>
+                                                                                                        </div>
+                                                                                                        <div class="table-item-area">
+                                                                                                            <span>${obj.areaTotal} M &#178;</span>
+                                                                                                        </div>
+                                                                                                        <div id="${obj.id}" class="table-item-features">
+
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                        </div>
+                                                                                                </a>
+                                                                                                `
+
+            tempDiv.innerHTML = apartmentCard;
+
+            //tempDiv.firstChild.firstChild.lastChild.appendChild(container)
+
+            //cosnole.log(tempDiv.firstChild.firstChild.lastChild)
+
+            //var name = obj.number; // Replace 'name' with the actual property you want to display
+            //var newElement = document.createElement("div");
+            //newElement.style.display = "inline";
+            //newElement.style.padding = "10px";
+            //newElement.textContent = name;
+
+            dataField.appendChild(tempDiv);
+
+            document.getElementById(obj.id).innerHTML = apartmentFeatures;
+
+        });
+
+
+
+        document.getElementById("pagination").innerHTML = "";
+        for (var i = 1; i <= Math.ceil(Math.ceil(response.data.total / 10)); i++) {
+            var listItem = document.createElement("li");
+            listItem.className = "page-item";
+
+
+
+
+            if (i === page) {
+                listItem.className += " active";
+                listItem.className += " disabled";
+            }
+
+
+
+            listItem.id = i;
+
+            var link = document.createElement("a");
+            link.className = "page-link";
+            link.id = i;
+            link.innerText = i;
+
+            listItem.appendChild(link);
+
+            // Assuming you have an element with id "pagination" where you want to append the list items
+            document.getElementById("pagination").appendChild(listItem);
+        }
+
+
+        var pageLinks = document.querySelectorAll('a.page-link');
+        // Add a click event listener to each anchor tag
+        pageLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Get and log the id attribute of the clicked anchor tag
+                var clickedLinkId = link.id;
+                page = clickedLinkId;
+                updateData().then(function() {
+
+                });
+
+                document.querySelectorAll('li').forEach(function(li) {
+                    li.classList.remove('disabled');
+                });
+
+                // Add the 'disabled' attribute to the li element with id='1'
+                var liWithId = document.getElementById(page.toString())
+                if (liWithId) {
+                    liWithId.classList.add('disabled');
+                }
+            });
+        });
+    
+    }
+</script>
+}
+
+
+@*<script src="~/assets/js/test.js"></script>*@

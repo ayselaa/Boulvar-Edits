@@ -1,0 +1,83 @@
+﻿@model EverytingComfortVM
+
+  <main>
+    <section class="apartment-bg">
+        <div class="container container-items">
+            <div class="apartment-over-text">
+                  @if (Model.LangCode == "en")
+                {
+                    <h1>EVERYTHING  FOR YOUR COMFORT</h1>
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <h1>RAHATLIĞINIZ ÜÇÜN HƏR ŞEY</h1>
+                }
+                else
+                {
+                    <h1>ВСЕ ДЛЯ ВАШЕГО КОМФОРТА</h1>
+                }
+            </div>
+            <div class="back-to-page">
+                <a asp-controller="Home" asp-action="Index">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 8H1M1 8L8.125 1M1 8L8.125 15" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+     <!--Blog Start-->
+      <section class="blog-section">
+
+        <div class="container">
+            <div class="row">
+                @foreach (var comfort in Model.Comforts)
+                {
+                    @foreach (var item in comfort.ComfortTranslates)
+                    {
+                        <div class="arch-elegance-title col-lg-5 col-md-6">
+                            <h1>@item.Name </h1>
+                        </div>
+                        <div class="arch-elegance-info">
+                            <p>
+                                @item.Header
+                            </p>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+
+        <div class="carousell-slick">
+            @foreach (var comfortBlog in Model.ComfortBlogs)
+            {
+                @foreach (var item in comfortBlog.ComfortBlogTranslates)
+                {
+                    <div>
+                        <div class="card-blog slick-opacity">
+                            <div class="card-header">
+                                <img id="zoomable-img" class="blogimg" src="~/comfortbloggallery/@comfortBlog.Image">
+                            </div>
+                            <div class="card-body-blog">
+                                <div class="card-body-blog">
+                                    <div class="card-text-blog">
+                                        <p>
+                                          @item.Description
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+    </section>
+    <!--Blog End-->
+
+  </main>
+

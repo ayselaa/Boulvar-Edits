@@ -1,0 +1,445 @@
+﻿@model BoulevardResidence.Service.DTOs.Aparments.ApartmentDetailDto
+@{
+    ViewData["Title"] = "ApartmentDetail";
+}
+
+<!-- Main Start-->
+<main>
+    <section class="apartment-bg">
+        <div class="container container-items">
+            <div class="apartment-over-text">
+                @if (Model?.LangCode == "en")
+                {
+                    <h1>APARTMENT @Model?.Number</h1>
+                }
+                else if (Model?.LangCode == "az")
+                {
+                    <h1>MƏNZİL @Model?.Number</h1>
+                }
+                else
+                {
+                    <h1>КВАРТИРА @Model?.Number</h1>
+                }
+
+            </div>
+            <div class="back-to-page">
+                <a asp-controller="Apartment" asp-action="Index">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 8H1M1 8L8.125 1M1 8L8.125 15" stroke="white" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="apartment-detail">
+        <div class="container">
+            <div class="row">
+                <div class="next-apartment">
+                    <a href="#">
+                        NEXT APARTMENT
+                        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10"
+                             viewBox="0 0 4 8" fill="none">
+                            <path d="M0.0896797 0.555285L3.27764 4.00035L0.0896797 7.44542C0.0326063 7.50697 0.0006543 7.5896 0.000654299 7.67564C0.000654298 7.76169 0.0326063 7.84431 0.0896797 7.90587C0.1174 7.93567 0.150488 7.95935 0.187004 7.97551C0.22352 7.99167 0.262732 8 0.302341 8C0.34195 8 0.381161 7.99167 0.417678 7.97551C0.454194 7.95935 0.487281 7.93567 0.515002 7.90587L3.90712 4.24091C3.96667 4.17655 4 4.09023 4 4.00035C4 3.91047 3.96667 3.82415 3.90712 3.75979L0.515657 0.0948391C0.487915 0.0648251 0.454747 0.0409699 0.418109 0.0246806C0.381472 0.00839186 0.342108 4.80917e-07 0.302341 4.80443e-07C0.262574 4.79968e-07 0.22321 0.00839186 0.186573 0.0246806C0.149935 0.0409699 0.116767 0.0648251 0.0890251 0.0948391C0.0319518 0.156391 9.25488e-08 0.23902 9.15227e-08 0.325062C9.04967e-08 0.411104 0.0319518 0.493732 0.0890251 0.555285L0.0896797 0.555285Z"
+                                  fill="#96A4AF" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="apartment-detail-flex">
+                    <div class="ap-detail-left">
+                        <div class="detail-name-number">
+                            <div class="ap-d-name">
+                                @if (Model?.LangCode == "en")
+                                {
+                                    <p>Floor</p>
+                                    <p>Building</p>
+                                    <p>Room</p>
+                                    <p>Total area</p>
+                                }
+                                else if (Model?.LangCode == "az")
+                                {
+                                    <p>Mərtəbə</p>
+                                    <p>Bina</p>
+                                    <p>Otaq</p>
+                                    <p>Ümumi Sahə</p>
+                                }
+                                else
+                                {
+                                    <p>Этаж</p>
+                                    <p>Здание</p>
+                                    <p>Комната</p>
+                                    <p>Площадь</p>
+                                }
+
+                            </div>
+                            <div class="ap-d-number">
+                                <p>@Model?.Floor</p>
+                                <p>@Model?.Building</p>
+                                <p>@Model?.Room</p>
+                                <p>@Model?.FloorArea &#178;</p>
+                            </div>
+                        </div>
+                        <!-- Overlay  Sidebar Start -->
+                        <div id="overlay" class="overlay"></div>
+                        <!-- Overlay  Sidebar End -->
+                        <!-- Send Request Sidebar Start-->
+                        @if (Model?.LangCode == "en")
+                        {
+                            <div class="sidebar-open" id="sidebar-p">
+                                <div class="container">
+                                    <div class="middle-elements">
+                                        <div class="close-sidebar-iconn">
+                                            <a class="close-sidebar-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                 viewBox="0 0 15 15" fill="none">
+                                                    <path d="M14.8843 14.3258C14.9584 14.3999 15 14.5003 15 14.6051C15 14.7098 14.9584 14.8103 14.8843 14.8843C14.8103 14.9584 14.7098 15 14.6051 15C14.5003 15 14.3999 14.9584 14.3258 14.8843L7.5 8.05854L0.674213 14.8843C0.600147 14.9584 0.499691 15 0.394945 15C0.290199 15 0.189743 14.9584 0.115677 14.8843C0.0416103 14.8103 2.06479e-09 14.7098 0 14.6051C-2.06479e-09 14.5003 0.0416099 14.3999 0.115676 14.3258L6.94146 7.5L0.115676 0.674213C0.0416099 0.600147 0 0.499691 0 0.394945C0 0.290199 0.0416099 0.189743 0.115676 0.115676C0.189743 0.0416099 0.290199 0 0.394945 0C0.499691 0 0.600147 0.0416099 0.674213 0.115676L7.5 6.94146L14.3258 0.115676C14.3625 0.0790024 14.406 0.049911 14.4539 0.0300632C14.5018 0.0102154 14.5532 1.02238e-09 14.6051 0C14.6569 -1.02238e-09 14.7083 0.0102154 14.7562 0.0300632C14.8041 0.049911 14.8476 0.0790024 14.8843 0.115676C14.921 0.15235 14.9501 0.195889 14.9699 0.243806C14.9898 0.291723 15 0.34308 15 0.394945C15 0.44681 14.9898 0.498167 14.9699 0.546084C14.9501 0.594001 14.921 0.637539 14.8843 0.674213L8.05854 7.5L14.8843 14.3258Z"
+                                                      fill="#585858" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="ap-d-sidebar-title">
+                                            @*<p>
+                                        BLOCK A <br>
+                                        APARTMENT 88
+                                        </p>*@
+                                            <p>
+                                                BLOCK @Model?.SectionName <br>
+                                                APARTMENT @Model?.Number
+                                            </p>
+                                        </div>
+                                        <div class="ap-d-sidebar-img">
+                                            <img src="~/assets/img/aparments/sidebarimg.png" alt="img">
+                                        </div>
+                                        <form class="sidebar-form-inputs" asp-action="SendRequestForApartment" asp-route-model="@Model">
+                                            <p>Leave your number, we call you</p>
+                                            <div class="form-group">
+                                                <input type="text" name="Name" placeholder="Name" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="Email" placeholder="Email address"
+                                                   class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" name="PhoneNumber"
+                                                   placeholder="+994 (000) 000 00 00" class="form-control">
+                                            </div>
+                                            <input type="hidden" name="ApartmentInfo" value="BLOCK @Model?.SectionName APARTMENT @Model?.Number">
+                                             <input type="hidden" name="Subject" value="Send Request For Apartment">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn-sidebar">Send request </button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if (Model.LangCode == "az")
+                        {
+                            <div class="sidebar-open" id="sidebar-p">
+                                <div class="container">
+                                    <div class="middle-elements">
+                                        <div class="close-sidebar-iconn">
+                                            <a class="close-sidebar-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                 viewBox="0 0 15 15" fill="none">
+                                                    <path d="M14.8843 14.3258C14.9584 14.3999 15 14.5003 15 14.6051C15 14.7098 14.9584 14.8103 14.8843 14.8843C14.8103 14.9584 14.7098 15 14.6051 15C14.5003 15 14.3999 14.9584 14.3258 14.8843L7.5 8.05854L0.674213 14.8843C0.600147 14.9584 0.499691 15 0.394945 15C0.290199 15 0.189743 14.9584 0.115677 14.8843C0.0416103 14.8103 2.06479e-09 14.7098 0 14.6051C-2.06479e-09 14.5003 0.0416099 14.3999 0.115676 14.3258L6.94146 7.5L0.115676 0.674213C0.0416099 0.600147 0 0.499691 0 0.394945C0 0.290199 0.0416099 0.189743 0.115676 0.115676C0.189743 0.0416099 0.290199 0 0.394945 0C0.499691 0 0.600147 0.0416099 0.674213 0.115676L7.5 6.94146L14.3258 0.115676C14.3625 0.0790024 14.406 0.049911 14.4539 0.0300632C14.5018 0.0102154 14.5532 1.02238e-09 14.6051 0C14.6569 -1.02238e-09 14.7083 0.0102154 14.7562 0.0300632C14.8041 0.049911 14.8476 0.0790024 14.8843 0.115676C14.921 0.15235 14.9501 0.195889 14.9699 0.243806C14.9898 0.291723 15 0.34308 15 0.394945C15 0.44681 14.9898 0.498167 14.9699 0.546084C14.9501 0.594001 14.921 0.637539 14.8843 0.674213L8.05854 7.5L14.8843 14.3258Z"
+                                                      fill="#585858" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="ap-d-sidebar-title">
+                                            @*<p>
+                                        BLOCK A <br>
+                                        APARTMENT 88
+                                        </p>*@
+                                            <p>
+                                                BLOCK @Model?.SectionName <br>
+                                                APARTMENT @Model?.Number
+                                            </p>
+                                        </div>
+                                        <div class="ap-d-sidebar-img">
+                                            <img src="~/assets/img/aparments/sidebarimg.png" alt="img">
+                                        </div>
+                                        <form class="sidebar-form-inputs" asp-action="SendRequestForApartment" asp-route-model="@Model">
+                                            <p>Nömrənizi buraxın, sizə zəng edək</p>
+                                            <div class="form-group">
+                                                <input type="text" name="Name" placeholder="Ad" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="Email" placeholder="Email adresi"
+                                                   class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" name="PhoneNumber"
+                                                   placeholder="+994 (000) 000 00 00" class="form-control">
+                                            </div>
+                                            <input type="hidden" name="ApartmentInfo" value="BLOCK @Model?.SectionName APARTMENT @Model?.Number">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn-sidebar">Sorğu göndər </button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="sidebar-open" id="sidebar-p">
+                                <div class="container">
+                                    <div class="middle-elements">
+                                        <div class="close-sidebar-iconn">
+                                            <a class="close-sidebar-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                 viewBox="0 0 15 15" fill="none">
+                                                    <path d="M14.8843 14.3258C14.9584 14.3999 15 14.5003 15 14.6051C15 14.7098 14.9584 14.8103 14.8843 14.8843C14.8103 14.9584 14.7098 15 14.6051 15C14.5003 15 14.3999 14.9584 14.3258 14.8843L7.5 8.05854L0.674213 14.8843C0.600147 14.9584 0.499691 15 0.394945 15C0.290199 15 0.189743 14.9584 0.115677 14.8843C0.0416103 14.8103 2.06479e-09 14.7098 0 14.6051C-2.06479e-09 14.5003 0.0416099 14.3999 0.115676 14.3258L6.94146 7.5L0.115676 0.674213C0.0416099 0.600147 0 0.499691 0 0.394945C0 0.290199 0.0416099 0.189743 0.115676 0.115676C0.189743 0.0416099 0.290199 0 0.394945 0C0.499691 0 0.600147 0.0416099 0.674213 0.115676L7.5 6.94146L14.3258 0.115676C14.3625 0.0790024 14.406 0.049911 14.4539 0.0300632C14.5018 0.0102154 14.5532 1.02238e-09 14.6051 0C14.6569 -1.02238e-09 14.7083 0.0102154 14.7562 0.0300632C14.8041 0.049911 14.8476 0.0790024 14.8843 0.115676C14.921 0.15235 14.9501 0.195889 14.9699 0.243806C14.9898 0.291723 15 0.34308 15 0.394945C15 0.44681 14.9898 0.498167 14.9699 0.546084C14.9501 0.594001 14.921 0.637539 14.8843 0.674213L8.05854 7.5L14.8843 14.3258Z"
+                                                      fill="#585858" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="ap-d-sidebar-title">
+                                            @*<p>
+                                        BLOCK A <br>
+                                        APARTMENT 88
+                                        </p>*@
+                                            <p>
+                                                BLOCK @Model?.SectionName <br>
+                                                APARTMENT @Model?.Number
+                                            </p>
+                                        </div>
+                                        <div class="ap-d-sidebar-img">
+                                            <img src="~/assets/img/aparments/sidebarimg.png" alt="img">
+                                        </div>
+                                        <form class="sidebar-form-inputs" asp-action="SendRequestForApartment" asp-route-model="@Model">
+                                            <p>Оставьте свой номер, мы вам позвоним</p>
+                                            <div class="form-group">
+                                                <input type="text" name="Name" placeholder="Имя" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="Email" placeholder="Email аддресс "
+                                                   class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" name="PhoneNumber"
+                                                   placeholder="+994 (000) 000 00 00" class="form-control">
+                                            </div>
+                                            <input type="hidden" name="ApartmentInfo" value="BLOCK @Model?.SectionName APARTMENT @Model?.Number">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn-sidebar">Отправить запрос </button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <!-- Send Request Sidebar End-->
+                        <!--Pdf Sidebar Start-->
+                        @if (Model.LangCode == "en")
+                        {
+                            <div class="sidebar-open-pdf" id="sidebar-pdf">
+                                <div class="container">
+                                    <div class="middle-elements">
+                                        <div class="close-sidebar-iconn">
+                                            <a class="close-sidebar-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                 viewBox="0 0 15 15" fill="none">
+                                                    <path d="M14.8843 14.3258C14.9584 14.3999 15 14.5003 15 14.6051C15 14.7098 14.9584 14.8103 14.8843 14.8843C14.8103 14.9584 14.7098 15 14.6051 15C14.5003 15 14.3999 14.9584 14.3258 14.8843L7.5 8.05854L0.674213 14.8843C0.600147 14.9584 0.499691 15 0.394945 15C0.290199 15 0.189743 14.9584 0.115677 14.8843C0.0416103 14.8103 2.06479e-09 14.7098 0 14.6051C-2.06479e-09 14.5003 0.0416099 14.3999 0.115676 14.3258L6.94146 7.5L0.115676 0.674213C0.0416099 0.600147 0 0.499691 0 0.394945C0 0.290199 0.0416099 0.189743 0.115676 0.115676C0.189743 0.0416099 0.290199 0 0.394945 0C0.499691 0 0.600147 0.0416099 0.674213 0.115676L7.5 6.94146L14.3258 0.115676C14.3625 0.0790024 14.406 0.049911 14.4539 0.0300632C14.5018 0.0102154 14.5532 1.02238e-09 14.6051 0C14.6569 -1.02238e-09 14.7083 0.0102154 14.7562 0.0300632C14.8041 0.049911 14.8476 0.0790024 14.8843 0.115676C14.921 0.15235 14.9501 0.195889 14.9699 0.243806C14.9898 0.291723 15 0.34308 15 0.394945C15 0.44681 14.9898 0.498167 14.9699 0.546084C14.9501 0.594001 14.921 0.637539 14.8843 0.674213L8.05854 7.5L14.8843 14.3258Z"
+                                                      fill="#585858" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="ap-d-sidebar-title">
+                                            <p>
+                                                REQUEST <br>
+                                                for PDF
+                                            </p>
+                                        </div>
+                                        <div class="ap-d-sidebar-img">
+                                            <img src="~/assets/img/aparments/sidebarimg.png" alt="img">
+                                        </div>
+                                        <form class="sidebar-form-inputs" asp-action="SendRequestForApartmentPdf" asp-route-model="@Model">
+                                            <p>Leave your mail adress, we’ll send PDF file</p>
+                                            <div class="form-group">
+                                                <input type="text" name="Name" placeholder="Name" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="Email" placeholder="Email address"
+                                                   class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" name="PhoneNumber"
+                                                   placeholder="+994 (000) 000 00 00" class="form-control">
+                                            </div>
+                                            
+                                            <input type="hidden" name="ApartmentInfo" value="BLOCK @Model?.SectionName APARTMENT @Model?.Number">
+                                            <input type="hidden" name="Subject" value="Send PDF For Apartment">
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn-sidebar">Send request </button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if (Model.LangCode == "az")
+                        {
+                            <div class="sidebar-open-pdf" id="sidebar-pdf">
+                                <div class="container">
+                                    <div class="middle-elements">
+                                        <div class="close-sidebar-iconn">
+                                            <a class="close-sidebar-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                 viewBox="0 0 15 15" fill="none">
+                                                    <path d="M14.8843 14.3258C14.9584 14.3999 15 14.5003 15 14.6051C15 14.7098 14.9584 14.8103 14.8843 14.8843C14.8103 14.9584 14.7098 15 14.6051 15C14.5003 15 14.3999 14.9584 14.3258 14.8843L7.5 8.05854L0.674213 14.8843C0.600147 14.9584 0.499691 15 0.394945 15C0.290199 15 0.189743 14.9584 0.115677 14.8843C0.0416103 14.8103 2.06479e-09 14.7098 0 14.6051C-2.06479e-09 14.5003 0.0416099 14.3999 0.115676 14.3258L6.94146 7.5L0.115676 0.674213C0.0416099 0.600147 0 0.499691 0 0.394945C0 0.290199 0.0416099 0.189743 0.115676 0.115676C0.189743 0.0416099 0.290199 0 0.394945 0C0.499691 0 0.600147 0.0416099 0.674213 0.115676L7.5 6.94146L14.3258 0.115676C14.3625 0.0790024 14.406 0.049911 14.4539 0.0300632C14.5018 0.0102154 14.5532 1.02238e-09 14.6051 0C14.6569 -1.02238e-09 14.7083 0.0102154 14.7562 0.0300632C14.8041 0.049911 14.8476 0.0790024 14.8843 0.115676C14.921 0.15235 14.9501 0.195889 14.9699 0.243806C14.9898 0.291723 15 0.34308 15 0.394945C15 0.44681 14.9898 0.498167 14.9699 0.546084C14.9501 0.594001 14.921 0.637539 14.8843 0.674213L8.05854 7.5L14.8843 14.3258Z"
+                                                      fill="#585858" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="ap-d-sidebar-title">
+                                            <p>
+                                                Sorğu <br>
+                                                PDF
+                                            </p>
+                                        </div>
+                                        <div class="ap-d-sidebar-img">
+                                            <img src="~/assets/img/aparments/sidebarimg.png" alt="img">
+                                        </div>
+                                        <form class="sidebar-form-inputs" asp-action="SendRequestForApartmentPdf" asp-route-model="@Model">
+                                            <p>Poçt ünvanınızı buraxın, biz PDF faylı göndərək</p>
+                                            <div class="form-group">
+                                                <input type="text" name="Name" placeholder="Ad" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="Email" placeholder="E-poçt ünvanı"
+                                                   class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" name="PhoneNumber"
+                                                   placeholder="+994 (000) 000 00 00" class="form-control">
+                                            </div>
+                                            <input type="hidden" name="ApartmentInfo" value="BLOCK @Model?.SectionName APARTMENT @Model?.Number">
+                                             <input type="hidden" name="Subject" value="Send PDF For Apartment">
+
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn-sidebar">Sorğu göndər </button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="sidebar-open-pdf" id="sidebar-pdf">
+                                <div class="container">
+                                    <div class="middle-elements">
+                                        <div class="close-sidebar-iconn">
+                                            <a class="close-sidebar-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                 viewBox="0 0 15 15" fill="none">
+                                                    <path d="M14.8843 14.3258C14.9584 14.3999 15 14.5003 15 14.6051C15 14.7098 14.9584 14.8103 14.8843 14.8843C14.8103 14.9584 14.7098 15 14.6051 15C14.5003 15 14.3999 14.9584 14.3258 14.8843L7.5 8.05854L0.674213 14.8843C0.600147 14.9584 0.499691 15 0.394945 15C0.290199 15 0.189743 14.9584 0.115677 14.8843C0.0416103 14.8103 2.06479e-09 14.7098 0 14.6051C-2.06479e-09 14.5003 0.0416099 14.3999 0.115676 14.3258L6.94146 7.5L0.115676 0.674213C0.0416099 0.600147 0 0.499691 0 0.394945C0 0.290199 0.0416099 0.189743 0.115676 0.115676C0.189743 0.0416099 0.290199 0 0.394945 0C0.499691 0 0.600147 0.0416099 0.674213 0.115676L7.5 6.94146L14.3258 0.115676C14.3625 0.0790024 14.406 0.049911 14.4539 0.0300632C14.5018 0.0102154 14.5532 1.02238e-09 14.6051 0C14.6569 -1.02238e-09 14.7083 0.0102154 14.7562 0.0300632C14.8041 0.049911 14.8476 0.0790024 14.8843 0.115676C14.921 0.15235 14.9501 0.195889 14.9699 0.243806C14.9898 0.291723 15 0.34308 15 0.394945C15 0.44681 14.9898 0.498167 14.9699 0.546084C14.9501 0.594001 14.921 0.637539 14.8843 0.674213L8.05854 7.5L14.8843 14.3258Z"
+                                                      fill="#585858" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="ap-d-sidebar-title">
+                                            <p>
+                                                Запрос <br>
+                                                для PDF
+                                            </p>
+                                        </div>
+                                        <div class="ap-d-sidebar-img">
+                                            <img src="~/assets/img/aparments/sidebarimg.png" alt="img">
+                                        </div>
+                                        <form class="sidebar-form-inputs" asp-action="SendRequestForApartmentPdf" asp-route-model="@Model">
+                                            <p>Оставьте свой адрес почты, мы отправим PDF-файл</p>
+                                            <div class="form-group">
+                                                <input type="text" name="Name" placeholder="Имя" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="Email" placeholder="Адрес электронной почты"
+                                                   class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" name="PhoneNumber"
+                                                   placeholder="+994 (000) 000 00 00" class="form-control">
+                                            </div>
+                                            <input type="hidden" name="ApartmentInfo" value="BLOCK @Model?.SectionName APARTMENT @Model?.Number">
+                                             <input type="hidden" name="Subject" value="Send PDF For Apartment">
+
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn-sidebar">Отправить запрос </button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <!--Pdf Sidebar End-->
+                        @if (Model.LangCode == "en")
+                        {
+                            <div class="a-detail-buttons">
+                                <button id="sidebarToggle">SEND REQUEST</button>
+                                <button id="sidebarTogglePdf">PDF</button>
+                            </div>
+                        }
+                        else if (Model.LangCode == "az")
+                        {
+                            <div class="a-detail-buttons">
+                                <button id="sidebarToggle">Sorğu Göndər</button>
+                                <button id="sidebarTogglePdf">PDF</button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="a-detail-buttons">
+                                <button id="sidebarToggle">Отправить Запрос</button>
+                                <button id="sidebarTogglePdf">PDF</button>
+                            </div>
+                        }
+
+
+                    </div>
+                    <div class="ap-detail-right">
+                        <div class="ap-detail-img">
+                            <img src="~/apartmentplangallery/@Model?.ApartmentPlan" alt="img">
+                            <p class="top-text">Gulbala Aliyev</p>
+                            <p class="bottom-text">Gulbala Aliyev</p>
+                            <p class="left-text">Gulbala Aliyev</p>
+                            <p class="right-text">Gulbala Aliyev</p>
+                        </div>
+                        <div class="a-detai-center-txt">
+                            <p>BOULVEVARD</p>
+                        </div>
+                        <div class="a-detail-right-buttons">
+                            <button><a href="floor.html">PLAN</a></button>
+                            <button><a class="hv-white" asp-controller="Floor" asp-action="Index" asp-route-sectionName="@Model.SectionName" asp-route-floornumber="@Model.Floor">FLOOR PLAN</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Main End-->

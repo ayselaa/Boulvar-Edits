@@ -1,0 +1,59 @@
+﻿@model GalleryUpdateVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> There are some validation errors. Please fix them before proceeding.
+    </div>
+}
+
+<div class="footer-menu-edit">
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group" style="margin-top: 80px">
+        <div class="image">
+            <img id="previewImage" class="img-fluid" src="~/boulevardgallery/@Model.Image" />
+        </div>
+        <div class="form-group mt-4">
+                <label class="stylelabel">Image:</label>
+            <input type="file" class="form-control" name="NewImage" onchange="previewFile()">
+        </div>
+        <input type="hidden" name="Image" value="@Model.Image">
+    </div>
+
+     <div class="form-group mt-4">
+        @Html.LabelFor(model => model.GalleryCategoryId, "Gallery Category")
+        @Html.DropDownListFor(model => model.GalleryCategoryId, ViewBag.Menus as SelectList, "-- Select Gallery Category --", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.GalleryCategoryId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group  mt-4">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+</div>
+
+<script>
+    function previewFile() {
+        var preview = document.getElementById('previewImage');
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "~/boulevardgallery/@Model.Image";
+        }
+    }
+</script>
+

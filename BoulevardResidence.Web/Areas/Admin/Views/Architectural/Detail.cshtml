@@ -1,0 +1,27 @@
+﻿@model ArchitecturalDetailVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="sliderdetails">
+
+<h1>Architecutral Elegance blog Details</h1>
+
+<div style="margin-top:4rem;">
+    <h4>Slider ID: @Model.Id</h4>
+</div>
+
+<hr />
+
+@foreach (var translate in Model.Translates)
+{
+    <div style="width:50%;">
+        <h5>@translate.LangCode</h5>
+        <p>Name: @translate.Name</p>
+        <p>Header: @translate.Header</p>
+            <hr />
+    </div>
+
+}
+    <a class="detail-back" asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,5424 @@
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .flex-pgnation {
+         gap: 0rem !important;
+    }
+    .table-item-details3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+    }
+        .table-item-features {
+        width: 70px;
+        display: flex;
+        justify-content: start;
+    }
+
+    .table-item-info {
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #7f784f40;
+    }
+  /******************************   A2 A3  BLOKLARII  Baslangic   ******************************/
+
+  /**************************************************************************************************/
+  /************* A2 A3  "Blok isareleri" Satilmis eraziler ucun    *************/
+  #path105-1,
+  #path105-2 {
+    transform: translate(51rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path104-1,
+  #path104-2 {
+    transform: translate(39rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path103-1,
+  #path103-2 {
+    transform: translate(26rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path102-1,
+  #path102-2 {
+    transform: translate(11rem, 1rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path101-1,
+  #path101-2 {
+    transform: translate(-2rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path100-1,
+  #path100-2 {
+    transform: translate(-293px, 201px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_100 {
+    transform: translate(163px, 28px);
+  }
+
+  .pathtranslatemove_100 path:first-child {
+    transform: translate(157px, -110px) matrix(1.07, 0, 0, 1.05, -108, 235);
+  }
+
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_101 {
+    transform: translate(393px, 660px);
+  }
+
+  .pathtranslatemove_101 path:first-child {
+    transform: translate(157px, -110px) matrix(1.05, 0, 0, 1.03, 108, 494);
+  }
+
+  /*  2 ci mertebe 3 ci ev*/
+  #hareketliGrup_102 {
+    transform: translate(556px, 47px);
+  }
+
+  .pathtranslatemove_102 path:first-child {
+    transform: translate(157px, -110px) matrix(1.03, 0, 0, 1.034, 315, 232);
+  }
+
+  /*  2 ci mertebe 4 ci ev*/
+  #hareketliGrup_103 {
+    transform: translate(807px, 660px);
+  }
+
+  .pathtranslatemove_103 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.04, 619, 230);
+  }
+
+  /*  2 ci mertebe 5 ci ev*/
+  #hareketliGrup_104 {
+    transform: translate(1120px, 678px);
+  }
+
+  .pathtranslatemove_104 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.04, 821, 498);
+  }
+
+  /*  2 ci mertebe 6 ci ev*/
+  #hareketliGrup_105 {
+    transform: translate(1190px, 46px);
+  }
+
+  .pathtranslatemove_105 path:first-child {
+    transform: translate(157px, -110px) matrix(1.07, 0, 0, 1.06, 1028, 232);
+  }
+
+  /******************************   A2 A3  BLOKLARII  Son  ******************************/
+  /***********************************************************************************/
+
+  .top-street,
+  .bottom-street,
+  .right-street,
+  .left-street {
+    font-size: 8px;
+  }
+  .top-street {
+    top: 38px;
+    transform: translateX(-50%);
+  }
+  .bottom-street {
+    bottom: 38px;
+    transform: translateX(-50%);
+  }
+  .right-street {
+    top: 50%;
+    right: -38px;
+    transform: translateY(-50%) rotate(-270deg);
+  }
+  .left-street {
+    top: 50%;
+    left: -38px;
+    transform: translateY(-50%) rotate(270deg);
+  }
+  /* 11 cu mertebe ev 1 */
+  #hareketliGrup_19 {
+    transform: translate(405px, 785px);
+  }
+
+  .pathtranslatemove_19 path:first-child {
+    transform: translate(157px, -110px) matrix(1.52, 0, 0, 1.502, 27, 51);
+  }
+  /* 11 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 1 */
+  #hareketliGrup_17 {
+    transform: translate(388px, 721px);
+  }
+
+  .pathtranslatemove_17 path:first-child {
+    transform: translate(157px, -110px) matrix(1.51, 0, 0, 1.466, 29, 78);
+  }
+
+  /* 10 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 2 */
+  #hareketliGrup_18 {
+    transform: translate(969px, 382px);
+  }
+
+  .pathtranslatemove_18 path:first-child {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.457, 418, 211);
+  }
+
+  /* 10 cu mertebe ev 2 */
+
+  /* 9 cu mertebe ev 1 */
+  #hareketliGrup_15 {
+    transform: translate(370px, 741px);
+  }
+
+  .pathtranslatemove_15 path:first-child {
+    transform: translate(157px, -110px) matrix(1.54, 0, 0, 1.496, 7, 84);
+  }
+
+  /* 9 cu mertebe ev 1 */
+
+  /* 9 cu mertebe ev 2 */
+
+  #hareketliGrup_16 {
+    transform: translate(944px, 429px);
+  }
+
+  .pathtranslatemove_16 path:first-child {
+    transform: translate(157px, -110px) matrix(1.52, 0, 0, 1.5, 402, 149);
+  }
+
+  /* 9 cu mertebe ev 2 */
+  /* 8 ci mertebe ev 1 */
+
+  #hareketliGrup_13 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_13 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.57, 22, 65);
+  }
+
+  /* 8 ci mertebe ev 1 */
+
+  /* 8 ci mertebe ev 2 */
+
+  #hareketliGrup_14 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_14 path:first-child {
+    transform: translate(157px, -110px) matrix(1.58, 0, 0, 1.58, 424, 122);
+  }
+
+  /* 8 ci mertebe ev 2 */
+
+  /* 7 ci mertebe ev 1 */
+
+  #hareketliGrup_11 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_11 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.57, 22, 65);
+  }
+
+  /* 7 ci mertebe ev 1 */
+
+  /* 7 ci mertebe ev 2 */
+
+  #hareketliGrup_12 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_12 path:first-child {
+    transform: translate(157px, -110px) matrix(1.58, 0, 0, 1.58, 424, 122);
+  }
+
+  /* 7 ci mertebe ev 2 */
+
+  /* 6 cu mertebe ev 2 */
+  #hareketliGrup_10 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_10 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 6 cu mertebe ev 2 */
+
+  /* 6 cu mertebe ev 1 */
+  .pathtranslatemove_9 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_9 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 6 cu mertebe ev 1 */
+
+  /* 5 cu mertebe ev 2 */
+  #hareketliGrup_8 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_8 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 5 cu mertebe ev 2 */
+  /* 5 cu mertebe ev 1 */
+  .pathtranslatemove_7 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_7 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 5 cu mertebe ev 1 */
+
+  /* 4 cu mertebe ev 2 */
+  #hareketliGrup_6 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_6 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 4 cu mertebe ev 2 */
+
+  /* 4 cu mertebe ev 1 */
+  .pathtranslatemove_5 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_5 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 4 cu mertebe ev 1 */
+  /*  3 cu mertebe 2 ci ev*/
+
+  #hareketliGrup_4 {
+    transform: translate(968px, 476px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_4 path:first-child {
+    transform: translate(157px, -110px) matrix(1.45, 0, 0, 1.45, 435, 196);
+  }
+
+  /*  3 cu mertebe 2 ci ev*/
+  /* 3 cu mertebe 1 ci ev*/
+
+  #hareketliGrup_3 {
+    transform: translate(420px, 728px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_3 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 75, 146);
+  }
+
+  /* 3 cu mertebe 1 ci ev*/
+  /* 2 ci mertebe 2 ci ev start*/
+  #path2-ev2,
+  #path3-ev2 {
+    transform: translate(220px, -110px) matrix(1.7, 0, 0, 1.7, 593, 443);
+  }
+  #hareketliGrup_2 {
+    transform: translate(987px, 471px);
+  }
+
+  .pathtranslatemove_2 path:first-child {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.25, 425, 167);
+  }
+  /* 2 ci mertebe 2 ci ev end*/
+
+  /*  2 ci mertebe 1 ci ev Start */
+  #path2,
+  #path3 {
+    transform: translate(157px, -110px) matrix(1.7, 0, 0, 1.7, 208, 559) !important;
+  }
+
+  .pathtranslatemove_1 path {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.26, 68, 117) !important;
+  }
+
+  #hareketliGrup_1 {
+    transform: translate(408px, 715px);
+  }
+  /*  2 ci mertebe 1 ci ev  End */
+  /* .building__svg {
+    display: none;
+  } */
+
+  .over-left-text img {
+    width: 82%;
+  }
+  .je-items {
+    justify-content: start;
+  }
+  .arch-elegance-title h1 {
+    line-height: 30px;
+  }
+
+  .gallery-title h1 {
+    line-height: 30px;
+  }
+  .building__svgg svg {
+    height: 100% !important;
+  }
+  /* .project__img {
+    height: 300px;
+  } */
+
+  .info-res-bottom {
+    padding: 3rem 1rem;
+  }
+  .info-res-bottom p {
+    font-size: 14px;
+  }
+  .info-res-bottom span {
+    font-size: 14px;
+  }
+  .over-left-text h1 {
+    font-size: 49px;
+  }
+  .phone_num_animation {
+    margin-right: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .sidenav a {
+    font-size: 20px;
+  }
+  .back-to-page a {
+    padding: 1rem;
+  }
+  .apartment-bg {
+    height: 40vh;
+  }
+  .css-slider-wrapper {
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  .slider-pagination {
+    gap: 0;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .slider-pagination label {
+    padding: 0.6rem;
+  }
+  .page1::before,
+  .page2::before,
+  .page3::before,
+  .page4::before,
+  .page5::before,
+  .page6::before,
+  .page7::before,
+  .page8::before,
+  .page9::before {
+    top: 7%;
+    font-size: 11px;
+    left: 40%;
+  }
+
+  .page10::before,
+  .page11::before,
+  .page12::before,
+  .page13::before,
+  .page14::before,
+  .page15::before,
+  .page16::before {
+    top: 3%;
+    font-size: 11px;
+    left: 28%;
+  }
+  .over-top-p {
+    padding: 6rem 1rem;
+  }
+  .footer-ct-info-bottom {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-page {
+    height: 100%;
+  }
+  .street-info p,
+  .email-info p {
+    font-size: 15px;
+  }
+  .footer-number p:nth-child(2) {
+    font-size: 49px;
+  }
+  .footer-middle-elements {
+    margin: 4rem 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .ap-d-sidebar-img img {
+    width: 88%;
+  }
+  .ap-d-sidebar-img {
+    padding: 0rem 7rem;
+  }
+  .sidebar-form-inputs {
+    padding: 1rem 2rem;
+  }
+  .ap-d-sidebar-title p {
+    font-size: 30px;
+  }
+  .middle-elements {
+    gap: 0rem;
+  }
+  .a-detail-buttons {
+    padding: 1rem;
+  }
+  .a-detail-buttons button:nth-child(1) {
+    width: 100%;
+    padding: 19px 35px;
+    font-size: 12px;
+  }
+  .a-detail-buttons button:nth-child(2) {
+    width: 100%;
+    padding: 19px 49px;
+    font-size: 12px;
+  }
+  .select-group {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .apartment-over-text h1 {
+    font-size: 37px;
+    padding-left: 1rem;
+  }
+  .modal-content {
+    max-width: 79%;
+  }
+  .modal-info-box {
+    padding: 0rem 0rem 2rem 0rem;
+  }
+  .modal_header_text {
+    font-size: 30px;
+  }
+  .modal_header_text p {
+    font-size: 23px;
+  }
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .over-left-text {
+    padding: 0.5rem;
+  }
+  .over-middle-text {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+  }
+  .rotate-svg {
+    width: 6px;
+  }
+  .bottom-move-elements {
+    bottom: -3rem !important;
+  }
+  .walkthrought img {
+    margin-left: 0.6rem;
+  }
+  .right-contact {
+    display: flex;
+    justify-content: right;
+    margin-top: 0.5rem;
+  }
+  .anim-img {
+    width: 47% !important;
+  }
+  .pulse {
+    height: 21px;
+    width: 21px;
+  }
+  .arch-elegance-info p {
+    font-size: 18px;
+  }
+
+  .arch-elegance-card-text p {
+    font-size: 18px;
+  }
+
+  .footer-left {
+    font-size: 9px;
+  }
+  .footer-right .author {
+    font-size: 9px;
+  }
+
+  .author {
+    margin-bottom: 0;
+  }
+  .progress-text::before {
+    top: 2rem;
+  }
+  .darkbluebg-slider {
+    width: 100%;
+  }
+  .navbar {
+    padding: 0rem 0.5rem;
+  }
+  .tab-item {
+    margin-left: 0 !important;
+  }
+  .aparment-between,
+  .gallery-between {
+    flex-direction: column !important;
+    justify-content: left !important;
+  }
+  .map_filter_controls {
+    position: initial;
+  }
+  .left-res h1 {
+    font-size: 47px;
+  }
+  .progress-text::before {
+    font-size: 13px;
+    right: -2rem;
+  }
+  .progress-text {
+    right: 1.6rem;
+    font-size: 1rem;
+  }
+  .aparment-between,
+  .gallery-between {
+    gap: 1rem;
+  }
+  .gallery-title h1 {
+    font-size: 30px;
+  }
+  .tab-item {
+    margin-left: 0 !important;
+  }
+  .scroll_down_animation::after {
+    top: 50%;
+  }
+
+  .choose_apartment {
+    display: none;
+  }
+  .phone_number {
+    display: none;
+  }
+  /*.boulevard-logo img {
+    width: 201px;
+    height: 53px;
+  }*/
+
+  .arch-elegance-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .arch-elegance-card-text h1 {
+    font-size: 30px;
+  }
+  .arch-elegance-title h1 {
+    font-size: 30px;
+  }
+
+  .left-numbers,
+  .right-numbers {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .right-numbers div:first-child {
+    grid-column: 1;
+  }
+  .border-around {
+    padding: 0rem 0.5rem;
+  }
+
+  .border-left {
+    padding: 0rem 0.5rem;
+  }
+
+  .number-d h1 {
+    font-size: 28px;
+  }
+
+  .number-d p {
+    font-size: 14px;
+  }
+  .boulevard-logo {
+    font-size: 1rem;
+  }
+  .choose_apartment a {
+    font-size: 0.8rem;
+  }
+
+  .right-nav-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .language-selector {
+    margin-top: 0.5rem;
+  }
+
+  .sidenav {
+    width: 100%;
+  }
+
+  .slick-prev {
+    left: 68%;
+  }
+  .slick-next {
+    left: 83%;
+  }
+
+  .menu_nav_element-div {
+    margin-top: 30%; /* Adjust the menu position */
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .flex-pgnation {
+        gap: 0rem !important;
+        overflow: scroll;
+    }
+    .table-item-features {
+        width: 87px;
+    }
+  /******************************   A2 A3  BLOKLARII  Baslangic   ******************************/
+
+  /**************************************************************************************************/
+
+  .a2top-street {
+    font-size: 12px !important;
+  }
+  .a2bottom-street {
+    font-size: 12px !important;
+  }
+  .a2right-street {
+    font-size: 12px !important;
+    right: -56px !important;
+  }
+  .a2left-street {
+    font-size: 12px !important;
+    left: -56px !important;
+  }
+  /************* A2 A3  "Blok isareleri" Satilmis eraziler ucun    *************/
+  #path105-1,
+  #path105-2 {
+    transform: translate(51rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path104-1,
+  #path104-2 {
+    transform: translate(39rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path103-1,
+  #path103-2 {
+    transform: translate(26rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path102-1,
+  #path102-2 {
+    transform: translate(11rem, 1rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path101-1,
+  #path101-2 {
+    transform: translate(-2rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path100-1,
+  #path100-2 {
+    transform: translate(-293px, 201px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_100 {
+    transform: translate(163px, 28px);
+  }
+
+  .pathtranslatemove_100 path:first-child {
+    transform: translate(157px, -110px) matrix(1.07, 0, 0, 1.05, -108, 235);
+  }
+
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_101 {
+    transform: translate(393px, 660px);
+  }
+
+  .pathtranslatemove_101 path:first-child {
+    transform: translate(157px, -110px) matrix(1.05, 0, 0, 1.03, 108, 494);
+  }
+
+  /*  2 ci mertebe 3 ci ev*/
+  #hareketliGrup_102 {
+    transform: translate(556px, 47px);
+  }
+
+  .pathtranslatemove_102 path:first-child {
+    transform: translate(157px, -110px) matrix(1.03, 0, 0, 1.034, 315, 232);
+  }
+
+  /*  2 ci mertebe 4 ci ev*/
+  #hareketliGrup_103 {
+    transform: translate(807px, 660px);
+  }
+
+  .pathtranslatemove_103 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.04, 619, 230);
+  }
+
+  /*  2 ci mertebe 5 ci ev*/
+  #hareketliGrup_104 {
+    transform: translate(1120px, 678px);
+  }
+
+  .pathtranslatemove_104 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.04, 821, 498);
+  }
+
+  /*  2 ci mertebe 6 ci ev*/
+  #hareketliGrup_105 {
+    transform: translate(1190px, 46px);
+  }
+
+  .pathtranslatemove_105 path:first-child {
+    transform: translate(157px, -110px) matrix(1.07, 0, 0, 1.06, 1028, 232);
+  }
+
+  /******************************   A2 A3  BLOKLARII  Son  ******************************/
+  /***********************************************************************************/
+
+  .top-street {
+    top: 0;
+    transform: translateX(-50%);
+  }
+  .bottom-street {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  .right-street {
+    top: 50%;
+    right: -66px;
+    transform: translateY(-50%) rotate(-270deg);
+  }
+  .left-street {
+    top: 50%;
+    left: -66px;
+    transform: translateY(-50%) rotate(270deg);
+  }
+  /* 11 cu mertebe ev 1 */
+  #hareketliGrup_19 {
+    transform: translate(405px, 785px);
+  }
+
+  .pathtranslatemove_19 path:first-child {
+    transform: translate(157px, -110px) matrix(1.52, 0, 0, 1.502, 27, 51);
+  }
+  /* 11 cu mertebe ev 1 */
+  /* 10 cu mertebe ev 1 */
+  #hareketliGrup_17 {
+    transform: translate(388px, 721px);
+  }
+
+  .pathtranslatemove_17 path:first-child {
+    transform: translate(157px, -110px) matrix(1.51, 0, 0, 1.466, 29, 78);
+  }
+
+  /* 10 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 2 */
+  #hareketliGrup_18 {
+    transform: translate(969px, 382px);
+  }
+
+  .pathtranslatemove_18 path:first-child {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.457, 418, 211);
+  }
+
+  /* 10 cu mertebe ev 2 */
+
+  /* 9 cu mertebe ev 1 */
+  #hareketliGrup_15 {
+    transform: translate(370px, 741px);
+  }
+
+  .pathtranslatemove_15 path:first-child {
+    transform: translate(157px, -110px) matrix(1.54, 0, 0, 1.496, 7, 84);
+  }
+
+  /* 9 cu mertebe ev 1 */
+
+  /* 9 cu mertebe ev 2 */
+
+  #hareketliGrup_16 {
+    transform: translate(944px, 429px);
+  }
+
+  .pathtranslatemove_16 path:first-child {
+    transform: translate(157px, -110px) matrix(1.52, 0, 0, 1.5, 402, 149);
+  }
+
+  /* 9 cu mertebe ev 2 */
+
+  /* 8 ci mertebe ev 1 */
+
+  #hareketliGrup_13 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_13 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.57, 22, 65);
+  }
+
+  /* 8 ci mertebe ev 1 */
+
+  /* 8 ci mertebe ev 2 */
+
+  #hareketliGrup_14 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_14 path:first-child {
+    transform: translate(157px, -110px) matrix(1.58, 0, 0, 1.58, 424, 122);
+  }
+
+  /* 8 ci mertebe ev 2 */
+
+  /* 7 ci mertebe ev 1 */
+
+  #hareketliGrup_11 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_11 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.57, 22, 65);
+  }
+
+  /* 7 ci mertebe ev 1 */
+
+  /* 7 ci mertebe ev 2 */
+
+  #hareketliGrup_12 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_12 path:first-child {
+    transform: translate(157px, -110px) matrix(1.58, 0, 0, 1.58, 424, 122);
+  }
+
+  /* 7 ci mertebe ev 2 */
+
+  /* 6 cu mertebe ev 2 */
+  #hareketliGrup_10 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_10 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 6 cu mertebe ev 2 */
+
+  /* 6 cu mertebe ev 1 */
+  .pathtranslatemove_9 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_9 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 6 cu mertebe ev 1 */
+
+  /* 5 cu mertebe ev 2 */
+  #hareketliGrup_8 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_8 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 5 cu mertebe ev 2 */
+
+  /* 5 cu mertebe ev 1 */
+  .pathtranslatemove_7 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_7 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 5 cu mertebe ev 1 */
+  /* 4 cu mertebe ev 2 */
+  #hareketliGrup_6 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_6 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 4 cu mertebe ev 2 */
+
+  /* 4 cu mertebe ev 1 */
+  .pathtranslatemove_5 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_5 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 4 cu mertebe ev 1 */
+
+  /*  3 cu mertebe 2 ci ev*/
+
+  #hareketliGrup_4 {
+    transform: translate(968px, 476px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_4 path:first-child {
+    transform: translate(157px, -110px) matrix(1.45, 0, 0, 1.45, 435, 196);
+  }
+
+  /*  3 cu mertebe 2 ci ev*/
+  /* 3 cu mertebe 1 ci ev*/
+
+  #hareketliGrup_3 {
+    transform: translate(420px, 728px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_3 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 75, 146);
+  }
+
+  /* 3 cu mertebe 1 ci ev*/
+  /* 2 ci mertebe 2 ci ev start*/
+  #path2-ev2,
+  #path3-ev2 {
+    transform: translate(220px, -110px) matrix(1.7, 0, 0, 1.7, 593, 443);
+  }
+  #hareketliGrup_2 {
+    transform: translate(987px, 471px);
+  }
+
+  .pathtranslatemove_2 path:first-child {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.25, 425, 167);
+  }
+  /* 2 ci mertebe 2 ci ev end*/
+
+  .building__svgg svg {
+    height: 100% !important;
+  }
+
+  /*  2 ci mertebe 1 ci ev Start */
+  #path2,
+  #path3 {
+    transform: translate(157px, -110px) matrix(1.7, 0, 0, 1.7, 208, 559) !important;
+  }
+
+  .pathtranslatemove_1 path {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.26, 73, 117) !important;
+  }
+
+  #hareketliGrup_1 {
+    transform: translate(408px, 715px);
+  }
+  /*  2 ci mertebe 1 ci ev  End */
+  .je-items {
+    justify-content: start;
+  }
+  .arch-elegance-title h1 {
+    line-height: 35px;
+  }
+
+  .gallery-title h1 {
+    line-height: 35px;
+  }
+
+  .sidenav a {
+    font-size: 20px;
+  }
+  .slider-pagination {
+    gap: 0;
+    overflow-x: scroll;
+  }
+  .slider-pagination label {
+    padding: 0.6rem;
+  }
+  .page1::before,
+  .page2::before,
+  .page3::before,
+  .page4::before,
+  .page5::before,
+  .page6::before,
+  .page7::before,
+  .page8::before,
+  .page9::before {
+    top: 7%;
+    font-size: 11px;
+    left: 40%;
+  }
+
+  .page10::before,
+  .page11::before,
+  .page12::before,
+  .page13::before,
+  .page14::before,
+  .page15::before,
+  .page16::before {
+    top: 3%;
+    font-size: 11px;
+    left: 28%;
+  }
+  .over-top-p {
+    padding: 6rem 1rem;
+  }
+  .footer-ct-info-bottom {
+    flex-direction: column;
+  }
+  .footer-page {
+    height: 100%;
+  }
+  .street-info p,
+  .email-info p {
+    font-size: 15px;
+  }
+  .footer-middle-elements {
+    margin: 4rem 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .slider-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .css-slider-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .ap-d-sidebar-img img {
+    width: 88%;
+  }
+  .ap-d-sidebar-img {
+    padding: 0rem 7rem;
+  }
+  .sidebar-form-inputs {
+    padding: 1rem 2rem;
+  }
+  .ap-d-sidebar-title p {
+    font-size: 30px;
+  }
+  .middle-elements {
+    gap: 0rem;
+  }
+
+  .a-detail-buttons button:nth-child(1) {
+    width: 100%;
+    padding: 19px 28px;
+    font-size: 14px;
+  }
+  .a-detail-buttons button:nth-child(2) {
+    width: 100%;
+    padding: 19px 28px;
+    font-size: 14px;
+  }
+
+  .tab-item {
+    font-size: 1rem !important;
+  }
+  .select-group .dropdown-filter:nth-child(5) {
+    grid-column: span 2;
+    justify-self: center;
+  }
+  .select-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .apartment-over-text h1 {
+    font-size: 42px;
+    padding-left: 1rem;
+  }
+  .modal-info-box {
+    padding: 0rem 0rem 2rem 0rem;
+  }
+  .modal-content {
+    max-width: 60%;
+  }
+  .modal_header_text {
+    font-size: 30px;
+  }
+  .modal_header_text p {
+    font-size: 23px;
+  }
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .phone_number {
+    display: none;
+  }
+  .choose_apartment {
+    display: none;
+  }
+  .walkthrought img {
+    width: 74%;
+  }
+  .rotate-svg {
+    width: 8px;
+  }
+  .pulse {
+    height: 45px !important;
+    width: 45px !important;
+  }
+  .anim-img {
+    width: 40% !important;
+  }
+
+  .navbar {
+    padding: 0rem 0.5rem;
+  }
+  .map_filter_controls {
+    position: initial;
+  }
+
+  .aparment-between,
+  .gallery-between {
+    gap: 1rem;
+  }
+  .progress-text::before {
+    font-size: 18px;
+    right: -5rem;
+  }
+  .progress-text {
+    right: 1rem;
+    font-size: 1.4rem;
+  }
+  .scroll_down_animation::after {
+    top: 62%;
+  }
+  .bottom-move-elements {
+    bottom: -1.5rem;
+  }
+
+  .choose_apartment {
+    display: none;
+  }
+  .phone_number {
+    display: none;
+  }
+/*  .boulevard-logo img {
+    width: 207px;
+    height: 52px;
+  }*/
+  .over-left-text h3:nth-child(1) {
+    font-size: 25px;
+  }
+
+  .over-left-text h3:nth-child(2) {
+    font-size: 55px;
+  }
+
+  .over-left-text h1 {
+    font-size: 48px;
+  }
+  .tab-item {
+    margin-left: 0 !important;
+  }
+  .aparment-between,
+  .gallery-between {
+    flex-direction: column !important;
+    justify-content: left !important;
+  }
+  .right-numbers div:first-child {
+    grid-column: 1;
+  }
+  .gallery-title h1 {
+    font-size: 40px;
+  }
+
+  .arch-elegance-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .arch-elegance-card-text h1 {
+    font-size: 40px;
+  }
+  .arch-elegance-title h1 {
+    font-size: 40px;
+  }
+
+  .left-numbers,
+  .right-numbers {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .boulevard-logo {
+    font-size: 1.2rem;
+  }
+
+  .choose_apartment a {
+    font-size: 1rem;
+  }
+
+  .slick-prev {
+    left: 76%;
+  }
+
+  .slick-next {
+    left: 87%;
+  }
+
+  .number-d h1 {
+    font-size: 36px;
+  }
+
+  .number-d p {
+    font-size: 11px;
+  }
+  .border-around {
+    padding: 0;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #hareketliGrup_269{
+    transform: translate(497px, -6px);
+      }
+  #hareketliGrup_270{
+    transform: translate(999px, 49rem);
+        }
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun baslangic   *************/
+        /*  11 ci mertebe 2 ci ev*/
+.pathtranslatemove_250 path:first-child {
+  transform: translate(629px, -345px) matrix(1.39, 0, 0, 1.399, 148, 342);
+}
+
+        /*  10 cu mertebe 1 ci ev*/
+
+.pathtranslatemove_231 path:first-child {
+  transform: translate(61px, -268px) matrix(1.49, 0, 0, 1.48, 148, 342);
+}
+/*  10 cu mertebe 2 ci ev*/
+
+.pathtranslatemove_232 path:first-child {
+  transform: translate(641px, -408px) matrix(1.51, 0, 0, 1.49, 148, 342);
+}
+  
+     /*  9 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_229 path:first-child {
+  transform: translate(9px, -338px) matrix(1.49, 0, 0, 1.48, 148, 342);
+}
+/*  9 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_230 path:first-child {
+  transform: translate(663px, -409px) matrix(1.50, 0, 0, 1.49, 148, 342);
+}
+        /*  5 ci mertebe 1 ci ev*/
+.pathtranslatemove_213 path:first-child {
+  transform: translate(39px, -314px) matrix(1.47, 0, 0, 1.47, 148, 342);
+}
+/*  5 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_214 path:first-child {
+  transform: translate(41px, -51px) matrix(1.43, 0, 0, 1.41, 148, 342);
+}
+/*  5 ci mertebe 3 ci ev*/
+.pathtranslatemove_215 path:first-child {
+  transform: translate(555px, 37px) matrix(1.42, 0, 0, 1.40, 148, 342);
+}
+/*  5 ci mertebe 4 ci ev*/
+
+.pathtranslatemove_216 path:first-child {
+  transform: translate(818px, -375px) matrix(1.44, 0, 0, 1.38, 148, 342);
+}
+/*  7 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_221 path:first-child,
+.pathtranslatemove_225 path:first-child {
+  transform: translate(38px, -336px) matrix(1.49, 0, 0, 1.55, 148, 342);
+}
+/*  7 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_222 path:first-child,
+.pathtranslatemove_226 path:first-child {
+  transform: translate(39px, -65px) matrix(1.49, 0, 0, 1.53, 148, 342);
+}
+/*  7 ci mertebe 3 ci ev*/
+
+.pathtranslatemove_223 path:first-child,
+.pathtranslatemove_227 path:first-child {
+  transform: translate(556px, 37px) matrix(1.45, 0, 0, 1.45, 148, 342);
+}
+/*  7 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_224 path:first-child,
+.pathtranslatemove_228 path:first-child {
+  transform: translate(822px, -394px) matrix(1.43, 0, 0, 1.45, 148, 342);
+}
+       /*  4 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_209 path:first-child,
+.pathtranslatemove_217 path:first-child {
+  transform: translate(38px, -336px) matrix(1.49, 0, 0, 1.55, 148, 342);
+}
+/*  4 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_210 path:first-child,
+.pathtranslatemove_218 path:first-child {
+  transform: translate(39px, -65px) matrix(1.44, 0, 0, 1.49, 148, 342);
+}
+/*  4 ci mertebe 3 ci ev*/
+
+
+.pathtranslatemove_211 path:first-child,
+.pathtranslatemove_219 path:first-child {
+  transform: translate(556px, 37px) matrix(1.45, 0, 0, 1.45, 148, 342);
+}
+/*  4 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_212 path:first-child,
+.pathtranslatemove_220 path:first-child {
+  transform: translate(822px, -394px) matrix(1.43, 0, 0, 1.45, 148, 342);
+}
+     /*  3 ci mertebe 1 ci ev*/
+
+     .pathtranslatemove_205 path:first-child {
+      transform: translate(18px, -342px) matrix(1.37, 0, 0, 1.39, 148, 342);
+                }
+    /*  3 ci mertebe 2 ci ev*/
+  
+    .pathtranslatemove_206 path:first-child {
+      transform: translate(20px, -83px) matrix(1.38, 0, 0, 1.41, 148, 342);
+            }
+    /*  3 ci mertebe 3 ci ev*/
+  
+    .pathtranslatemove_207 path:first-child {
+      transform: translate(537px, 21px) matrix(1.42, 0, 0, 1.397, 148, 342);
+        }
+ /*  3 cu mertebe 4 ci ev*/
+  
+ .pathtranslatemove_208 path:first-child {
+  transform: translate(803px, -394px) matrix(1.41, 0, 0, 1.39, 148, 342);
+ }  
+  #pathA1_0_1,
+  #pathA1_0_2 {
+    transform: translate(4rem, -84px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_1_1,
+  #pathA1_1_2 {
+    transform: translate(4rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_2_1,
+  #pathA1_2_2 {
+    transform: translate(384px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_3_1,
+  #pathA1_3_2 {
+    transform: translate(651px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+      /*  9 cu mertebe ucun blok hissesi */
+#pathA1_floor9_ev1-1,
+#pathA1_floor9_ev1-2{
+   transform: translate(6rem, 5rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+#pathA1_floor9_ev2-1,
+#pathA1_floor9_ev2-2{
+  transform: translate(35rem, 246px) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun son    *************/
+  /*********************************  A1 Bloklaeeoi baslangic  *******************************************/
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_201 {
+    transform: translate(530px, -90px);
+  }
+
+  .pathtranslatemove_201 path:first-child {
+    transform: translate(32px, -339px) matrix(1.39, 0, 0, 1.41, 148, 342);
+  }
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_202 {
+    transform: translate(529px, 747px);
+  }
+
+  .pathtranslatemove_202 path:first-child {
+    transform: translate(2px, -84px) matrix(1.39, 0, 0, 1.4, 148, 342);
+  }
+  /*  2 ci mertebe 3 ci ev*/
+
+  #hareketliGrup_203 {
+    transform: translate(833px, 49rem);
+  }
+
+  .pathtranslatemove_203 path:first-child {
+    transform: translate(558px, 25px) matrix(1.42, 0, 0, 1.41, 148, 342);
+  }
+  /*  2 ci mertebe 4 ci ev*/
+
+  #hareketliGrup_204 {
+    transform: translate(1162px, -134px);
+  }
+
+  .pathtranslatemove_204 path:first-child {
+    transform: translate(817px, -397px) matrix(1.44, 0, 0, 1.41, 148, 342);
+  }
+  /*********************************  A1 Bloklaeeoi son  *******************************************/
+  /******************************   A2 A3  BLOKLARII  Baslangic   ******************************/
+  /*  11 ci mertebe 1 ci ev*/
+  .pathtranslatemove_155 path:first-child {
+    transform: translate(-85px, -214px) matrix(1.19, 0, 0, 1.14, 147, 338);
+  }
+
+  /*  11 ci mertebe 2 ci ev*/
+  .pathtranslatemove_156 path:first-child {
+    transform: translate(-17px, -118px) matrix(1.17, 0, 0, 1.14, 276, 502);
+  }
+
+  /*  11 ci mertebe 3 ci ev*/
+  .pathtranslatemove_157 path:first-child {
+    transform: translate(66px, -215px) matrix(1.16, 0, 0, 1.14, 404, 338);
+  }
+
+  /*  11 ci mertebe 4 ci ev*/
+  .pathtranslatemove_158 path:first-child {
+    transform: translate(178px, -207px) matrix(1.22, 0, 0, 1.14, 599, 338);
+  }
+
+  /*  11 ci mertebe 5 ci ev*/
+  .pathtranslatemove_159 path:first-child {
+    transform: translate(250px, -113px) matrix(1.15, 0, 0, 1.14, 724, 502);
+  }
+
+  /*  11 ci mertebe 6 ci ev*/
+  .pathtranslatemove_160 path:first-child {
+    transform: translate(329px, -219px) matrix(1.18, 0, 0, 1.15, 849, 340);
+  }
+  /*  10 cu mertebe 1 ci ev*/
+  .pathtranslatemove_149 path:first-child {
+    transform: translate(-74px, -195px) matrix(1.17, 0, 0, 1.12, 147, 338);
+  }
+
+  /*  10 cu mertebe 2 ci ev*/
+  .pathtranslatemove_150 path:first-child {
+    transform: translate(5px, -106px) matrix(1.15, 0, 0, 1.12, 276, 502);
+  }
+
+  /*  10 cu mertebe 3 ci ev*/
+  .pathtranslatemove_151 path:first-child {
+    transform: translate(75px, -200px) matrix(1.13, 0, 0, 1.11, 404, 338);
+  }
+
+  /*  10 cu mertebe 4 ci ev*/
+  .pathtranslatemove_152 path:first-child {
+    transform: translate(171px, -196px) matrix(1.18, 0, 0, 1.11, 599, 338);
+  }
+
+  /*  10 cu mertebe 5 ci ev*/
+  .pathtranslatemove_153 path:first-child {
+    transform: translate(238px, -101px) matrix(1.19, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  10 cu mertebe 6 ci ev*/
+  .pathtranslatemove_154 path:first-child {
+    transform: translate(313px, -196px) matrix(1.17, 0, 0, 1.11, 849, 340);
+  }
+  /*  9 cu mertebe 1 ci ev*/
+  .pathtranslatemove_143 path:first-child {
+    transform: translate(-57px, -185px) matrix(1.13, 0, 0, 1.1, 147, 338);
+  }
+
+  /*  9 cu mertebe 2 ci ev*/
+  .pathtranslatemove_144 path:first-child {
+    transform: translate(15px, -106px) matrix(1.13, 0, 0, 1.12, 276, 502);
+  }
+
+  /*  9 cu mertebe 3 ci ev*/
+  .pathtranslatemove_145 path:first-child {
+    transform: translate(75px, -187px) matrix(1.13, 0, 0, 1.09, 404, 338);
+  }
+
+  /*  9 cu mertebe 4 ci ev*/
+  .pathtranslatemove_146 path:first-child {
+    transform: translate(171px, -187px) matrix(1.13, 0, 0, 1.1, 599, 338);
+  }
+
+  /*  9 cu mertebe 5 ci ev*/
+  .pathtranslatemove_147 path:first-child {
+    transform: translate(238px, -101px) matrix(1.12, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  9 cu mertebe 6 ci ev*/
+  .pathtranslatemove_148 path:first-child {
+    transform: translate(297px, -195px) matrix(1.17, 0, 0, 1.13, 849, 340);
+  }
+  /*  7,8 ci mertebe 1 ci ev*/
+  .pathtranslatemove_131 path:first-child,
+  .pathtranslatemove_137 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  7,8 ci mertebe 2 ci ev*/
+  .pathtranslatemove_132 path:first-child,
+  .pathtranslatemove_138 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  7,8 ci mertebe 3 ci ev*/
+  .pathtranslatemove_133 path:first-child,
+  .pathtranslatemove_139 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  7,8 ci mertebe 4 ci ev*/
+  .pathtranslatemove_134 path:first-child,
+  .pathtranslatemove_140 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  7,8 ci mertebe 5 ci ev*/
+  .pathtranslatemove_135 path:first-child,
+  .pathtranslatemove_141 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  7,8 ci mertebe 6 ci ev*/
+  .pathtranslatemove_136 path:first-child,
+  .pathtranslatemove_142 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+
+  /*  6 ci mertebe 1 ci ev*/
+  .pathtranslatemove_125 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  6 ci mertebe 2 ci ev*/
+  .pathtranslatemove_126 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  6 ci mertebe 3 ci ev*/
+  .pathtranslatemove_127 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  6 ci mertebe 4 ci ev*/
+  .pathtranslatemove_128 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  6 ci mertebe 5 ci ev*/
+  .pathtranslatemove_129 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  6 ci mertebe 6 ci ev*/
+  .pathtranslatemove_130 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+  /* 5 ci slide baslangic */
+
+  /*  5 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_119 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  5 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_120 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  5 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_121 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  5 ci mertebe 4 ci ev*/
+  .pathtranslatemove_122 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  5 ci mertebe 5 ci ev*/
+
+  .pathtranslatemove_123 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  5 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_124 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+
+  /* 5 ci slide son */
+
+  /* 4 ci slide baslangic */
+
+  /*  4 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_113 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  4 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_114 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  4 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_115 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  4 ci mertebe 4 ci ev*/
+  .pathtranslatemove_116 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  4 ci mertebe 5 ci ev*/
+
+  .pathtranslatemove_117 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  4 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_118 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+
+  /* 4 ci slide son */
+
+  /* 3 ci slide baslangic */
+
+  /*  3 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_107 {
+    transform: translate(236px, 64px);
+  }
+
+  .pathtranslatemove_107 path:first-child {
+    transform: translate(74px, -131px) matrix(1.09, 0, 0, 1.1, 10, 281);
+  }
+
+  /*  3 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_108 {
+    transform: translate(435px, 658px);
+  }
+
+  .pathtranslatemove_108 path:first-child {
+    transform: translate(100px, -94px) matrix(1.11, 0, 0, 1.09, 186, 497);
+  }
+
+  /*  3 ci mertebe 3 ci ev*/
+  #hareketliGrup_109 {
+    transform: translate(692px, 66px);
+  }
+
+  .pathtranslatemove_109 path:first-child {
+    transform: translate(78px, -184px) matrix(1.12, 0, 0, 1.1, 404, 335);
+  }
+
+  /*  3 ci mertebe 4 ci ev*/
+  #hareketliGrup_110 {
+    transform: translate(822px, 671px);
+  }
+  .pathtranslatemove_110 path:first-child {
+    transform: translate(181px, -159px) matrix(1.09, 0, 0, 1.09, 602, 307);
+  }
+
+  /*  3 ci mertebe 5 ci ev*/
+  #hareketliGrup_111 {
+    transform: translate(1089px, 658px);
+  }
+
+  .pathtranslatemove_111 path:first-child {
+    transform: translate(254px, -95px) matrix(1.09, 0, 0, 1.09, 724, 502);
+  }
+
+  /*  3 ci mertebe 6 ci ev*/
+
+  #hareketliGrup_112 {
+    transform: translate(1205px, 74px);
+  }
+
+  .pathtranslatemove_112 path:first-child {
+    transform: translate(323px, -136px) matrix(1.11, 0, 0, 1.11, 849, 285);
+  }
+
+  /* 3 ci slide son */
+  /**************************************************************************************************/
+  /************* A2 A3  "Blok isareleri" Satilmis eraziler ucun    *************/
+
+  .a2top-street {
+    font-size: 12px !important;
+  }
+  .a2bottom-street {
+    font-size: 12px !important;
+  }
+  .a2right-street {
+    font-size: 12px !important;
+    right: -56px !important;
+  }
+  .a2left-street {
+    font-size: 12px !important;
+    left: -56px !important;
+  }
+  #path105-1,
+  #path105-2 {
+    transform: translate(51rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path104-1,
+  #path104-2 {
+    transform: translate(39rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path103-1,
+  #path103-2 {
+    transform: translate(26rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path102-1,
+  #path102-2 {
+    transform: translate(11rem, 1rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path101-1,
+  #path101-2 {
+    transform: translate(-2rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path100-1,
+  #path100-2 {
+    transform: translate(-293px, 201px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_100 {
+    transform: translate(163px, 28px);
+  }
+
+  .pathtranslatemove_100 path:first-child {
+    transform: translate(157px, -110px) matrix(1.07, 0, 0, 1.05, -108, 235);
+  }
+
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_101 {
+    transform: translate(393px, 660px);
+  }
+
+  .pathtranslatemove_101 path:first-child {
+    transform: translate(157px, -110px) matrix(1.05, 0, 0, 1.03, 108, 494);
+  }
+
+  /*  2 ci mertebe 3 ci ev*/
+  #hareketliGrup_102 {
+    transform: translate(556px, 47px);
+  }
+
+  .pathtranslatemove_102 path:first-child {
+    transform: translate(157px, -110px) matrix(1.03, 0, 0, 1.034, 315, 232);
+  }
+
+  /*  2 ci mertebe 4 ci ev*/
+  #hareketliGrup_103 {
+    transform: translate(807px, 660px);
+  }
+
+  .pathtranslatemove_103 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.04, 619, 230);
+  }
+
+  /*  2 ci mertebe 5 ci ev*/
+  #hareketliGrup_104 {
+    transform: translate(1120px, 678px);
+  }
+
+  .pathtranslatemove_104 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.04, 821, 498);
+  }
+
+  /*  2 ci mertebe 6 ci ev*/
+  #hareketliGrup_105 {
+    transform: translate(1190px, 46px);
+  }
+
+  .pathtranslatemove_105 path:first-child {
+    transform: translate(157px, -110px) matrix(1.07, 0, 0, 1.06, 1028, 232);
+  }
+
+  /******************************   A2 A3  BLOKLARII  Son  ******************************/
+  /***********************************************************************************/
+
+  .top-street {
+    top: 0;
+    transform: translateX(-50%);
+  }
+  .bottom-street {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  .right-street {
+    top: 50%;
+    right: -66px;
+    transform: translateY(-50%) rotate(-270deg);
+  }
+  .left-street {
+    top: 50%;
+    left: -66px;
+    transform: translateY(-50%) rotate(270deg);
+  }
+  /* 11 cu mertebe ev 1 */
+  #hareketliGrup_19 {
+    transform: translate(405px, 785px);
+  }
+
+  .pathtranslatemove_19 path:first-child {
+    transform: translate(157px, -110px) matrix(1.52, 0, 0, 1.502, 27, 51);
+  }
+  /* 11 cu mertebe ev 1 */
+  /* 10 cu mertebe ev 1 */
+  #hareketliGrup_17 {
+    transform: translate(388px, 721px);
+  }
+
+  .pathtranslatemove_17 path:first-child {
+    transform: translate(157px, -110px) matrix(1.51, 0, 0, 1.466, 29, 78);
+  }
+
+  /* 10 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 2 */
+  #hareketliGrup_18 {
+    transform: translate(969px, 382px);
+  }
+
+  .pathtranslatemove_18 path:first-child {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.457, 418, 211);
+  }
+
+  /* 10 cu mertebe ev 2 */
+
+  /* 9 cu mertebe ev 1 */
+  #hareketliGrup_15 {
+    transform: translate(370px, 741px);
+  }
+
+  .pathtranslatemove_15 path:first-child {
+    transform: translate(157px, -110px) matrix(1.54, 0, 0, 1.496, 7, 84);
+  }
+
+  /* 9 cu mertebe ev 1 */
+
+  /* 9 cu mertebe ev 2 */
+
+  #hareketliGrup_16 {
+    transform: translate(944px, 429px);
+  }
+
+  .pathtranslatemove_16 path:first-child {
+    transform: translate(157px, -110px) matrix(1.52, 0, 0, 1.5, 402, 149);
+  }
+
+  /* 9 cu mertebe ev 2 */
+  /* 8 ci mertebe ev 1 */
+
+  #hareketliGrup_13 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_13 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.57, 22, 65);
+  }
+
+  /* 8 ci mertebe ev 1 */
+
+  /* 8 ci mertebe ev 2 */
+
+  #hareketliGrup_14 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_14 path:first-child {
+    transform: translate(157px, -110px) matrix(1.58, 0, 0, 1.58, 424, 122);
+  }
+
+  /* 8 ci mertebe ev 2 */
+
+  /* 7 ci mertebe ev 1 */
+
+  #hareketliGrup_11 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_11 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.57, 22, 65);
+  }
+
+  /* 7 ci mertebe ev 1 */
+
+  /* 7 ci mertebe ev 2 */
+
+  #hareketliGrup_12 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_12 path:first-child {
+    transform: translate(157px, -110px) matrix(1.58, 0, 0, 1.58, 424, 122);
+  }
+
+  /* 7 ci mertebe ev 2 */
+
+  /* 6 cu mertebe ev 2 */
+  #hareketliGrup_10 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_10 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 6 cu mertebe ev 2 */
+
+  /* 6 cu mertebe ev 1 */
+  .pathtranslatemove_9 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_9 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 6 cu mertebe ev 1 */
+
+  /* 5 cu mertebe ev 2 */
+  #hareketliGrup_8 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_8 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 5 cu mertebe ev 2 */
+
+  /* 5 cu mertebe ev 1 */
+  .pathtranslatemove_7 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_7 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 5 cu mertebe ev 1 */
+
+  /* 4 cu mertebe ev 2 */
+  #hareketliGrup_6 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_6 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 4 cu mertebe ev 2 */
+  /* 4 cu mertebe ev 1 */
+  .pathtranslatemove_5 path {
+    transform: translate(157px, -110px) matrix(1.47, 0, 0, 1.44, 67, 111) !important;
+  }
+
+  #hareketliGrup_5 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 4 cu mertebe ev 1 */
+  /*  3 cu mertebe 2 ci ev*/
+
+  #hareketliGrup_4 {
+    transform: translate(968px, 476px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_4 path:first-child {
+    transform: translate(157px, -110px) matrix(1.45, 0, 0, 1.45, 435, 196);
+  }
+
+  /*  3 cu mertebe 2 ci ev*/
+  /* 3 cu mertebe 1 ci ev*/
+
+  #hareketliGrup_3 {
+    transform: translate(420px, 728px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_3 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 75, 146);
+  }
+
+  /* 3 cu mertebe 1 ci ev*/
+  .building__svgg svg {
+    height: 100% !important;
+  }
+  /* 2 ci mertebe 2 ci ev start*/
+  #path2-ev2,
+  #path3-ev2 {
+    transform: translate(220px, -110px) matrix(1.7, 0, 0, 1.7, 593, 443);
+  }
+  #hareketliGrup_2 {
+    transform: translate(987px, 471px);
+  }
+
+  .pathtranslatemove_2 path:first-child {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.25, 425, 167);
+  }
+  /* 2 ci mertebe 2 ci ev end*/
+
+  /*  2 ci mertebe 1 ci ev Start */
+  #path2,
+  #path3 {
+    transform: translate(157px, -110px) matrix(1.7, 0, 0, 1.7, 208, 559) !important;
+  }
+
+  .pathtranslatemove_1 path {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.26, 67, 117) !important;
+  }
+
+  #hareketliGrup_1 {
+    transform: translate(408px, 715px);
+  }
+  /*  2 ci mertebe 1 ci ev  End */
+  .sidenav a {
+    font-size: 18px;
+  }
+  .arch-elegance-title h1 {
+    line-height: 39px;
+  }
+
+  .gallery-title h1 {
+    line-height: 39px;
+  }
+  .footer-middle-elements {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .footer-number p:nth-child(2) {
+    font-size: 45px;
+  }
+  .over-top-p {
+    padding: 6rem 1rem;
+  }
+  .street-info p,
+  .email-info p {
+    font-size: 15px;
+  }
+  .css-slider-wrapper {
+    grid-template-columns: 1fr 9fr;
+  }
+  .ap-d-sidebar-img img {
+    width: 88%;
+  }
+  .ap-d-sidebar-img {
+    padding: 1rem 7rem;
+  }
+  .sidebar-form-inputs {
+    padding: 1rem 2rem;
+  }
+  .ap-d-sidebar-title p {
+    font-size: 30px;
+  }
+  .middle-elements {
+    gap: 0rem;
+  }
+  .a-detail-buttons button:nth-child(1) {
+    width: 100%;
+    padding: 19px 28px;
+    font-size: 14px;
+  }
+  .a-detail-buttons button:nth-child(2) {
+    width: 100%;
+    padding: 19px 28px;
+    font-size: 14px;
+  }
+  .tab-item {
+    font-size: 1rem !important;
+  }
+  .select-group .dropdown-filter:nth-child(5) {
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .select-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr;
+  }
+  .apartment-over-text h1 {
+    font-size: 50px;
+  }
+  .modal_header_text {
+    font-size: 30px;
+  }
+  .modal_header_text p {
+    font-size: 23px;
+  }
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .phone_number {
+    display: none;
+  }
+  .choose_apartment {
+    display: none;
+  }
+  .walkthrought img {
+    width: 50%; /* new */
+  }
+  .rotate-svg {
+    width: 13px !important;
+  }
+  .scroll_down_animation::after {
+    top: 68% !important;
+  }
+  .bottom-move-elements {
+    bottom: -0.5rem !important;
+  }
+  .anim-img {
+    width: 31% !important;
+  }
+  .gallery-title h1 {
+    font-size: 40px;
+  }
+  .right-numbers div:first-child {
+    grid-column: 1;
+  }
+  .arch-elegance-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .arch-elegance-card-text h1 {
+    font-size: 40px;
+  }
+  .arch-elegance-title h1 {
+    font-size: 40px;
+  }
+
+  .left-numbers,
+  .right-numbers {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .boulevard-logo {
+    font-size: 1.4rem;
+    padding: 0rem 0.5rem;
+  }
+
+  .choose_apartment a {
+    font-size: 1.2rem;
+  }
+
+  .slick-prev {
+    left: 82% !important;
+  }
+
+  .number-d h1 {
+    font-size: 55px;
+  }
+
+  .number-d p {
+    font-size: 14px;
+  }
+  .border-around {
+    padding: 0;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  #hareketliGrup_269{
+    transform: translate(497px, -6px);
+      }
+  #hareketliGrup_270{
+    transform: translate(999px, 49rem);
+        }
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun baslangic   *************/
+  #pathA1_0_1,
+  #pathA1_0_2 {
+    transform: translate(4rem, -84px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_1_1,
+  #pathA1_1_2 {
+    transform: translate(4rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_2_1,
+  #pathA1_2_2 {
+    transform: translate(384px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_3_1,
+  #pathA1_3_2 {
+    transform: translate(651px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+    /*  9 cu mertebe ucun blok hissesi */
+#pathA1_floor9_ev1-1,
+#pathA1_floor9_ev1-2{
+  transform: translate(6rem, 5rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+#pathA1_floor9_ev2-1,
+#pathA1_floor9_ev2-2{
+  transform: translate(35rem, 246px) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun son    *************/
+
+  /*********************************  A1 Bloklaeeoi baslangic  *******************************************/
+      /*  11 ci mertebe 2 ci ev*/
+.pathtranslatemove_250 path:first-child {
+  transform: translate(629px, -345px) matrix(1.39, 0, 0, 1.399, 148, 342);
+}
+       /*  10 cu mertebe 1 ci ev*/
+
+.pathtranslatemove_231 path:first-child {
+  transform: translate(65px, -265px) matrix(1.47, 0, 0, 1.46, 148, 342);
+}
+/*  10 cu mertebe 2 ci ev*/
+
+.pathtranslatemove_232 path:first-child {
+  transform: translate(641px, -404px) matrix(1.487, 0, 0, 1.477, 148, 342);
+}
+  
+  /*  9 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_229 path:first-child {
+  transform: translate(15px, -331px) matrix(1.49, 0, 0, 1.46, 148, 342);
+}
+/*  9 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_230 path:first-child {
+  transform: translate(661px, -404px) matrix(1.48, 0, 0, 1.47, 148, 342);
+}
+      /*  5 ci mertebe 1 ci ev*/
+.pathtranslatemove_213 path:first-child {
+  transform: translate(43px, -313px) matrix(1.47, 0, 0, 1.53, 148, 342);
+}
+/*  5 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_214 path:first-child {
+  transform: translate(46px, -58px) matrix(1.42, 0, 0, 1.42, 148, 342);
+}
+/*  5 ci mertebe 3 ci ev*/
+.pathtranslatemove_215 path:first-child {
+  transform: translate(555px, 37px) matrix(1.42, 0, 0, 1.44, 148, 342);
+}
+/*  5 ci mertebe 4 ci ev*/
+
+.pathtranslatemove_216 path:first-child {
+  transform: translate(818px, -375px) matrix(1.41, 0, 0, 1.38, 148, 342);
+}
+/*  7 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_221 path:first-child,
+.pathtranslatemove_225 path:first-child {
+  transform: translate(47px, -334px) matrix(1.46, 0, 0, 1.53, 148, 342);
+}
+/*  7 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_222 path:first-child,
+.pathtranslatemove_226 path:first-child {
+  transform: translate(44px, -64px) matrix(1.48, 0, 0, 1.53, 148, 342);
+}
+/*  7 ci mertebe 3 ci ev*/
+
+.pathtranslatemove_223 path:first-child,
+.pathtranslatemove_227 path:first-child {
+  transform: translate(555px, 37px) matrix(1.42, 0, 0, 1.44, 148, 342);
+}
+/*  7 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_224 path:first-child,
+.pathtranslatemove_228 path:first-child {
+  transform: translate(818px, -394px) matrix(1.41, 0, 0, 1.43, 148, 342);
+}
+     /*  4 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_209 path:first-child,
+.pathtranslatemove_217 path:first-child {
+  transform: translate(47px, -334px) matrix(1.46, 0, 0, 1.53, 148, 342);
+}
+/*  4 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_210 path:first-child,
+.pathtranslatemove_218 path:first-child {
+  transform: translate(43px, -66px) matrix(1.42, 0, 0, 1.47, 148, 342);
+}
+/*  4 ci mertebe 3 ci ev*/
+
+
+.pathtranslatemove_211 path:first-child,
+.pathtranslatemove_219 path:first-child {
+  transform: translate(555px, 37px) matrix(1.42, 0, 0, 1.44, 148, 342);
+}
+/*  4 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_212 path:first-child,
+.pathtranslatemove_220 path:first-child {
+  transform: translate(818px, -394px) matrix(1.41, 0, 0, 1.43, 148, 342);
+}
+     /*  3 ci mertebe 1 ci ev*/
+
+     .pathtranslatemove_205 path:first-child {
+      transform: translate(25px, -342px) matrix(1.35, 0, 0, 1.39, 148, 342);
+            }
+    /*  3 ci mertebe 2 ci ev*/
+  
+    .pathtranslatemove_206 path:first-child {
+      transform: translate(26px, -83px) matrix(1.37, 0, 0, 1.41, 148, 342);
+        }
+    /*  3 ci mertebe 3 ci ev*/
+  
+    .pathtranslatemove_207 path:first-child {
+      transform: translate(537px, 21px) matrix(1.42, 0, 0, 1.397, 148, 342);
+        }
+ /*  3 cu mertebe 4 ci ev*/
+  
+ .pathtranslatemove_208 path:first-child {
+  transform: translate(797px, -394px) matrix(1.41, 0, 0, 1.39, 148, 342);
+ }  
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_201 {
+    transform: translate(530px, -90px);
+  }
+
+  .pathtranslatemove_201 path:first-child {
+    transform: translate(38px, -334px) matrix(1.39, 0, 0, 1.39, 148, 342);
+  }
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_202 {
+    transform: translate(529px, 747px);
+  }
+
+  .pathtranslatemove_202 path:first-child {
+    transform: translate(7px, -83px) matrix(1.37, 0, 0, 1.41, 148, 342);
+  }
+  /*  2 ci mertebe 3 ci ev*/
+
+  #hareketliGrup_203 {
+    transform: translate(833px, 49rem);
+  }
+
+  .pathtranslatemove_203 path:first-child {
+    transform: translate(558px, 25px) matrix(1.42, 0, 0, 1.397, 148, 342);
+  }
+  /*  2 ci mertebe 4 ci ev*/
+
+  #hareketliGrup_204 {
+    transform: translate(1162px, -134px);
+  }
+
+  .pathtranslatemove_204 path:first-child {
+    transform: translate(817px, -394px) matrix(1.41, 0, 0, 1.39, 148, 342);
+  }
+  /*********************************  A1 Bloklaeeoi son  *******************************************/
+  /******************************   A2 A3  BLOKLARII  Baslangic   ******************************/
+  /*  11 ci mertebe 1 ci ev*/
+  .pathtranslatemove_155 path:first-child {
+    transform: translate(-77px, -212px) matrix(1.18, 0, 0, 1.13, 147, 338);
+  }
+
+  /*  11 ci mertebe 2 ci ev*/
+  .pathtranslatemove_156 path:first-child {
+    transform: translate(-11px, -118px) matrix(1.15, 0, 0, 1.12, 276, 502);
+  }
+
+  /*  11 ci mertebe 3 ci ev*/
+  .pathtranslatemove_157 path:first-child {
+    transform: translate(75px, -211px) matrix(1.13, 0, 0, 1.13, 404, 338);
+  }
+
+  /*  11 ci mertebe 4 ci ev*/
+  .pathtranslatemove_158 path:first-child {
+    transform: translate(178px, -207px) matrix(1.19, 0, 0, 1.13, 599, 338);
+  }
+
+  /*  11 ci mertebe 5 ci ev*/
+  .pathtranslatemove_159 path:first-child {
+    transform: translate(250px, -113px) matrix(1.15, 0, 0, 1.14, 724, 502);
+  }
+
+  /*  11 ci mertebe 6 ci ev*/
+  .pathtranslatemove_160 path:first-child {
+    transform: translate(323px, -216px) matrix(1.17, 0, 0, 1.14, 849, 340);
+  }
+  /*  10 cu mertebe 1 ci ev*/
+  .pathtranslatemove_149 path:first-child {
+    transform: translate(-65px, -193px) matrix(1.14, 0, 0, 1.1, 147, 338);
+  }
+
+  /*  10 cu mertebe 2 ci ev*/
+  .pathtranslatemove_150 path:first-child {
+    transform: translate(5px, -106px) matrix(1.15, 0, 0, 1.12, 276, 502);
+  }
+
+  /*  10 cu mertebe 3 ci ev*/
+  .pathtranslatemove_151 path:first-child {
+    transform: translate(75px, -200px) matrix(1.13, 0, 0, 1.11, 404, 338);
+  }
+
+  /*  10 cu mertebe 4 ci ev*/
+  .pathtranslatemove_152 path:first-child {
+    transform: translate(171px, -187px) matrix(1.13, 0, 0, 1.1, 599, 338);
+  }
+
+  /*  10 cu mertebe 5 ci ev*/
+  .pathtranslatemove_153 path:first-child {
+    transform: translate(238px, -101px) matrix(1.12, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  10 cu mertebe 6 ci ev*/
+  .pathtranslatemove_154 path:first-child {
+    transform: translate(304px, -196px) matrix(1.17, 0, 0, 1.11, 849, 340);
+  }
+  /*  9 cu mertebe 1 ci ev*/
+  .pathtranslatemove_143 path:first-child {
+    transform: translate(-49px, -185px) matrix(1.11, 0, 0, 1.1, 147, 338);
+  }
+
+  /*  9 cu mertebe 2 ci ev*/
+  .pathtranslatemove_144 path:first-child {
+    transform: translate(15px, -106px) matrix(1.13, 0, 0, 1.12, 276, 502);
+  }
+
+  /*  9 cu mertebe 3 ci ev*/
+  .pathtranslatemove_145 path:first-child {
+    transform: translate(75px, -187px) matrix(1.13, 0, 0, 1.09, 404, 338);
+  }
+
+  /*  9 cu mertebe 4 ci ev*/
+  .pathtranslatemove_146 path:first-child {
+    transform: translate(171px, -187px) matrix(1.13, 0, 0, 1.1, 599, 338);
+  }
+
+  /*  9 cu mertebe 5 ci ev*/
+  .pathtranslatemove_147 path:first-child {
+    transform: translate(238px, -101px) matrix(1.12, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  9 cu mertebe 6 ci ev*/
+  .pathtranslatemove_148 path:first-child {
+    transform: translate(297px, -189px) matrix(1.13, 0, 0, 1.11, 849, 340);
+  }
+  /*  7,8 ci mertebe 1 ci ev*/
+  .pathtranslatemove_131 path:first-child,
+  .pathtranslatemove_137 path:first-child {
+    transform: translate(58px, -142px) matrix(1.12, 0, 0, 1.1, 10, 281);
+  }
+
+  /*  7,8 ci mertebe 2 ci ev*/
+  .pathtranslatemove_132 path:first-child,
+  .pathtranslatemove_138 path:first-child {
+    transform: translate(88px, -101px) matrix(1.11, 0, 0, 1.1, 186, 497);
+  }
+
+  /*  7,8 ci mertebe 3 ci ev*/
+  .pathtranslatemove_133 path:first-child,
+  .pathtranslatemove_139 path:first-child {
+    transform: translate(69px, -196px) matrix(1.12, 0, 0, 1.1, 404, 335);
+  }
+
+  /*  7,8 ci mertebe 4 ci ev*/
+  .pathtranslatemove_134 path:first-child,
+  .pathtranslatemove_140 path:first-child {
+    transform: translate(171px, -166px) matrix(1.13, 0, 0, 1.1, 602, 307);
+  }
+
+  /*  7,8 ci mertebe 5 ci ev*/
+  .pathtranslatemove_135 path:first-child,
+  .pathtranslatemove_141 path:first-child {
+    transform: translate(252px, -105px) matrix(1.09, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  7,8 ci mertebe 6 ci ev*/
+  .pathtranslatemove_136 path:first-child,
+  .pathtranslatemove_142 path:first-child {
+    transform: translate(323px, -146px) matrix(1.11, 0, 0, 1.12, 849, 285);
+  }
+
+  /*  6 ci mertebe 1 ci ev*/
+  .pathtranslatemove_125 path:first-child {
+    transform: translate(58px, -142px) matrix(1.12, 0, 0, 1.1, 10, 281);
+  }
+
+  /*  6 ci mertebe 2 ci ev*/
+  .pathtranslatemove_126 path:first-child {
+    transform: translate(88px, -101px) matrix(1.11, 0, 0, 1.1, 186, 497);
+  }
+
+  /*  6 ci mertebe 3 ci ev*/
+  .pathtranslatemove_127 path:first-child {
+    transform: translate(69px, -196px) matrix(1.12, 0, 0, 1.1, 404, 335);
+  }
+
+  /*  6 ci mertebe 4 ci ev*/
+  .pathtranslatemove_128 path:first-child {
+    transform: translate(171px, -166px) matrix(1.13, 0, 0, 1.1, 602, 307);
+  }
+
+  /*  6 ci mertebe 5 ci ev*/
+  .pathtranslatemove_129 path:first-child {
+    transform: translate(252px, -105px) matrix(1.09, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  6 ci mertebe 6 ci ev*/
+  .pathtranslatemove_130 path:first-child {
+    transform: translate(323px, -146px) matrix(1.11, 0, 0, 1.12, 849, 285);
+  }
+  /* 5 ci slide baslangic */
+
+  /*  5 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_119 path:first-child {
+    transform: translate(58px, -142px) matrix(1.12, 0, 0, 1.1, 10, 281);
+  }
+
+  /*  5 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_120 path:first-child {
+    transform: translate(88px, -101px) matrix(1.11, 0, 0, 1.1, 186, 497);
+  }
+
+  /*  5 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_121 path:first-child {
+    transform: translate(69px, -196px) matrix(1.12, 0, 0, 1.1, 404, 335);
+  }
+
+  /*  5 ci mertebe 4 ci ev*/
+  .pathtranslatemove_122 path:first-child {
+    transform: translate(171px, -166px) matrix(1.13, 0, 0, 1.1, 602, 307);
+  }
+
+  /*  5 ci mertebe 5 ci ev*/
+
+  .pathtranslatemove_123 path:first-child {
+    transform: translate(252px, -105px) matrix(1.09, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  5 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_124 path:first-child {
+    transform: translate(323px, -146px) matrix(1.11, 0, 0, 1.12, 849, 285);
+  }
+
+  /* 5 ci slide son */
+
+  /* 4 ci slide baslangic */
+  /*  4 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_113 path:first-child {
+    transform: translate(58px, -142px) matrix(1.12, 0, 0, 1.1, 10, 281);
+  }
+
+  /*  4 ci mertebe 2 ci ev*/
+  .pathtranslatemove_114 path:first-child {
+    transform: translate(88px, -101px) matrix(1.11, 0, 0, 1.1, 186, 497);
+  }
+
+  /*  4 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_115 path:first-child {
+    transform: translate(69px, -196px) matrix(1.12, 0, 0, 1.1, 404, 335);
+  }
+
+  /*  4 ci mertebe 4 ci ev*/
+
+  .pathtranslatemove_116 path:first-child {
+    transform: translate(171px, -166px) matrix(1.13, 0, 0, 1.1, 602, 307);
+  }
+
+  /*  4 ci mertebe 5 ci ev*/
+  .pathtranslatemove_117 path:first-child {
+    transform: translate(252px, -105px) matrix(1.09, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  4 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_118 path:first-child {
+    transform: translate(323px, -146px) matrix(1.11, 0, 0, 1.12, 849, 285);
+  }
+
+  /* 4 ci slide son */
+
+  /* 3 ci slide baslangic */
+
+  /*  3 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_107 {
+    transform: translate(236px, 64px);
+  }
+
+  .pathtranslatemove_107 path:first-child {
+    transform: translate(74px, -131px) matrix(1.09, 0, 0, 1.1, 10, 281);
+  }
+
+  /*  3 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_108 {
+    transform: translate(435px, 658px);
+  }
+
+  .pathtranslatemove_108 path:first-child {
+    transform: translate(100px, -94px) matrix(1.11, 0, 0, 1.09, 186, 497);
+  }
+
+  /*  3 ci mertebe 3 ci ev*/
+  #hareketliGrup_109 {
+    transform: translate(692px, 66px);
+  }
+
+  .pathtranslatemove_109 path:first-child {
+    transform: translate(78px, -184px) matrix(1.12, 0, 0, 1.1, 404, 335);
+  }
+
+  /*  3 ci mertebe 4 ci ev*/
+  #hareketliGrup_110 {
+    transform: translate(822px, 671px);
+  }
+  .pathtranslatemove_110 path:first-child {
+    transform: translate(181px, -159px) matrix(1.09, 0, 0, 1.09, 602, 307);
+  }
+
+  /*  3 ci mertebe 5 ci ev*/
+  #hareketliGrup_111 {
+    transform: translate(1089px, 658px);
+  }
+
+  .pathtranslatemove_111 path:first-child {
+    transform: translate(254px, -95px) matrix(1.09, 0, 0, 1.09, 724, 502);
+  }
+
+  /*  3 ci mertebe 6 ci ev*/
+
+  #hareketliGrup_112 {
+    transform: translate(1205px, 74px);
+  }
+
+  .pathtranslatemove_112 path:first-child {
+    transform: translate(323px, -136px) matrix(1.11, 0, 0, 1.11, 849, 285);
+  }
+
+  /* 3 ci slide son */
+  /**************************************************************************************************/
+  .a2top-street {
+    font-size: 12px !important;
+  }
+  .a2bottom-street {
+    font-size: 12px !important;
+  }
+  .a2right-street {
+    font-size: 12px !important;
+  }
+  .a2left-street {
+    font-size: 12px !important;
+  }
+  /************* A2 A3  "Blok isareleri" Satilmis eraziler ucun    *************/
+
+  #path105-1,
+  #path105-2 {
+    transform: translate(51rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path104-1,
+  #path104-2 {
+    transform: translate(39rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path103-1,
+  #path103-2 {
+    transform: translate(26rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path102-1,
+  #path102-2 {
+    transform: translate(11rem, 1rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path101-1,
+  #path101-2 {
+    transform: translate(-2rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path100-1,
+  #path100-2 {
+    transform: translate(-293px, 201px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_100 {
+    transform: translate(163px, 28px);
+  }
+
+  .pathtranslatemove_100 path:first-child {
+    transform: translate(157px, -110px) matrix(1.02, 0, 0, 1.04, -98, 238);
+  }
+
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_101 {
+    transform: translate(393px, 660px);
+  }
+
+  .pathtranslatemove_101 path:first-child {
+    transform: translate(157px, -110px) matrix(1.05, 0, 0, 1.03, 108, 494);
+  }
+
+  /*  2 ci mertebe 3 ci ev*/
+  #hareketliGrup_102 {
+    transform: translate(556px, 47px);
+  }
+
+  .pathtranslatemove_102 path:first-child {
+    transform: translate(157px, -110px) matrix(1.03, 0, 0, 1.034, 315, 232);
+  }
+
+  /*  2 ci mertebe 4 ci ev*/
+  #hareketliGrup_103 {
+    transform: translate(807px, 660px);
+  }
+
+  .pathtranslatemove_103 path:first-child {
+    transform: translate(157px, -110px) matrix(1.02, 0, 0, 1.04, 619, 230);
+  }
+
+  /*  2 ci mertebe 5 ci ev*/
+  #hareketliGrup_104 {
+    transform: translate(1120px, 678px);
+  }
+
+  .pathtranslatemove_104 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.04, 821, 498);
+  }
+
+  /*  2 ci mertebe 6 ci ev*/
+  #hareketliGrup_105 {
+    transform: translate(1190px, 46px);
+  }
+
+  .pathtranslatemove_105 path:first-child {
+    transform: translate(157px, -110px) matrix(1.02, 0, 0, 1.04, 1028, 236);
+  }
+
+  /******************************   A2 A3  BLOKLARII  Son  ******************************/
+  /***********************************************************************************/
+
+  .top-street {
+    top: 0;
+    transform: translateX(-50%);
+  }
+  .bottom-street {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  .right-street {
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%) rotate(-270deg);
+  }
+  .left-street {
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%) rotate(270deg);
+  }
+
+  /* 11 cu mertebe ev 1 */
+  #hareketliGrup_19 {
+    transform: translate(405px, 785px);
+  }
+
+  .pathtranslatemove_19 path:first-child {
+    transform: translate(157px, -110px) matrix(1.49, 0, 0, 1.5, 33, 53);
+  }
+  /* 11 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 1 */
+  #hareketliGrup_17 {
+    transform: translate(388px, 721px);
+  }
+
+  .pathtranslatemove_17 path:first-child {
+    transform: translate(157px, -110px) matrix(1.46, 0, 0, 1.44, 38, 87);
+  }
+
+  /* 10 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 2 */
+  #hareketliGrup_18 {
+    transform: translate(969px, 382px);
+  }
+
+  .pathtranslatemove_18 path:first-child {
+    transform: translate(157px, -110px) matrix(1.46, 0, 0, 1.444, 418, 214);
+  }
+
+  /* 10 cu mertebe ev 2 */
+
+  /* 9 cu mertebe ev 1 */
+  #hareketliGrup_15 {
+    transform: translate(370px, 741px);
+  }
+
+  .pathtranslatemove_15 path:first-child {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.48, 14, 88);
+  }
+
+  /* 9 cu mertebe ev 1 */
+
+  /* 9 cu mertebe ev 2 */
+
+  #hareketliGrup_16 {
+    transform: translate(944px, 429px);
+  }
+
+  .pathtranslatemove_16 path:first-child {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.5, 406, 150);
+  }
+  /* 9 cu mertebe ev 2 */
+
+  /* 8 ci mertebe ev 1 */
+
+  #hareketliGrup_13 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_13 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.56, 27, 69);
+  }
+
+  /* 8 ci mertebe ev 1 */
+
+  /* 8 ci mertebe ev 2 */
+
+  #hareketliGrup_14 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_14 path:first-child {
+    transform: translate(157px, -110px) matrix(1.57, 0, 0, 1.56, 424, 128);
+  }
+
+  /* 8 ci mertebe ev 2 */
+
+  /* 7 ci mertebe ev 1 */
+
+  #hareketliGrup_11 {
+    transform: translate(386px, 749px);
+  }
+
+  .pathtranslatemove_11 path:first-child {
+    transform: translate(157px, -110px) matrix(1.61, 0, 0, 1.56, 27, 69);
+  }
+
+  /* 7 ci mertebe ev 1 */
+
+  /* 7 ci mertebe ev 2 */
+
+  #hareketliGrup_12 {
+    transform: translate(996px, 456px);
+  }
+
+  .pathtranslatemove_12 path:first-child {
+    transform: translate(157px, -110px) matrix(1.57, 0, 0, 1.56, 424, 128);
+  }
+
+  /* 7 ci mertebe ev 2 */
+
+  /* 6 cu mertebe ev 2 */
+  #hareketliGrup_10 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_10 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 6 cu mertebe ev 2 */
+
+  /* 6 cu mertebe ev 1 */
+  .pathtranslatemove_9 path {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.42, 73, 117) !important;
+  }
+
+  #hareketliGrup_9 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 6 cu mertebe ev 1 */
+
+  /* 5 cu mertebe ev 2 */
+  #hareketliGrup_8 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_8 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 5 cu mertebe ev 2 */
+
+  /* 5 cu mertebe ev 1 */
+  .pathtranslatemove_7 path {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.42, 73, 117) !important;
+  }
+
+  #hareketliGrup_7 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 5 cu mertebe ev 1 */
+
+  /* 4 cu mertebe ev 2 */
+  #hareketliGrup_6 {
+    transform: translate(987px, 449px);
+  }
+
+  .pathtranslatemove_6 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 428, 167);
+  }
+  /* 4 cu mertebe ev 2 */
+
+  /* 4 cu mertebe ev 1 */
+  .pathtranslatemove_5 path {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.42, 73, 117) !important;
+  }
+
+  #hareketliGrup_5 {
+    transform: translate(408px, 715px);
+  }
+
+  /* 4 cu mertebe ev 1 */
+
+  /*  3 cu mertebe 2 ci ev*/
+
+  #hareketliGrup_4 {
+    transform: translate(968px, 476px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_4 path:first-child {
+    transform: translate(157px, -110px) matrix(1.45, 0, 0, 1.45, 435, 196);
+  }
+
+  /*  3 cu mertebe 2 ci ev*/
+
+  /* 3 cu m 1 ci ev*/
+  #hareketliGrup_3 {
+    transform: translate(420px, 728px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_3 path:first-child {
+    transform: translate(157px, -110px) matrix(1.44, 0, 0, 1.43, 81, 146);
+  }
+
+  /* 3 cu mertebe 1 ci ev*/
+
+  /* 2 ci mertebe 2 ci ev start*/
+  #path2-ev2,
+  #path3-ev2 {
+    transform: translate(220px, -110px) matrix(1.7, 0, 0, 1.7, 593, 443);
+  }
+  #hareketliGrup_2 {
+    transform: translate(987px, 471px);
+  }
+
+  .pathtranslatemove_2 path:first-child {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.25, 425, 167);
+  }
+  /* 2 ci mertebe 2 ci ev end*/
+
+  .building__svgg svg {
+    height: 100% !important;
+  }
+  /*  2 ci mertebe 1 ci ev Start */
+  #path2,
+  #path3 {
+    transform: translate(157px, -110px) matrix(1.7, 0, 0, 1.7, 208, 559) !important;
+  }
+
+  .pathtranslatemove_1 path {
+    transform: translate(157px, -110px) matrix(1.3, 0, 0, 1.26, 73, 117) !important;
+  }
+
+  #hareketliGrup_1 {
+    transform: translate(408px, 715px);
+  }
+  /*  2 ci mertebe 1 ci ev  End */
+  .sidenav a {
+    font-size: 18px;
+  }
+  .bottom-move-elements {
+    bottom: 0rem;
+  }
+  .scroll_down_animation::after {
+    top: 85%;
+  }
+  .over-middle-text {
+    top: 25%;
+  }
+
+  .over-top-p {
+    padding-top: 6rem;
+  }
+  .ap-d-sidebar-img img {
+    width: 88%;
+  }
+  .ap-d-sidebar-img {
+    padding: 0rem 8rem;
+  }
+  .sidebar-form-inputs {
+    padding: 1rem 2rem;
+  }
+  .ap-d-sidebar-title p {
+    font-size: 26px;
+  }
+  .middle-elements {
+    gap: 0rem;
+  }
+  .a-detail-buttons button:nth-child(1) {
+    width: 100%;
+    padding: 23px 63px;
+    font-size: 14px;
+  }
+  .a-detail-buttons button:nth-child(2) {
+    width: 100%;
+    padding: 23px 63px;
+    font-size: 14px;
+  }
+  .tab-item {
+    font-size: 1.2rem !important;
+  }
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .modal_header_text {
+    font-size: 30px;
+  }
+  .modal_header_text p {
+    font-size: 23px;
+  }
+  .walkthrought img {
+    width: 79% !important;
+  }
+  .rotate-svg {
+    width: 11px !important;
+  }
+  .gallery-title h1 {
+    font-size: 56px;
+  }
+  .number-d h1 {
+    font-size: 65px;
+  }
+  .boulevard-logo {
+    font-size: 1.6rem;
+  }
+
+  .choose_apartment a {
+    font-size: 18px;
+  }
+
+  .slick-prev {
+    left: 82% !important;
+  }
+}
+
+/* Extra-Large Desktop */
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .sidenav a {
+    font-size: 20px;
+  }
+  .over-top-p {
+    padding-top: 6rem;
+  }
+  .ap-d-sidebar-img img {
+    width: 88%;
+  }
+  .ap-d-sidebar-img {
+    padding: 0rem 7rem;
+  }
+  .sidebar-form-inputs {
+    padding: 1rem 2rem;
+  }
+  .ap-d-sidebar-title p {
+    font-size: 35px;
+  }
+  .tab-item {
+    font-size: 1.2rem !important;
+  }
+  .modal-content {
+    max-width: 47%;
+  }
+  .walkthrought img {
+    width: 50% !important;
+  }
+  .rotate-svg {
+    width: 11px !important;
+  }
+  .slick-prev {
+    left: 85% !important;
+  }
+  .modal_header_text {
+    font-size: 35px;
+  }
+  .modal_header_text p {
+    font-size: 27px;
+  }
+}
+/* Extra Large Devices (large desktops) */
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .bottom-move-elements {
+    bottom: 1rem;
+  }
+  .scroll_down_animation::after {
+    top: 87%;
+  }
+  .over-middle-text {
+    top: 22%;
+  }
+}
+
+/* Extra Extra Large Devices (extra-large desktops) */
+@media (min-width: 1440px) and (max-width: 1680px) {
+ 
+  .bottom-move-elements {
+    bottom: 2rem;
+  }
+  .scroll_down_animation::after {
+    top: 100%;
+  }
+  .over-middle-text {
+    top: 22%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .floor img {
+    width: 100%;
+  }
+  .partners__offer {
+    padding: 45px;
+    font-size: 2.4rem;
+  }
+  .partners__offer::after,
+  .partners__offer::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 200px;
+  }
+  .location__list:not(.location__list--secondary) {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  .project__area span {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun baslangic   *************/
+  #hareketliGrup_269{
+    transform: translate(497px, -6px);
+      }
+  #hareketliGrup_270{
+    transform: translate(999px, 49rem);
+        }
+                /*  11 ci mertebe 2 ci ev*/
+.pathtranslatemove_250 path:first-child {
+  transform: translate(629px, -345px) matrix(1.39, 0, 0, 1.399, 148, 342);
+}
+         /*  10 cu mertebe 1 ci ev*/
+
+.pathtranslatemove_231 path:first-child {
+  transform: translate(61px, -268px) matrix(1.49, 0, 0, 1.48, 148, 342);
+}
+/*  10 cu mertebe 2 ci ev*/
+
+.pathtranslatemove_232 path:first-child {
+  transform: translate(641px, -408px) matrix(1.51, 0, 0, 1.49, 148, 342);
+}
+       /*  9 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_229 path:first-child {
+  transform: translate(9px, -338px) matrix(1.49, 0, 0, 1.48, 148, 342);
+}
+/*  9 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_230 path:first-child {
+  transform: translate(663px, -409px) matrix(1.50, 0, 0, 1.49, 148, 342);
+}
+  /*  7 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_221 path:first-child,
+.pathtranslatemove_225 path:first-child  {
+  transform: translate(38px, -336px) matrix(1.49, 0, 0, 1.55, 148, 342);
+}
+/*  7 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_222 path:first-child,
+.pathtranslatemove_226 path:first-child {
+  transform: translate(39px, -65px) matrix(1.49, 0, 0, 1.53, 148, 342);
+}
+/*  7 ci mertebe 3 ci ev*/
+
+.pathtranslatemove_223 path:first-child,
+.pathtranslatemove_227 path:first-child {
+  transform: translate(556px, 37px) matrix(1.45, 0, 0, 1.45, 148, 342);
+}
+/*  7 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_224 path:first-child,
+.pathtranslatemove_228 path:first-child {
+  transform: translate(822px, -394px) matrix(1.43, 0, 0, 1.45, 148, 342);
+}
+          /*  5 ci mertebe 1 ci ev*/
+.pathtranslatemove_213 path:first-child {
+  transform: translate(39px, -314px) matrix(1.47, 0, 0, 1.47, 148, 342);
+}
+/*  5 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_214 path:first-child {
+  transform: translate(41px, -51px) matrix(1.43, 0, 0, 1.41, 148, 342);
+}
+/*  5 ci mertebe 3 ci ev*/
+.pathtranslatemove_215 path:first-child {
+  transform: translate(555px, 37px) matrix(1.42, 0, 0, 1.40, 148, 342);
+}
+/*  5 ci mertebe 4 ci ev*/
+
+.pathtranslatemove_216 path:first-child {
+  transform: translate(818px, -375px) matrix(1.44, 0, 0, 1.38, 148, 342);
+}
+       /*  4 ci mertebe 1 ci ev*/
+
+       .pathtranslatemove_209 path:first-child,
+       .pathtranslatemove_217 path:first-child {
+        transform: translate(38px, -336px) matrix(1.49, 0, 0, 1.55, 148, 342);
+      }
+      /*  4 ci mertebe 2 ci ev*/
+      
+      .pathtranslatemove_210 path:first-child,
+      .pathtranslatemove_218 path:first-child {
+        transform: translate(39px, -65px) matrix(1.44, 0, 0, 1.49, 148, 342);
+      }
+      /*  4 ci mertebe 3 ci ev*/
+      
+      
+      .pathtranslatemove_211 path:first-child,
+      .pathtranslatemove_219 path:first-child {
+        transform: translate(556px, 37px) matrix(1.45, 0, 0, 1.45, 148, 342);
+      }
+      /*  4 cu mertebe 4 ci ev*/
+      
+      .pathtranslatemove_212 path:first-child,
+      .pathtranslatemove_220 path:first-child {
+        transform: translate(822px, -394px) matrix(1.43, 0, 0, 1.45, 148, 342);
+      }
+    /*  3 ci mertebe 1 ci ev*/
+
+    .pathtranslatemove_205 path:first-child {
+      transform: translate(18px, -342px) matrix(1.37, 0, 0, 1.39, 148, 342);
+                }
+    /*  3 ci mertebe 2 ci ev*/
+  
+    .pathtranslatemove_206 path:first-child {
+      transform: translate(20px, -83px) matrix(1.38, 0, 0, 1.41, 148, 342);
+            }
+    /*  3 ci mertebe 3 ci ev*/
+  
+    .pathtranslatemove_207 path:first-child {
+      transform: translate(537px, 21px) matrix(1.42, 0, 0, 1.397, 148, 342);
+        }
+ /*  3 cu mertebe 4 ci ev*/
+  
+ .pathtranslatemove_208 path:first-child {
+  transform: translate(803px, -394px) matrix(1.41, 0, 0, 1.39, 148, 342);
+ }  
+
+  #pathA1_0_1,
+  #pathA1_0_2 {
+    transform: translate(4rem, -84px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_1_1,
+  #pathA1_1_2 {
+    transform: translate(4rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_2_1,
+  #pathA1_2_2 {
+    transform: translate(384px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_3_1,
+  #pathA1_3_2 {
+    transform: translate(651px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+        /*  9 cu mertebe ucun blok hissesi */
+#pathA1_floor9_ev1-1,
+#pathA1_floor9_ev1-2{
+   transform: translate(6rem, 5rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+#pathA1_floor9_ev2-1,
+#pathA1_floor9_ev2-2{
+  transform: translate(35rem, 246px) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun son    *************/
+  /*********************************  A1 Bloklaeeoi baslangic  *******************************************/
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_201 {
+    transform: translate(530px, -90px);
+  }
+
+  .pathtranslatemove_201 path:first-child {
+    transform: translate(32px, -339px) matrix(1.39, 0, 0, 1.41, 148, 342);
+  }
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_202 {
+    transform: translate(529px, 747px);
+  }
+
+  .pathtranslatemove_202 path:first-child {
+    transform: translate(2px, -84px) matrix(1.39, 0, 0, 1.4, 148, 342);
+  }
+  /*  2 ci mertebe 3 ci ev*/
+
+  #hareketliGrup_203 {
+    transform: translate(833px, 49rem);
+  }
+
+  .pathtranslatemove_203 path:first-child {
+    transform: translate(558px, 25px) matrix(1.42, 0, 0, 1.41, 148, 342);
+  }
+  /*  2 ci mertebe 4 ci ev*/
+
+  #hareketliGrup_204 {
+    transform: translate(1162px, -134px);
+  }
+
+  .pathtranslatemove_204 path:first-child {
+    transform: translate(817px, -397px) matrix(1.44, 0, 0, 1.41, 148, 342);
+  }
+  /*********************************  A1 Bloklaeeoi son  *******************************************/
+  /*  11 ci mertebe 1 ci ev*/
+  .pathtranslatemove_155 path:first-child {
+    transform: translate(-85px, -214px) matrix(1.19, 0, 0, 1.14, 147, 338);
+  }
+
+  /*  11 ci mertebe 2 ci ev*/
+  .pathtranslatemove_156 path:first-child {
+    transform: translate(-17px, -118px) matrix(1.17, 0, 0, 1.14, 276, 502);
+  }
+
+  /*  11 ci mertebe 3 ci ev*/
+  .pathtranslatemove_157 path:first-child {
+    transform: translate(66px, -215px) matrix(1.16, 0, 0, 1.14, 404, 338);
+  }
+
+  /*  11 ci mertebe 4 ci ev*/
+  .pathtranslatemove_158 path:first-child {
+    transform: translate(178px, -207px) matrix(1.22, 0, 0, 1.14, 599, 338);
+  }
+
+  /*  11 ci mertebe 5 ci ev*/
+  .pathtranslatemove_159 path:first-child {
+    transform: translate(250px, -113px) matrix(1.15, 0, 0, 1.14, 724, 502);
+  }
+
+  /*  11 ci mertebe 6 ci ev*/
+  .pathtranslatemove_160 path:first-child {
+    transform: translate(329px, -219px) matrix(1.18, 0, 0, 1.15, 849, 340);
+  }
+  /*  10 cu mertebe 1 ci ev*/
+  .pathtranslatemove_149 path:first-child {
+    transform: translate(-74px, -195px) matrix(1.17, 0, 0, 1.12, 147, 338);
+  }
+
+  /*  10 cu mertebe 2 ci ev*/
+  .pathtranslatemove_150 path:first-child {
+    transform: translate(5px, -106px) matrix(1.15, 0, 0, 1.12, 276, 502);
+  }
+
+  /*  10 cu mertebe 3 ci ev*/
+  .pathtranslatemove_151 path:first-child {
+    transform: translate(75px, -200px) matrix(1.13, 0, 0, 1.11, 404, 338);
+  }
+
+  /*  10 cu mertebe 4 ci ev*/
+  .pathtranslatemove_152 path:first-child {
+    transform: translate(171px, -196px) matrix(1.18, 0, 0, 1.11, 599, 338);
+  }
+
+  /*  10 cu mertebe 5 ci ev*/
+  .pathtranslatemove_153 path:first-child {
+    transform: translate(238px, -101px) matrix(1.19, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  10 cu mertebe 6 ci ev*/
+  .pathtranslatemove_154 path:first-child {
+    transform: translate(313px, -196px) matrix(1.17, 0, 0, 1.11, 849, 340);
+  }
+  /*  9 cu mertebe 1 ci ev*/
+  .pathtranslatemove_143 path:first-child {
+    transform: translate(-57px, -185px) matrix(1.13, 0, 0, 1.1, 147, 338);
+  }
+
+  /*  9 cu mertebe 2 ci ev*/
+  .pathtranslatemove_144 path:first-child {
+    transform: translate(15px, -106px) matrix(1.13, 0, 0, 1.12, 276, 502);
+  }
+
+  /*  9 cu mertebe 3 ci ev*/
+  .pathtranslatemove_145 path:first-child {
+    transform: translate(75px, -187px) matrix(1.13, 0, 0, 1.09, 404, 338);
+  }
+
+  /*  9 cu mertebe 4 ci ev*/
+  .pathtranslatemove_146 path:first-child {
+    transform: translate(171px, -187px) matrix(1.13, 0, 0, 1.1, 599, 338);
+  }
+
+  /*  9 cu mertebe 5 ci ev*/
+  .pathtranslatemove_147 path:first-child {
+    transform: translate(238px, -101px) matrix(1.12, 0, 0, 1.11, 724, 502);
+  }
+
+  /*  9 cu mertebe 6 ci ev*/
+  .pathtranslatemove_148 path:first-child {
+    transform: translate(297px, -195px) matrix(1.17, 0, 0, 1.13, 849, 340);
+  }
+  /*  7,8 ci mertebe 1 ci ev*/
+  .pathtranslatemove_131 path:first-child,
+  .pathtranslatemove_137 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  7,8 ci mertebe 2 ci ev*/
+  .pathtranslatemove_132 path:first-child,
+  .pathtranslatemove_138 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  7,8 ci mertebe 3 ci ev*/
+  .pathtranslatemove_133 path:first-child,
+  .pathtranslatemove_139 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  7,8 ci mertebe 4 ci ev*/
+  .pathtranslatemove_134 path:first-child,
+  .pathtranslatemove_140 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  7,8 ci mertebe 5 ci ev*/
+  .pathtranslatemove_135 path:first-child,
+  .pathtranslatemove_141 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  7,8 ci mertebe 6 ci ev*/
+  .pathtranslatemove_136 path:first-child,
+  .pathtranslatemove_142 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+  /* 3 ci slide baslangic */
+
+  /*  3 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_107 {
+    transform: translate(236px, 64px);
+  }
+
+  .pathtranslatemove_107 path:first-child {
+    transform: translate(65px, -133px) matrix(1.13, 0, 0, 1.11, 10, 281);
+  }
+
+  /*  3 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_108 {
+    transform: translate(435px, 658px);
+  }
+
+  .pathtranslatemove_108 path:first-child {
+    transform: translate(100px, -94px) matrix(1.11, 0, 0, 1.09, 186, 497);
+  }
+
+  /*  3 ci mertebe 3 ci ev*/
+  #hareketliGrup_109 {
+    transform: translate(692px, 66px);
+  }
+
+  .pathtranslatemove_109 path:first-child {
+    transform: translate(78px, -187px) matrix(1.12, 0, 0, 1.1, 404, 335);
+  }
+
+  /*  3 ci mertebe 4 ci ev*/
+  #hareketliGrup_110 {
+    transform: translate(822px, 671px);
+  }
+  .pathtranslatemove_110 path:first-child {
+    transform: translate(181px, -159px) matrix(1.09, 0, 0, 1.1, 602, 307);
+  }
+
+  /*  3 ci mertebe 5 ci ev*/
+  #hareketliGrup_111 {
+    transform: translate(1089px, 658px);
+  }
+
+  .pathtranslatemove_111 path:first-child {
+    transform: translate(254px, -95px) matrix(1.09, 0, 0, 1.09, 724, 502);
+  }
+
+  /*  3 ci mertebe 6 ci ev*/
+
+  #hareketliGrup_112 {
+    transform: translate(1205px, 74px);
+  }
+
+  .pathtranslatemove_112 path:first-child {
+    transform: translate(323px, -136px) matrix(1.16, 0, 0, 1.12, 849, 285);
+  }
+
+  /* 3 ci slide son */
+
+  /* 4 ci slide baslangic */
+
+  /*  4 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_113 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  4 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_114 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  4 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_115 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  4 ci mertebe 4 ci ev*/
+  .pathtranslatemove_116 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  4 ci mertebe 5 ci ev*/
+
+  .pathtranslatemove_117 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  4 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_118 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+
+  /* 4 ci slide son */
+  /* 5 ci slide baslangic */
+
+  /*  5 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_119 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  5 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_120 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  5 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_121 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  5 ci mertebe 4 ci ev*/
+  .pathtranslatemove_122 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  5 ci mertebe 5 ci ev*/
+
+  .pathtranslatemove_123 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  5 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_124 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+
+  /* 5 ci slide son */
+
+  /*  6 ci mertebe 1 ci ev*/
+  .pathtranslatemove_125 path:first-child {
+    transform: translate(49px, -144px) matrix(1.139, 0, 0, 1.12, 10, 281);
+  }
+
+  /*  6 ci mertebe 2 ci ev*/
+  .pathtranslatemove_126 path:first-child {
+    transform: translate(82px, -102px) matrix(1.13, 0, 0, 1.115, 186, 497);
+  }
+
+  /*  6 ci mertebe 3 ci ev*/
+  .pathtranslatemove_127 path:first-child {
+    transform: translate(65px, -199px) matrix(1.15, 0, 0, 1.12, 404, 335);
+  }
+
+  /*  6 ci mertebe 4 ci ev*/
+  .pathtranslatemove_128 path:first-child {
+    transform: translate(174px, -172px) matrix(1.12, 0, 0, 1.12, 602, 307);
+  }
+
+  /*  6 ci mertebe 5 ci ev*/
+  .pathtranslatemove_129 path:first-child {
+    transform: translate(254px, -105px) matrix(1.09, 0, 0, 1.12, 724, 502);
+  }
+
+  /*  6 ci mertebe 6 ci ev*/
+  .pathtranslatemove_130 path:first-child {
+    transform: translate(323px, -153px) matrix(1.15, 0, 0, 1.14, 849, 285);
+  }
+  .apartment-over-text h1 {
+    font-size: 33px;
+    padding-left: 1rem;
+  }
+
+  .apartment-over-text {
+    top: 59%;
+  }
+
+  .apartment-bg {
+    height: 50vh;
+  }
+
+  .apartment-detail-flex {
+    display: flex;
+    flex-direction: column !important;
+  }
+    .table-item-info {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        gap: 1rem; /* new*/
+    }
+
+
+  .table-item-floor p {
+    font-size: 14px;
+  }
+  .table-item-floor span {
+    font-size: 12px;
+  }
+  .table-item-rooms span {
+    font-size: 12px;
+  }
+  .table-item-area span {
+    font-size: 12px;
+  }
+  .table-item-features img {
+    width: 78%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .left-text {
+    left: -10%;
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg);
+  }
+
+  .right-text {
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-270deg);
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 1200px) {
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun baslangic   *************/
+  #hareketliGrup_269{
+    transform: translate(473px, 51px);
+    }
+  #hareketliGrup_270{
+    transform: translate(961px, 43rem);
+      }
+  #pathA1_0_1,
+  #pathA1_0_2 {
+    transform: translate(6rem, -37px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_1_1,
+  #pathA1_1_2 {
+    transform: translate(5rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_2_1,
+  #pathA1_2_2 {
+    transform: translate(366px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #pathA1_3_1,
+  #pathA1_3_2 {
+    transform: translate(574px, 316px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  /*  9 cu mertebe ucun blok hissesi */
+#pathA1_floor9_ev1-1,
+#pathA1_floor9_ev1-2{
+  transform: translate(9rem, 6rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+#pathA1_floor9_ev2-1,
+#pathA1_floor9_ev2-2{
+  transform: translate(32rem, 246px) matrix(1.24, 0, 0, 1.23, 432, 214);
+}
+
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun son    *************/
+
+  /*********************************  A1 Bloklaeeoi baslangic  *******************************************/
+
+    /*  11 ci mertebe 2 ci ev*/
+.pathtranslatemove_250 path:first-child {
+  transform: translate(613px, -278px) matrix(1.21, 0, 0, 1.17, 148, 342);
+}
+    /*  10 cu mertebe 1 ci ev*/
+
+.pathtranslatemove_231 path:first-child {
+  transform: translate(148px, -212px) matrix(1.24, 0, 0, 1.23, 148, 342);
+}
+/*  10 cu mertebe 2 ci ev*/
+
+.pathtranslatemove_232 path:first-child {
+  transform: translate(630px, -327px) matrix(1.25, 0, 0, 1.23, 148, 342);
+}
+
+    /*  9 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_229 path:first-child {
+  transform: translate(106px, -267px) matrix(1.24, 0, 0, 1.22, 148, 342);
+}
+/*  9 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_230 path:first-child {
+  transform: translate(644px, -327px) matrix(1.25, 0, 0, 1.23, 148, 342);
+}
+
+    /*  5 ci mertebe 1 ci ev*/
+.pathtranslatemove_213 path:first-child {
+  transform: translate(132px, -250px) matrix(1.22, 0, 0, 1.25, 148, 342);
+}
+/*  5 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_214 path:first-child {
+  transform: translate(132px, -37px) matrix(1.19, 0, 0, 1.18, 148, 342);
+}
+/*  5 ci mertebe 3 ci ev*/
+.pathtranslatemove_215 path:first-child {
+  transform: translate(558px, 46px) matrix(1.2, 0, 0, 1.14, 148, 342);
+}
+/*  5 ci mertebe 4 ci ev*/
+
+.pathtranslatemove_216 path:first-child {
+  transform: translate(774px, -301px) matrix(1.18, 0, 0, 1.15, 148, 342);
+}
+/*  7 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_221 path:first-child,
+.pathtranslatemove_225 path:first-child {
+  transform: translate(132px, -263px) matrix(1.22, 0, 0, 1.25, 148, 342);
+}
+/*  7 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_222 path:first-child,
+.pathtranslatemove_226 path:first-child {
+  transform: translate(132px, -42px) matrix(1.23, 0, 0, 1.27, 148, 342);
+}
+/*  7 ci mertebe 3 ci ev*/
+
+.pathtranslatemove_223 path:first-child,
+.pathtranslatemove_227 path:first-child {
+  transform: translate(556px, 41px) matrix(1.2, 0, 0, 1.20, 148, 342);
+}
+/*  7 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_224 path:first-child,
+.pathtranslatemove_228 path:first-child  {
+  transform: translate(775px, -320px) matrix(1.2, 0, 0, 1.20, 148, 342);
+}
+    /*  4 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_209 path:first-child,
+.pathtranslatemove_217 path:first-child  {
+  transform: translate(132px, -263px) matrix(1.22, 0, 0, 1.25, 148, 342);
+}
+/*  4 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_210 path:first-child,
+.pathtranslatemove_218 path:first-child  {
+  transform: translate(132px, -42px) matrix(1.19, 0, 0, 1.23, 148, 342);
+}
+/*  4 ci mertebe 3 ci ev*/
+
+
+.pathtranslatemove_211 path:first-child,
+.pathtranslatemove_219 path:first-child  {
+  transform: translate(556px, 41px) matrix(1.2, 0, 0, 1.20, 148, 342);
+}
+/*  4 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_212 path:first-child,
+.pathtranslatemove_220 path:first-child  {
+  transform: translate(775px, -320px) matrix(1.2, 0, 0, 1.20, 148, 342);
+}
+
+    /*  3 ci mertebe 1 ci ev*/
+
+    .pathtranslatemove_205 path:first-child {
+      transform: translate(113px, -275px) matrix(1.14, 0, 0, 1.19, 148, 342);
+        }
+    /*  3 ci mertebe 2 ci ev*/
+  
+    .pathtranslatemove_206 path:first-child {
+      transform: translate(113px, -57px) matrix(1.15, 0, 0, 1.18, 148, 342);
+        }
+    /*  3 ci mertebe 3 ci ev*/
+  
+    .pathtranslatemove_207 path:first-child {
+      transform: translate(542px, 26px) matrix(1.2, 0, 0, 1.17, 148, 342);
+        }
+    /*  3 cu mertebe 4 ci ev*/
+  
+    .pathtranslatemove_208 path:first-child {
+      transform: translate(764px, -320px) matrix(1.2, 0, 0, 1.16, 148, 342);  
+      }
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_201 {
+    transform: translate(530px, -15px);
+  }
+
+  .pathtranslatemove_201 path:first-child {
+    transform: translate(126px, -270px) matrix(1.14, 0, 0, 1.19, 148, 342);
+  }
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_202 {
+    transform: translate(563px, 682px);
+  }
+
+  .pathtranslatemove_202 path:first-child {
+    transform: translate(101px, -58px) matrix(1.15, 0, 0, 1.18, 148, 342);
+  }
+  /*  2 ci mertebe 3 ci ev*/
+
+  #hareketliGrup_203 {
+    transform: translate(809px, 44rem);  }
+
+  .pathtranslatemove_203 path:first-child {
+    transform: translate(556px, 32px) matrix(1.2, 0, 0, 1.17, 148, 342);
+  }
+  /*  2 ci mertebe 4 ci ev*/
+
+  #hareketliGrup_204 {
+    transform: translate(1094px, -47px);
+  }
+
+  .pathtranslatemove_204 path:first-child {
+    transform: translate(771px, -316px) matrix(1.2, 0, 0, 1.16, 148, 342);
+  }
+  /*********************************  A1 Bloklaeeoi son  *******************************************/
+  /******************************   A2 A3  BLOKLARII  Baslangic   ******************************/
+  /*  11 ci mertebe 1 ci ev*/
+  .pathtranslatemove_155 path:first-child {
+    transform: translate(30px, -163px) matrix(0.98, 0, 0, 0.94, 147, 338);
+  }
+
+  /*  11 ci mertebe 2 ci ev*/
+  .pathtranslatemove_156 path:first-child {
+    transform: translate(67px, -114px) matrix(0.95, 0, 0, 0.93, 276, 502);
+  }
+
+  /*  11 ci mertebe 3 ci ev*/
+  .pathtranslatemove_157 path:first-child {
+    transform: translate(116px, -168px) matrix(0.93, 0, 0, 0.95, 404, 338);
+  }
+
+  /*  11 ci mertebe 4 ci ev*/
+  .pathtranslatemove_158 path:first-child {
+    transform: translate(165px, -163px) matrix(1.02, 0, 0, 0.95, 599, 338);
+  }
+
+  /*  11 ci mertebe 5 ci ev*/
+  .pathtranslatemove_159 path:first-child {
+    transform: translate(207px, -112px) matrix(0.96, 0, 0, 0.95, 724, 502);
+  }
+
+  /*  11 ci mertebe 6 ci ev*/
+  .pathtranslatemove_160 path:first-child {
+    transform: translate(246px, -170px) matrix(0.97, 0, 0, 0.95, 849, 340);
+  }
+  /*  10 cu mertebe 1 ci ev*/
+  .pathtranslatemove_149 path:first-child {
+    transform: translate(41px, -149px) matrix(0.95, 0, 0, 0.92, 147, 338);
+  }
+
+  /*  10 cu mertebe 2 ci ev*/
+  .pathtranslatemove_150 path:first-child {
+    transform: translate(76px, -104px) matrix(0.97, 0, 0, 0.93, 276, 502);
+  }
+
+  /*  10 cu mertebe 3 ci ev*/
+  .pathtranslatemove_151 path:first-child {
+    transform: translate(116px, -151px) matrix(0.93, 0, 0, 0.93, 404, 338);
+  }
+
+  /*  10 cu mertebe 4 ci ev*/
+  .pathtranslatemove_152 path:first-child {
+    transform: translate(159px, -149px) matrix(0.96, 0, 0, 0.92, 599, 338);
+  }
+
+  /*  10 cu mertebe 5 ci ev*/
+  .pathtranslatemove_153 path:first-child {
+    transform: translate(193px, -101px) matrix(0.96, 0, 0, 0.93, 724, 502);
+  }
+
+  /*  10 cu mertebe 6 ci ev*/
+  .pathtranslatemove_154 path:first-child {
+    transform: translate(226px, -154px) matrix(1.01, 0, 0, 0.93, 849, 340);
+  }
+  /*  9 cu mertebe 1 ci ev*/
+  .pathtranslatemove_143 path:first-child {
+    transform: translate(54px, -141px) matrix(0.93, 0, 0, 0.92, 147, 338);
+  }
+
+  /*  9 cu mertebe 2 ci ev*/
+  .pathtranslatemove_144 path:first-child {
+    transform: translate(89px, -102px) matrix(0.93, 0, 0, 0.93, 276, 502);
+  }
+
+  /*  9 cu mertebe 3 ci ev*/
+  .pathtranslatemove_145 path:first-child {
+    transform: translate(116px, -144px) matrix(0.93, 0, 0, 0.91, 404, 338);
+  }
+
+  /*  9 cu mertebe 4 ci ev*/
+  .pathtranslatemove_146 path:first-child {
+    transform: translate(159px, -144px) matrix(0.96, 0, 0, 0.92, 599, 338);
+  }
+
+  /*  9 cu mertebe 5 ci ev*/
+  .pathtranslatemove_147 path:first-child {
+    transform: translate(193px, -101px) matrix(0.96, 0, 0, 0.93, 724, 502);
+  }
+
+  /*  9 cu mertebe 6 ci ev*/
+  .pathtranslatemove_148 path:first-child {
+    transform: translate(226px, -145px) matrix(0.94, 0, 0, 0.92, 849, 340);
+  }
+  /*  7,8 ci mertebe 1 ci ev*/
+  .pathtranslatemove_131 path:first-child,
+  .pathtranslatemove_137 path:first-child {
+    transform: translate(165px, -97px) matrix(0.94, 0, 0, 0.924, 10, 281);
+  }
+
+  /*  7,8 ci mertebe 2 ci ev*/
+  .pathtranslatemove_132 path:first-child,
+  .pathtranslatemove_138 path:first-child {
+    transform: translate(162px, -101px) matrix(0.94, 0, 0, 0.929, 186, 497);
+  }
+
+  /*  7 ci mertebe 3 ci ev*/
+  .pathtranslatemove_133 path:first-child,
+  .pathtranslatemove_139 path:first-child {
+    transform: translate(105px, -151px) matrix(0.95, 0, 0, 0.92, 404, 335);
+  }
+
+  /*  7 ci mertebe 4 ci ev*/
+  .pathtranslatemove_134 path:first-child,
+  .pathtranslatemove_140 path:first-child {
+    transform: translate(160px, -123px) matrix(0.95, 0, 0, 0.92, 602, 307);
+  }
+
+  /*  7 ci mertebe 5 ci ev*/
+  .pathtranslatemove_135 path:first-child,
+  .pathtranslatemove_141 path:first-child {
+    transform: translate(210px, -102px) matrix(0.92, 0, 0, 0.919, 724, 502);
+  }
+
+  /*  7 ci mertebe 6 ci ev*/
+  .pathtranslatemove_136 path:first-child,
+  .pathtranslatemove_142 path:first-child {
+    transform: translate(249px, -101px) matrix(0.92, 0, 0, 0.934, 849, 285);
+  }
+
+  /*  6 ci mertebe 1 ci ev*/
+  .pathtranslatemove_125 path:first-child {
+    transform: translate(165px, -97px) matrix(0.94, 0, 0, 0.924, 10, 281);
+  }
+
+  /*  6 ci mertebe 2 ci ev*/
+  .pathtranslatemove_126 path:first-child {
+    transform: translate(162px, -101px) matrix(0.94, 0, 0, 0.929, 186, 497);
+  }
+
+  /*  6 ci mertebe 3 ci ev*/
+  .pathtranslatemove_127 path:first-child {
+    transform: translate(105px, -151px) matrix(0.95, 0, 0, 0.92, 404, 335);
+  }
+
+  /*  6 ci mertebe 4 ci ev*/
+  .pathtranslatemove_128 path:first-child {
+    transform: translate(160px, -123px) matrix(0.95, 0, 0, 0.92, 602, 307);
+  }
+
+  /*  6 ci mertebe 5 ci ev*/
+  .pathtranslatemove_129 path:first-child {
+    transform: translate(210px, -102px) matrix(0.92, 0, 0, 0.919, 724, 502);
+  }
+
+  /*  6 ci mertebe 6 ci ev*/
+  .pathtranslatemove_130 path:first-child {
+    transform: translate(249px, -101px) matrix(0.92, 0, 0, 0.934, 849, 285);
+  }
+  /* 5 ci slide baslangic */
+
+  /*  5 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_119 path:first-child {
+    transform: translate(165px, -97px) matrix(0.94, 0, 0, 0.924, 10, 281);
+  }
+
+  /*  5 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_120 path:first-child {
+    transform: translate(162px, -101px) matrix(0.94, 0, 0, 0.929, 186, 497);
+  }
+
+  /*  5 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_121 path:first-child {
+    transform: translate(105px, -151px) matrix(0.95, 0, 0, 0.92, 404, 335);
+  }
+
+  /*  5 ci mertebe 4 ci ev*/
+  .pathtranslatemove_122 path:first-child {
+    transform: translate(160px, -123px) matrix(0.95, 0, 0, 0.92, 602, 307);
+  }
+
+  /*  5 ci mertebe 5 ci ev*/
+
+  .pathtranslatemove_123 path:first-child {
+    transform: translate(210px, -102px) matrix(0.92, 0, 0, 0.919, 724, 502);
+  }
+
+  /*  5 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_124 path:first-child {
+    transform: translate(249px, -101px) matrix(0.92, 0, 0, 0.934, 849, 285);
+  }
+
+  /* 5 ci slide son */
+  /* 4 ci slide baslangic */
+
+  /*  4 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_113 path:first-child {
+    transform: translate(165px, -97px) matrix(0.94, 0, 0, 0.924, 10, 281);
+  }
+
+  /*  4 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_114 path:first-child {
+    transform: translate(162px, -101px) matrix(0.94, 0, 0, 0.929, 186, 497);
+  }
+
+  /*  4 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_115 path:first-child {
+    transform: translate(105px, -151px) matrix(0.95, 0, 0, 0.92, 404, 335);
+  }
+
+  /*  4 ci mertebe 4 ci ev*/
+  .pathtranslatemove_116 path:first-child {
+    transform: translate(160px, -123px) matrix(0.95, 0, 0, 0.92, 602, 307);
+  }
+
+  /*  4 ci mertebe 5 ci ev*/
+
+  .pathtranslatemove_117 path:first-child {
+    transform: translate(210px, -102px) matrix(0.92, 0, 0, 0.919, 724, 502);
+  }
+
+  /*  4 ci mertebe 6 ci ev*/
+
+  .pathtranslatemove_118 path:first-child {
+    transform: translate(249px, -101px) matrix(0.92, 0, 0, 0.934, 849, 285);
+  }
+
+  /* 4 ci slide son */
+
+  /* 3 ci slide baslangic */
+
+  /*  3 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_107 {
+    transform: translate(270px, 101px);
+  }
+
+  .pathtranslatemove_107 path:first-child {
+    transform: translate(179px, -91px) matrix(0.911, 0, 0, 0.92, 10, 281);
+  }
+
+  /*  3 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_108 {
+    transform: translate(518px, 597px);
+  }
+
+  .pathtranslatemove_108 path:first-child {
+    transform: translate(170px, -94px) matrix(0.94, 0, 0, 0.92, 186, 497);
+  }
+
+  /*  3 ci mertebe 3 ci ev*/
+  #hareketliGrup_109 {
+    transform: translate(692px, 100px);
+  }
+
+  .pathtranslatemove_109 path:first-child {
+    transform: translate(117px, -142px) matrix(0.922, 0, 0, 0.91, 404, 335);
+  }
+
+  /*  3 ci mertebe 4 ci ev*/
+  #hareketliGrup_110 {
+    transform: translate(824px, 596px);
+  }
+  .pathtranslatemove_110 path:first-child {
+    transform: translate(165px, -117px) matrix(0.95, 0, 0, 0.92, 602, 307);
+  }
+
+  /*  3 ci mertebe 5 ci ev*/
+  #hareketliGrup_111 {
+    transform: translate(1034px, 598px);
+  }
+
+  .pathtranslatemove_111 path:first-child {
+    transform: translate(210px, -95px) matrix(0.92, 0, 0, 0.91, 724, 502);
+  }
+
+  /*  3 ci mertebe 6 ci ev*/
+
+  #hareketliGrup_112 {
+    transform: translate(1144px, 117px);
+  }
+
+  .pathtranslatemove_112 path:first-child {
+    transform: translate(249px, -93px) matrix(0.92, 0, 0, 0.93, 849, 285);
+  }
+
+  /* 3 ci slide son */
+  /**************************************************************************************************/
+  /************* A2 A3  "Blok isareleri" Satilmis eraziler ucun    *************/
+  #path105-1,
+  #path105-2 {
+    transform: translate(46rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path104-1,
+  #path104-2 {
+    transform: translate(35rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path103-1,
+  #path103-2 {
+    transform: translate(24rem, 13rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path102-1,
+  #path102-2 {
+    transform: translate(11rem, 4rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path101-1,
+  #path101-2 {
+    transform: translate(0rem, 18rem) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  #path100-1,
+  #path100-2 {
+    transform: translate(-204px, 201px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_100 {
+    transform: translate(256px, 59px);
+  }
+
+  .pathtranslatemove_100 path:first-child {
+    transform: translate(157px, -110px) matrix(0.87, 0, 0, 0.87, 10, 281);
+  }
+
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_101 {
+    transform: translate(454px, 618px);
+  }
+
+  .pathtranslatemove_101 path:first-child {
+    transform: translate(157px, -110px) matrix(0.87, 0, 0, 0.85, 186, 497);
+  }
+
+  /*  2 ci mertebe 3 ci ev*/
+  #hareketliGrup_102 {
+    transform: translate(628px, 60px);
+  }
+
+  .pathtranslatemove_102 path:first-child {
+    transform: translate(157px, -110px) matrix(0.86, 0, 0, 0.87, 352, 278);
+  }
+
+  /*  2 ci mertebe 4 ci ev*/
+  #hareketliGrup_103 {
+    transform: translate(807px, 615px);
+  }
+
+  .pathtranslatemove_103 path:first-child {
+    transform: translate(157px, -110px) matrix(0.87, 0, 0, 0.87, 607, 279);
+  }
+
+  /*  2 ci mertebe 5 ci ev*/
+  #hareketliGrup_104 {
+    transform: translate(1062px, 612px);
+  }
+
+  .pathtranslatemove_104 path:first-child {
+    transform: translate(157px, -110px) matrix(0.88, 0, 0, 0.86, 778, 501);
+  }
+
+  /*  2 ci mertebe 6 ci ev*/
+  #hareketliGrup_105 {
+    transform: translate(1179px, 65px);
+  }
+
+  .pathtranslatemove_105 path:first-child {
+    transform: translate(157px, -110px) matrix(0.87, 0, 0, 0.87, 948, 284);
+  }
+
+  /******************************   A2 A3  BLOKLARII  Son  ******************************/
+  /***********************************************************************************/
+
+  /* 11 cu mertebe ev 1 */
+
+  #hareketliGrup_19 {
+    transform: translate(457px, 707px);
+  }
+
+  .pathtranslatemove_19 path:first-child {
+    transform: translate(157px, -110px) matrix(1.234, 0, 0, 1.239, 122, 134);
+  }
+  /* 11 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 1 */
+  #hareketliGrup_17 {
+    transform: translate(440px, 656px);
+  }
+
+  .pathtranslatemove_17 path:first-child {
+    transform: translate(157px, -110px) matrix(1.23, 0, 0, 1.204, 125, 157);
+  }
+
+  /* 10 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 2 */
+  #hareketliGrup_18 {
+    transform: translate(895px, 408px);
+  }
+
+  .pathtranslatemove_18 path:first-child {
+    transform: translate(157px, -110px) matrix(1.22, 0, 0, 1.21, 443, 264);
+  }
+
+  /* 10 cu mertebe ev 2 */
+
+  /* 9 cu mertebe ev 1 */
+  #hareketliGrup_15 {
+    transform: translate(428px, 689px);
+  }
+
+  .pathtranslatemove_15 path:first-child {
+    transform: translate(157px, -110px) matrix(1.27, 0, 0, 1.235, 105, 160);
+  }
+
+  /* 9 cu mertebe ev 1 */
+
+  /* 9 cu mertebe ev 2 */
+
+  #hareketliGrup_16 {
+    transform: translate(944px, 407px);
+  }
+
+  .pathtranslatemove_16 path:first-child {
+    transform: translate(157px, -110px) matrix(1.24, 0, 0, 1.23, 432, 214);
+  }
+
+  /* 9 cu mertebe ev 2 */
+
+  /* 8 ci mertebe ev 1 */
+
+  #hareketliGrup_13 {
+    transform: translate(440px, 682px);
+  }
+
+  .pathtranslatemove_13 path:first-child {
+    transform: translate(157px, -110px) matrix(1.34, 0, 0, 1.3, 116, 143);
+  }
+
+  /* 8 ci mertebe ev 1 */
+
+  /* 8 ci mertebe ev 2 */
+
+  #hareketliGrup_14 {
+    transform: translate(944px, 425px);
+  }
+
+  .pathtranslatemove_14 path:first-child {
+    transform: translate(157px, -110px) matrix(1.31, 0, 0, 1.3, 445, 193);
+  }
+
+  /* 8 ci mertebe ev 2 */
+
+  /* 7 ci mertebe ev 1 */
+
+  #hareketliGrup_11 {
+    transform: translate(440px, 682px);
+  }
+
+  .pathtranslatemove_11 path:first-child {
+    transform: translate(157px, -110px) matrix(1.34, 0, 0, 1.3, 116, 143);
+  }
+
+  /* 7 ci mertebe ev 1 */
+
+  /* 7 ci mertebe ev 2 */
+
+  #hareketliGrup_12 {
+    transform: translate(944px, 425px);
+  }
+
+  .pathtranslatemove_12 path:first-child {
+    transform: translate(157px, -110px) matrix(1.31, 0, 0, 1.3, 445, 193);
+  }
+
+  /* 7 ci mertebe ev 2 */
+
+  /* 6 cu mertebe ev 2 */
+  #hareketliGrup_10 {
+    transform: translate(927px, 449px);
+  }
+
+  .pathtranslatemove_10 path:first-child {
+    transform: translate(157px, -110px) matrix(1.21, 0, 0, 1.2, 449, 226);
+  }
+  /* 6 cu mertebe ev 2*/
+
+  /* 6 cu mertebe ev 1 */
+
+  #hareketliGrup_9 {
+    transform: translate(465px, 640px);
+  }
+
+  .pathtranslatemove_9 path:first-child {
+    transform: translate(157px, -110px) matrix(1.2, 0, 0, 1.19, 155, 182);
+  }
+
+  /* 6 cu mertebe ev 1 */
+
+  /* 5 cu mertebe ev 2 */
+  #hareketliGrup_8 {
+    transform: translate(927px, 449px);
+  }
+
+  .pathtranslatemove_8 path:first-child {
+    transform: translate(157px, -110px) matrix(1.21, 0, 0, 1.2, 449, 226);
+  }
+  /* 5 cu mertebe ev 2*/
+
+  /* 5 cu mertebe ev 1 */
+
+  #hareketliGrup_7 {
+    transform: translate(465px, 640px);
+  }
+
+  .pathtranslatemove_7 path:first-child {
+    transform: translate(157px, -110px) matrix(1.2, 0, 0, 1.19, 155, 182);
+  }
+
+  /* 5 cu mertebe ev 1 */
+
+  /* 4 cu mertebe ev 2 */
+  #hareketliGrup_6 {
+    transform: translate(927px, 449px);
+  }
+
+  .pathtranslatemove_6 path:first-child {
+    transform: translate(157px, -110px) matrix(1.21, 0, 0, 1.2, 449, 226);
+  }
+  /* 4 cu mertebe ev 2*/
+
+  /* 4 cu mertebe ev 1 */
+
+  #hareketliGrup_5 {
+    transform: translate(465px, 640px);
+  }
+
+  .pathtranslatemove_5 path:first-child {
+    transform: translate(157px, -110px) matrix(1.2, 0, 0, 1.19, 155, 182);
+  }
+
+  /* 4 cu mertebe ev 1 */
+  /*  3 cu mertebe 2 ci ev*/
+
+  #hareketliGrup_4 {
+    transform: translate(929px, 466px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_4 path:first-child {
+    transform: translate(157px, -110px) matrix(1.199, 0, 0, 1.2, 456, 248);
+  }
+
+  /*  3 cu mertebe 2 ci ev*/
+  /* 3 cu mertebe 1 ci ev*/
+  .building__link_floor:hover #hareketliGrup_3 {
+    display: block;
+  }
+  #hareketliGrup_3 {
+    transform: translate(471px, 678px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_3 path:first-child {
+    transform: translate(157px, -110px) matrix(1.21, 0, 0, 1.2, 161, 210);
+  }
+
+  /* 3 cu mertebe 1 ci ev*/
+
+  /* 2 ci mertebe 2 ci ev start*/
+  #hareketliGrup_2 {
+    transform: translate(944px, 420px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_2 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.05, 451, 221);
+  }
+
+  #path2-ev2,
+  #path3-ev2 {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.5, 630, 443);
+  }
+  /* 2 ci mertebe 2 ci ev end*/
+
+  .building__svgg svg {
+    height: 100% !important;
+  }
+  /*  Slide 2 Responsive Start */
+  #hareketliGrup_1 {
+    transform: translate(465px, 640px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_1 path:first-child {
+    transform: translate(157px, -110px) matrix(1.04, 0, 0, 1.04, 155, 185);
+  }
+
+  #path2,
+  #path3 {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.5, 258, 559);
+  }
+  /*  Slide 2 Responsive Ennd */
+}
+
+@media (max-width: 1680px) and (min-width: 1400px) {
+
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun baslangic   *************/
+  #hareketliGrup_269{
+    transform: translate(473px, 87px);
+  }
+  #hareketliGrup_270{
+    transform: translate(916px, 40rem);
+    }
+
+  #pathA1_0_1,
+  #pathA1_0_2 {
+    transform: translate(36rem, 200px);
+  }
+
+  #pathA1_1_1,
+  #pathA1_1_2 {
+    transform: translate(35rem, 26rem);
+  }
+
+  #pathA1_2_1,
+  #pathA1_2_2 {
+    transform: translate(772px, 495px);
+  }
+
+  #pathA1_3_1,
+  #pathA1_3_2 {
+    transform: translate(965px, 493px);
+  }
+  
+/*  9 cu mertebe ucun blok hissesi */
+#pathA1_floor9_ev1-1,
+#pathA1_floor9_ev1-2{
+  transform: translate(37rem, 338px);
+}
+
+#pathA1_floor9_ev2-1,
+#pathA1_floor9_ev2-2{
+  transform: translate(57rem, 430px);
+}
+
+  /************* A1  "Blok isareleri" Satilmis eraziler ucun son    *************/
+
+  /*********************************  A1 Bloklaeeoi baslangic  *******************************************/
+  /*  11 ci mertebe 2 ci ev*/
+.pathtranslatemove_250 path:first-child {
+  transform: translate(611px, -232px) matrix(1.0, 0, 0, 1.01, 148, 342);
+}
+  /*  10 cu mertebe 1 ci ev*/
+
+.pathtranslatemove_231 path:first-child {
+  transform: translate(209px, -170px) matrix(1.06, 0, 0, 1.05, 148, 342);
+}
+/*  10 cu mertebe 2 ci ev*/
+
+.pathtranslatemove_232 path:first-child {
+  transform: translate(622px, -269px) matrix(1.06, 0, 0, 1.05, 148, 342);
+}
+
+  /*  9 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_229 path:first-child {
+  transform: translate(174px, -220px) matrix(1.06, 0, 0, 1.05, 148, 342);
+}
+/*  9 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_230 path:first-child {
+  transform: translate(636px, -269px) matrix(1.06, 0, 0, 1.05, 148, 342);
+}
+
+  /*  5 ci mertebe 1 ci ev*/
+.pathtranslatemove_213 path:first-child {
+  transform: translate(194px, -204px) matrix(1.05, 0, 0, 1.04, 148, 342);
+}
+/*  5 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_214 path:first-child {
+  transform: translate(194px, -22px) matrix(1.02, 0, 0, 1.01, 148, 342);
+}
+/*  5 ci mertebe 3 ci ev*/
+.pathtranslatemove_215 path:first-child {
+  transform: translate(561px, 47px) matrix(1.03, 0, 0, 0.98, 148, 342);
+}
+/*  5 ci mertebe 4 ci ev*/
+
+.pathtranslatemove_216 path:first-child {
+  transform: translate(747px, -249px) matrix(1, 0, 0, 0.98, 148, 342);
+}
+
+/*  7 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_221 path:first-child,
+.pathtranslatemove_225 path:first-child {
+  transform: translate(196px, -218px) matrix(1.05, 0, 0, 1.08, 148, 342);
+}
+/*  7 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_222 path:first-child,
+.pathtranslatemove_226 path:first-child {
+  transform: translate(194px, -26px) matrix(1.06, 0, 0, 1.08, 148, 342);
+}
+/*  7 ci mertebe 3 ci ev*/
+
+.pathtranslatemove_223 path:first-child,
+.pathtranslatemove_227 path:first-child {
+  transform: translate(561px, 45px) matrix(1.03, 0, 0, 1.03, 148, 342);
+}
+/*  7 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_224 path:first-child,
+.pathtranslatemove_228 path:first-child {
+  transform: translate(749px, -262px) matrix(1, 0, 0, 1.023, 148, 342);
+}
+
+  /*  4 ci mertebe 1 ci ev*/
+
+.pathtranslatemove_209 path:first-child,
+.pathtranslatemove_217 path:first-child  {
+  transform: translate(196px, -218px) matrix(1.05, 0, 0, 1.08, 148, 342);
+}
+/*  4 ci mertebe 2 ci ev*/
+
+.pathtranslatemove_210 path:first-child,
+.pathtranslatemove_218 path:first-child {
+  transform: translate(194px, -26px) matrix(1.02, 0, 0, 1.05, 148, 342);
+}
+/*  4 ci mertebe 3 ci ev*/
+
+
+.pathtranslatemove_211 path:first-child,
+.pathtranslatemove_219 path:first-child {
+  transform: translate(561px, 45px) matrix(1.03, 0, 0, 1.03, 148, 342);
+}
+/*  4 cu mertebe 4 ci ev*/
+
+.pathtranslatemove_212 path:first-child,
+.pathtranslatemove_220 path:first-child {
+  transform: translate(749px, -262px) matrix(1, 0, 0, 1.023, 148, 342);
+}
+
+  /*  3 ci mertebe 1 ci ev*/
+
+  .pathtranslatemove_205 path:first-child {
+    transform: translate(178px, -224px) matrix(0.97, 0, 0, 1, 148, 342);
+    }
+  /*  3 ci mertebe 2 ci ev*/
+
+  .pathtranslatemove_206 path:first-child {
+    transform: translate(179px, -39px) matrix(0.99, 0, 0, 1, 148, 342);
+    }
+  /*  3 ci mertebe 3 ci ev*/
+
+  .pathtranslatemove_207 path:first-child {
+    transform: translate(546px, 34px) matrix(1.03, 0, 0, 1, 148, 342);
+    }
+  /*  3 cu mertebe 4 ci ev*/
+
+  .pathtranslatemove_208 path:first-child {
+    transform: translate(735px, -267px) matrix(1, 0, 0, 1, 148, 342);
+    }
+
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_201 {
+    transform: translate(544px, 30px);
+  }
+
+  .pathtranslatemove_201 path:first-child {
+    transform: translate(189px, -221px) matrix(0.99, 0, 0, 1, 148, 342);
+  }
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_202 {
+    transform: translate(565px, 612px);
+      }
+
+  .pathtranslatemove_202 path:first-child {
+    transform: translate(168px, -39px) matrix(0.98, 0, 0, 1, 148, 342);
+  }
+  /*  2 ci mertebe 3 ci ev*/
+
+  #hareketliGrup_203 {
+    transform: translate(798px, 40rem);
+    }
+
+  .pathtranslatemove_203 path:first-child {
+    transform: translate(559px, 38px) matrix(1.03, 0, 0, 1, 148, 342);
+  }
+  /*  2 ci mertebe 4 ci ev*/
+
+  #hareketliGrup_204 {
+    transform: translate(1040px, 0px);
+  }
+
+  .pathtranslatemove_204 path:first-child {
+    transform: translate(748px, -263px) matrix(1, 0, 0, 1, 148, 342);
+  }
+  /*********************************  A1 Bloklaeeoi son  *******************************************/
+  /******************************   A2 A3  BLOKLARII  Baslangic   ******************************/
+
+  /*  11 ci mertebe 1 ci ev*/
+  .pathtranslatemove_155 path:first-child {
+    transform: translate(108px, -131px) matrix(0.84, 0, 0, 0.81, 147, 338);
+  }
+
+  /*  11 ci mertebe 2 ci ev*/
+  .pathtranslatemove_156 path:first-child {
+    transform: translate(116px, -111px) matrix(0.84, 0, 0, 0.8, 276, 502);
+  }
+
+  /*  11 ci mertebe 3 ci ev*/
+  .pathtranslatemove_157 path:first-child {
+    transform: translate(141px, -133px) matrix(0.82, 0, 0, 0.81, 404, 338);
+  }
+
+  /*  11 ci mertebe 4 ci ev*/
+  .pathtranslatemove_158 path:first-child {
+    transform: translate(159px, -128px) matrix(0.86, 0, 0, 0.81, 599, 338);
+  }
+
+  /*  11 ci mertebe 5 ci ev*/
+  .pathtranslatemove_159 path:first-child {
+    transform: translate(179px, -107px) matrix(0.81, 0, 0, 0.81, 724, 502);
+  }
+
+  /*  11 ci mertebe 6 ci ev*/
+  .pathtranslatemove_160 path:first-child {
+    transform: translate(194px, -136px) matrix(0.83, 0, 0, 0.814, 849, 340);
+  }
+  /*  10 cu mertebe 1 ci ev*/
+  .pathtranslatemove_149 path:first-child {
+    transform: translate(116px, -119px) matrix(0.82, 0, 0, 0.79, 147, 338);
+  }
+
+  /*  10 cu mertebe 2 ci ev*/
+  .pathtranslatemove_150 path:first-child {
+    transform: translate(127px, -103px) matrix(0.84, 0, 0, 0.8, 276, 502);
+  }
+
+  /*  10 cu mertebe 3 ci ev*/
+  .pathtranslatemove_151 path:first-child {
+    transform: translate(139px, -121px) matrix(0.81, 0, 0, 0.79, 404, 338);
+  }
+
+  /*  10 cu mertebe 4 ci ev*/
+  .pathtranslatemove_152 path:first-child {
+    transform: translate(154px, -118px) matrix(0.82, 0, 0, 0.79, 599, 338);
+  }
+
+  /*  10 cu mertebe 5 ci ev*/
+  .pathtranslatemove_153 path:first-child {
+    transform: translate(166px, -100px) matrix(0.83, 0, 0, 0.8, 724, 502);
+  }
+
+  /*  10 cu mertebe 6 ci ev*/
+  .pathtranslatemove_154 path:first-child {
+    transform: translate(182px, -120px) matrix(0.83, 0, 0, 0.8, 849, 340);
+  }
+  /*  9 cu mertebe 1 ci ev*/
+  .pathtranslatemove_143 path:first-child {
+    transform: translate(127px, -113px) matrix(0.806, 0, 0, 0.79, 147, 338);
+  }
+
+  /*  9 cu mertebe 2 ci ev*/
+  .pathtranslatemove_144 path:first-child {
+    transform: translate(136px, -102px) matrix(0.82, 0, 0, 0.8, 276, 502);
+  }
+
+  /*  9 cu mertebe 3 ci ev*/
+  .pathtranslatemove_145 path:first-child {
+    transform: translate(145px, -113px) matrix(0.8, 0, 0, 0.777, 404, 338);
+  }
+
+  /*  9 cu mertebe 4 ci ev*/
+  .pathtranslatemove_146 path:first-child {
+    transform: translate(154px, -115px) matrix(0.82, 0, 0, 0.79, 599, 338);
+  }
+
+  /*  9 cu mertebe 5 ci ev*/
+  .pathtranslatemove_147 path:first-child {
+    transform: translate(166px, -100px) matrix(0.82, 0, 0, 0.8, 724, 502);
+  }
+
+  /*  9 cu mertebe 6 ci ev*/
+  .pathtranslatemove_148 path:first-child {
+    transform: translate(175px, -116px) matrix(0.81, 0, 0, 0.8, 849, 340);
+  }
+  /*  4,5,6,7,8 ci mertebe 1 ci ev*/
+  .pathtranslatemove_131 path:first-child,
+  .pathtranslatemove_137 path:first-child,
+  .pathtranslatemove_125 path:first-child,
+  .pathtranslatemove_119 path:first-child,
+  .pathtranslatemove_113 path:first-child {
+    transform: translate(103px, -127px) matrix(0.8, 0, 0, 0.79, 148, 342);
+  }
+
+  /* 4, 5,6,7,8 ci mertebe 2 ci ev*/
+  .pathtranslatemove_132 path:first-child,
+  .pathtranslatemove_138 path:first-child,
+  .pathtranslatemove_126 path:first-child,
+  .pathtranslatemove_120 path:first-child,
+  .pathtranslatemove_114 path:first-child {
+    transform: translate(124px, -104px) matrix(0.79, 0, 0, 0.79, 276, 502);
+  }
+
+  /*  4,5,6,7,8 ci mertebe 3 ci ev*/
+  .pathtranslatemove_133 path:first-child,
+  .pathtranslatemove_139 path:first-child,
+  .pathtranslatemove_127 path:first-child,
+  .pathtranslatemove_121 path:first-child,
+  .pathtranslatemove_115 path:first-child {
+    transform: translate(137px, -123px) matrix(0.81, 0, 0, 0.79, 404, 338);
+  }
+
+  /* 4, 5,6,7,8 ci mertebe 4 ci ev*/
+  .pathtranslatemove_134 path:first-child,
+  .pathtranslatemove_140 path:first-child,
+  .pathtranslatemove_128 path:first-child,
+  .pathtranslatemove_122 path:first-child,
+  .pathtranslatemove_116 path:first-child {
+    transform: translate(160px, -122px) matrix(0.81, 0, 0, 0.79, 599, 338);
+  }
+
+  /* 4,5,6,7,8 ci mertebe 5 ci ev*/
+  .pathtranslatemove_135 path:first-child,
+  .pathtranslatemove_141 path:first-child,
+  .pathtranslatemove_129 path:first-child,
+  .pathtranslatemove_123 path:first-child,
+  .pathtranslatemove_117 path:first-child {
+    transform: translate(178px, -100px) matrix(0.8, 0, 0, 0.79, 724, 502);
+  }
+
+  /*  4,5,6,7,8 ci mertebe 6 ci ev*/
+  .pathtranslatemove_136 path:first-child,
+  .pathtranslatemove_142 path:first-child,
+  .pathtranslatemove_130 path:first-child,
+  .pathtranslatemove_124 path:first-child,
+  .pathtranslatemove_118 path:first-child {
+    transform: translate(195px, -93px) matrix(0.79, 0, 0, 0.79, 849, 317);
+  }
+
+  /* 3 ci slide baslangic */
+
+  /*  3 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_107 {
+    transform: translate(367px, 143px);
+  }
+
+  .pathtranslatemove_107 path:first-child {
+    transform: translate(176px, -94px) matrix(0.78, 0, 0, 0.79, 89, 317);
+  }
+
+  /*  3 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_108 {
+    transform: translate(534px, 553px);
+  }
+
+  .pathtranslatemove_108 path:first-child {
+    transform: translate(134px, -97px) matrix(0.79, 0, 0, 0.79, 276, 502);
+  }
+
+  /*  3 ci mertebe 3 ci ev*/
+  #hareketliGrup_109 {
+    transform: translate(692px, 149px);
+  }
+
+  .pathtranslatemove_109 path:first-child {
+    transform: translate(151px, -113px) matrix(0.78, 0, 0, 0.78, 404, 338);
+  }
+
+  /*  3 ci mertebe 4 ci ev*/
+  #hareketliGrup_110 {
+    transform: translate(780px, 557px);
+  }
+  .pathtranslatemove_110 path:first-child {
+    transform: translate(165px, -117px) matrix(0.79, 0, 0, 0.79, 599, 338);
+  }
+
+  /*  3 ci mertebe 5 ci ev*/
+  #hareketliGrup_111 {
+    transform: translate(975px, 558px);
+  }
+
+  .pathtranslatemove_111 path:first-child {
+    transform: translate(181px, -95px) matrix(0.79, 0, 0, 0.79, 724, 502);
+  }
+
+  /*  3 ci mertebe 6 ci ev*/
+
+  #hareketliGrup_112 {
+    transform: translate(1093px, 149px);
+  }
+
+  .pathtranslatemove_112 path:first-child {
+    transform: translate(195px, -93px) matrix(0.79, 0, 0, 0.79, 849, 317);
+  }
+
+  /* 3 ci slide son */
+
+  /* 2 ci slide baslangic */
+  /**************************************************************************************************/
+  /************* A2 A3  "Blok isareleri" Satilmis eraziler ucun    *************/
+  #path105-1,
+  #path105-2 {
+    transform: translate(1102px, 419px);
+  }
+
+  #path104-1,
+  #path104-2 {
+    transform: translate(956px, 480px);
+  }
+
+  #path103-1,
+  #path103-2 {
+    transform: translate(813px, 416px);
+  }
+
+  #path102-1,
+  #path102-2 {
+    transform: translate(594px, 296px);
+  }
+
+  #path101-1,
+  #path101-2 {
+    transform: translate(484px, 476px);
+  }
+
+  #path100-1,
+  #path100-2 {
+    transform: translate(301px, 426px);
+  }
+
+  /*  2 ci mertebe 1 ci ev*/
+
+  #hareketliGrup_100 {
+    transform: translate(321px, 113px);
+  }
+
+  .pathtranslatemove_100 path:first-child {
+    transform: translate(157px, -110px) matrix(0.75, 0, 0, 0.744, 89, 317);
+  }
+
+  /*  2 ci mertebe 2 ci ev*/
+
+  #hareketliGrup_101 {
+    transform: translate(470px, 569px);
+  }
+
+  .pathtranslatemove_101 path:first-child {
+    transform: translate(157px, -110px) matrix(0.745, 0, 0, 0.73, 242, 501);
+  }
+
+  /*  2 ci mertebe 3 ci ev*/
+  #hareketliGrup_102 {
+    transform: translate(683px, 110px);
+  }
+
+  .pathtranslatemove_102 path:first-child {
+    transform: translate(157px, -110px) matrix(0.75, 0, 0, 0.74, 382, 314);
+  }
+
+  /*  2 ci mertebe 4 ci ev*/
+  #hareketliGrup_103 {
+    transform: translate(797px, 569px);
+  }
+
+  .pathtranslatemove_103 path:first-child {
+    transform: translate(157px, -110px) matrix(0.75, 0, 0, 0.7, 601, 338);
+  }
+
+  /*  2 ci mertebe 5 ci ev*/
+  #hareketliGrup_104 {
+    transform: translate(1016px, 569px);
+  }
+
+  .pathtranslatemove_104 path:first-child {
+    transform: translate(157px, -110px) matrix(0.74, 0, 0, 0.745, 747, 502);
+  }
+
+  /*  2 ci mertebe 6 ci ev*/
+  #hareketliGrup_105 {
+    transform: translate(1116px, 109px);
+  }
+
+  .pathtranslatemove_105 path:first-child {
+    transform: translate(157px, -110px) matrix(0.75, 0, 0, 0.75, 893, 315);
+  }
+
+  /* 2 ci slide son */
+
+  /******************************   A2 A3  BLOKLARII  Son  ******************************/
+  /***********************************************************************************/
+
+  /* 11 cu mertebe ev 1 */
+
+  #hareketliGrup_19 {
+    transform: translate(493px, 653px); /* display: none; */
+  }
+
+  .pathtranslatemove_19 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.07, 184, 185);
+  }
+
+  /* 11 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 1 */
+  #hareketliGrup_17 {
+    transform: translate(480px, 626px);
+  }
+
+  .pathtranslatemove_17 path:first-child {
+    transform: translate(157px, -110px) matrix(1.06, 0, 0, 1.031, 186, 209);
+  }
+
+  /* 10 cu mertebe ev 1 */
+
+  /* 10 cu mertebe ev 2 */
+  #hareketliGrup_18 {
+    transform: translate(895px, 363px);
+  }
+
+  .pathtranslatemove_18 path:first-child {
+    transform: translate(157px, -110px) matrix(1.04, 0, 0, 1.04, 460, 300);
+  }
+
+  /* 10 cu mertebe ev 2 */
+
+  /* 9 cu mertebe ev 1 */
+  #hareketliGrup_15 {
+    transform: translate(469px, 651px);
+  }
+
+  .pathtranslatemove_15 path:first-child {
+    transform: translate(157px, -110px) matrix(1.077, 0, 0, 1.059, 168, 210);
+  }
+
+  /* 9 cu mertebe ev 1 */
+
+  /* 9 cu mertebe ev 2 */
+
+  #hareketliGrup_16 {
+    transform: translate(909px, 407px);
+  }
+
+  .pathtranslatemove_16 path:first-child {
+    transform: translate(157px, -110px) matrix(1.07, 0, 0, 1.07, 449, 256);
+  }
+
+  /* 9 cu mertebe ev 2 */
+
+  /* 8 ci mertebe ev 1 */
+
+  #hareketliGrup_13 {
+    transform: translate(480px, 634px);
+  }
+
+  .pathtranslatemove_13 path:first-child {
+    transform: translate(157px, -110px) matrix(1.15, 0, 0, 1.114, 180, 197);
+  }
+
+  /* 8 ci mertebe ev 1 */
+
+  /* 8 ci mertebe ev 2 */
+
+  #hareketliGrup_14 {
+    transform: translate(921px, 407px);
+  }
+
+  .pathtranslatemove_14 path:first-child {
+    transform: translate(157px, -110px) matrix(1.12, 0, 0, 1.11, 464, 239);
+  }
+
+  /* 8 ci mertebe ev 2 */
+
+  /* 7 ci mertebe ev 1 */
+
+  #hareketliGrup_11 {
+    transform: translate(480px, 634px);
+  }
+
+  .pathtranslatemove_11 path:first-child {
+    transform: translate(157px, -110px) matrix(1.15, 0, 0, 1.114, 180, 197);
+  }
+
+  /* 7 ci mertebe ev 1 */
+
+  /* 7 ci mertebe ev 2 */
+
+  #hareketliGrup_12 {
+    transform: translate(921px, 407px);
+  }
+
+  .pathtranslatemove_12 path:first-child {
+    transform: translate(157px, -110px) matrix(1.12, 0, 0, 1.11, 464, 239);
+  }
+
+  /* 7 ci mertebe ev 2 */
+
+  /* 6 cu mertebe ev 2 */
+  #hareketliGrup_10 {
+    transform: translate(895px, 423px); /* display: none; */
+  }
+
+  .pathtranslatemove_10 path:first-child {
+    transform: translate(157px, -110px) matrix(1.03, 0, 0, 1.03, 465, 267);
+  }
+  /* 6 cu mertebe ev 2 */
+
+  /* 6 cu mertebe ev 1 */
+
+  #hareketliGrup_9 {
+    transform: translate(500px, 595px);
+  }
+
+  .pathtranslatemove_9 path:first-child {
+    transform: translate(157px, -110px) matrix(1.04, 0, 0, 1.02, 211, 230);
+  }
+
+  /* 6 cu mertebe ev 1 */
+
+  /* 5 cu mertebe ev 2 */
+  #hareketliGrup_8 {
+    transform: translate(895px, 423px); /* display: none; */
+  }
+
+  .pathtranslatemove_8 path:first-child {
+    transform: translate(157px, -110px) matrix(1.03, 0, 0, 1.03, 465, 267);
+  }
+  /* 5 cu mertebe ev 2 */
+
+  /* 5 cu mertebe ev 1 */
+
+  #hareketliGrup_7 {
+    transform: translate(500px, 595px);
+  }
+
+  .pathtranslatemove_7 path:first-child {
+    transform: translate(157px, -110px) matrix(1.04, 0, 0, 1.02, 211, 230);
+  }
+
+  /* 5 cu mertebe ev 1 */
+
+  /* 4 cu mertebe ev 2 */
+  #hareketliGrup_6 {
+    transform: translate(895px, 423px); /* display: none; */
+  }
+
+  .pathtranslatemove_6 path:first-child {
+    transform: translate(157px, -110px) matrix(1.03, 0, 0, 1.03, 465, 267);
+  }
+  /* 4 cu mertebe ev 2 */
+
+  /* 4 cu mertebe ev 1 */
+
+  #hareketliGrup_5 {
+    transform: translate(500px, 595px);
+  }
+
+  .pathtranslatemove_5 path:first-child {
+    transform: translate(157px, -110px) matrix(1.04, 0, 0, 1.02, 211, 230);
+  }
+
+  /* 4 cu mertebe ev 1 */
+
+  /*  3 cu mertebe 2 ci ev*/
+
+  #hareketliGrup_4 {
+    transform: translate(933px, 427px);
+  }
+
+  .pathtranslatemove_4 path:first-child {
+    transform: translate(157px, -110px) matrix(1.04, 0, 0, 1.02, 470, 287);
+  }
+
+  /*  3 cu mertebe 2 ci ev*/
+
+  /* 3 cu mertebe 1 ci ev*/
+  #hareketliGrup_3 {
+    transform: translate(504px, 627px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_3 path:first-child {
+    transform: translate(157px, -110px) matrix(1.04, 0, 0, 1.02, 217, 254);
+  }
+
+  /* 3 cu mertebe 1 ci ev*/
+  .building__svgg svg {
+    height: 100% !important;
+  }
+
+  /* 2 ci mertebe 2 ci ev start*/
+  #hareketliGrup_2 {
+    transform: translate(898px, 392px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_2 path:first-child {
+    transform: translate(157px, -110px) matrix(0.9, 0, 0, 0.9, 467, 263);
+  }
+
+  #path2-ev2,
+  #path3-ev2 {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.5, 630, 443);
+  }
+  /* 2 ci mertebe 2 ci ev end*/
+
+  /*  2 ci mertebe 1 ci ev Responsive Start */
+  #hareketliGrup_1 {
+    transform: translate(522px, 595px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_1 path:first-child {
+    transform: translate(157px, -110px) matrix(0.89, 0, 0, 0.9, 214, 230);
+  }
+
+  #path2,
+  #path3 {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.5, 321, 559);
+  }
+  /* 2 ci mertebe 1 Responsive Ennd */
+}
+
+@media (min-width: 1680px) {
+  /* 6 cu mertebe ev 1 */
+  #hareketliGrup_9 {
+    transform: translate(522px, 570px);
+  }
+
+  .pathtranslatemove_9 path:first-child {
+    transform: translate(157px, -110px) matrix(0.92, 0, 0, 0.9, 254, 262);
+  }
+
+  /* 6 cu mertebe ev 1 */
+  /* 5 cu mertebe ev 1 */
+  #hareketliGrup_7 {
+    transform: translate(522px, 570px);
+  }
+
+  .pathtranslatemove_7 path:first-child {
+    transform: translate(157px, -110px) matrix(0.92, 0, 0, 0.9, 254, 262);
+  }
+
+  /* 5 cu mertebe ev 1 */
+
+  /* 4 cu mertebe ev 1 */
+  #hareketliGrup_5 {
+    transform: translate(522px, 570px);
+  }
+
+  .pathtranslatemove_5 path:first-child {
+    transform: translate(157px, -110px) matrix(0.92, 0, 0, 0.9, 254, 262);
+  }
+
+  /* 4 cu mertebe ev 1 */
+  /*  3 cu mertebe 2 ci ev*/
+
+  #hareketliGrup_4 {
+    transform: translate(872px, 424px);
+    /* display: none; */
+  }
+
+  .pathtranslatemove_4 path:first-child {
+    transform: translate(157px, -110px) matrix(0.9, 0, 0, 0.9, 483, 314);
+  }
+
+  /*  3 cu mertebe 2 ci ev*/
+  /*  3 cu mertebe 1 ci ev*/
+  .pathtranslatemove_3 path:first-child {
+    transform: translate(157px, -110px) matrix(0.91, 0, 0, 0.89, 259, 287);
+  }
+  /*  3 cu mertebe 1 ci ev*/
+  #path2-ev2,
+  #path3-ev2 {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.5, 600, 443);
+  }
+
+  #path2,
+  #path3 {
+    transform: translate(157px, -110px) matrix(1.5, 0, 0, 1.5, 330, 516) !important;
+  }
+  .building__svgg svg {
+    height: 100% !important;
+  }
+
+  .sidenav a {
+    font-size: 24px;
+  }
+  .footer {
+    height: 100%;
+  }
+  .over-middle-text {
+    top: 22%;
+  }
+
+  .container {
+    max-width: 1500px;
+  }
+
+  .header {
+    position: absolute;
+    top: 1.3rem;
+  }
+
+  .boulevard-logo::after {
+    bottom: 89px;
+  }
+    .walkthrought img {
+        width: 50% !important;
+    }
+}

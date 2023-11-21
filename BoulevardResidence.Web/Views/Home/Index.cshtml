@@ -1,0 +1,1071 @@
+﻿@model HomeVM;
+@inject IBackgroundImageService service;
+
+@{
+    //var welcome = sl["key_welcome"].Value;
+    var imageurl = Url.Content("/assets/img/bg-header_img.png");
+    var oddIdBlogs = Model.ArchitecturalBlogs.Where(blog => blog.Id % 2 == 1).ToList();
+    var evenIdBlogs = Model.ArchitecturalBlogs.Where(blog => blog.Id % 2 == 0).ToList();
+    var count = Model.Apartments.Where(m => m.Status == "AVAILABLE").Count();
+    var allCountApartment = Model.ApartmentsWithoutStatus.Count();
+  
+}
+<main>
+    <!-- Header Background Start-->
+
+
+    <section class="top-bg" style="background-image: url('@imageurl');">
+        <div class="container container-items">
+            <div class="over-middle-text">
+                @if (Model.LangCode == "az")
+                {
+                    <p>Sevdiyiniz hər şey hər gün sizin üçündür</p>
+                }
+                else if (Model.LangCode == "en")
+                {
+                    <p>Discover luxury living at its finest</p>
+                }
+                else
+                {
+                    <p>Откройте для себя роскошную жизнь во всей ее красе</p>
+                }
+            </div>
+            <div class="over-left-text">
+                @if (Model.LangCode == "az")
+                {
+                    <img src="~/assets/img/newimages/XususiBulvar/xususibulvar-azdilinde.png"  alt="az dilinde">
+                }
+                else if (Model.LangCode == "en")
+                {
+                      <img src="~/assets/img/newimages/XususiBulvar/xususibulvar-ingilisdilinde.png" alt="ingilis dilinde">
+                }
+                else
+                {
+                      <img src="~/assets/img/newimages/XususiBulvar/xususibulvar-rusdilinde.png" alt="rus dilinde">
+                }
+            </div>
+            <div class="bottom-move-elements row">
+                <div class="walkthrought col-4">
+                    @if (Model.LangCode == "en")
+                    {
+                        <img src="~/assets/img/newimages/360deg/360deg-ingilisdilinde.png" alt="en">
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                            <img src="~/assets/img/newimages/360deg/360deg-azerbaycandili.png" alt="circle 360 deg">
+                    }
+                    else
+                    {
+                            <img src="~/assets/img/newimages/360deg/360deg-rusdilinde.png" alt="circle 360 deg">
+                    }
+                </div>
+                <div class="scroll_down_animation col-4">
+                    <div class="image-container">
+
+                        @if (Model.LangCode == "en")
+                        {
+                            <img style="height: 100%; width: 26%;" class="anim-img" src="~/assets/img/srolldownanimation.png"
+                             alt="scrollimg-ingilis dilinde" />
+                        }
+                        else if (Model.LangCode == "ru")
+                        {
+                            <img style="height: 100%; width: 26%; " class="anim-img" src="~/assets/img/russscrolldown.png"
+                             alt="scrollimg-rus dilinde" />
+                        }
+                        else
+                        {
+                            <img style="height: 100%; width: 26%; " class="anim-img" src="~/assets/img/azdilindescroldown.png"
+                             alt="scrollimg-az dilinde" />
+                        }
+                        <svg class="rotate-svg" style="width: 6px;" viewBox="0 0 15 30" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.49138 29.3432L6.49026 29.3421L0.344178 23.2835C-0.116247 22.8296 -0.114535 22.0955 0.348194 21.6437C0.810865 21.1919 1.55921 21.1937 2.01969 21.6476L6.14608 25.7153L6.14608 1.1595C6.14608 0.519111 6.67524 -2.79925e-08 7.32802 0C7.98081 2.79925e-08 8.50996 0.519111 8.50996 1.1595V25.7153L12.6363 21.6476C13.0968 21.1937 13.8452 21.192 14.3078 21.6437C14.7706 22.0955 14.7722 22.8297 14.3119 23.2836L8.16578 29.3422L8.16465 29.3432C7.70263 29.7973 6.95187 29.7959 6.49138 29.3432Z"
+                                  fill="#CFC273" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="right-contact col-4">
+
+                    <div class="phone_num_animation" id="openModal">
+                        <div class="content-center">
+                            <div class="pulse">
+                                <svg class="call-icon" width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.70154 4.54236L11.3374 4.55463M11.1739 2.86957L12.8526 4.5483L11.1743 6.22742M14.9359 10.8029C14.0979 10.6994 13.2658 10.5527 12.443 10.3635C12.2421 10.2964 12.0272 10.2822 11.8193 10.3224C11.6113 10.3627 11.4172 10.4559 11.2558 10.5931C11.0461 10.8068 10.4408 11.4045 9.81185 12.022C7.55755 10.9139 5.73443 9.08938 4.62802 6.83423C5.24156 6.20486 5.81552 5.60319 6.04866 5.3938C6.18582 5.23239 6.27902 5.03833 6.31924 4.83037C6.35945 4.62241 6.34534 4.4076 6.27824 4.20669C6.08873 3.38254 5.94208 2.54912 5.83887 1.70978C5.82776 1.60294 5.79502 1.49947 5.74265 1.40569C5.69027 1.3119 5.61936 1.22975 5.53423 1.16424C5.4491 1.09874 5.35152 1.05124 5.24745 1.02465C5.14337 0.998051 5.03497 0.992916 4.92885 1.00955H1.55754C1.41833 1.02212 1.28802 1.08339 1.18954 1.18259C1.09107 1.28179 1.03075 1.41255 1.0192 1.55184C0.801495 4.59461 2.49962 7.85113 2.8436 8.47615V8.4999L2.8911 8.59094C4.12334 10.7283 5.89766 12.5028 8.03495 13.7352L8.20912 13.8341C9.00079 14.2537 12.1465 15.8363 15.0863 15.6186C15.227 15.6088 15.3597 15.5493 15.4605 15.4506C15.5613 15.352 15.6237 15.2207 15.6365 15.0802V11.7129C15.6532 11.6067 15.648 11.4983 15.6214 11.3942C15.5948 11.2901 15.5473 11.1925 15.4817 11.1074C15.4162 11.0222 15.334 10.9513 15.2401 10.899C15.1463 10.8466 15.0428 10.8139 14.9359 10.8029Z"
+                                          stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal_number" id="myModalNumber">
+        <div class="modal-content">
+            <div class="modal-grid">
+                <div class="modal_img">
+                    <img src="./assets/img/modalimg.png" alt="">
+                </div>
+                <div class="modal-info-box">
+                    <div class="close-div-m">
+                        <span class="close-number-modal" id="closeModalll">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.8843 14.3258C14.9584 14.3999 15 14.5003 15 14.6051C15 14.7098 14.9584 14.8103 14.8843 14.8843C14.8103 14.9584 14.7098 15 14.6051 15C14.5003 15 14.3999 14.9584 14.3258 14.8843L7.5 8.05854L0.674213 14.8843C0.600147 14.9584 0.499691 15 0.394945 15C0.290199 15 0.189743 14.9584 0.115677 14.8843C0.0416103 14.8103 2.06479e-09 14.7098 0 14.6051C-2.06479e-09 14.5003 0.0416099 14.3999 0.115676 14.3258L6.94146 7.5L0.115676 0.674213C0.0416099 0.600147 0 0.499691 0 0.394945C0 0.290199 0.0416099 0.189743 0.115676 0.115676C0.189743 0.0416099 0.290199 0 0.394945 0C0.499691 0 0.600147 0.0416099 0.674213 0.115676L7.5 6.94146L14.3258 0.115676C14.3625 0.0790024 14.406 0.049911 14.4539 0.0300632C14.5018 0.0102154 14.5532 1.02238e-09 14.6051 0C14.6569 -1.02238e-09 14.7083 0.0102154 14.7562 0.0300632C14.8041 0.049911 14.8476 0.0790024 14.8843 0.115676C14.921 0.15235 14.9501 0.195889 14.9699 0.243806C14.9898 0.291723 15 0.34308 15 0.394945C15 0.44681 14.9898 0.498167 14.9699 0.546084C14.9501 0.594001 14.921 0.637539 14.8843 0.674213L8.05854 7.5L14.8843 14.3258Z" fill="#585858" />
+                            </svg>
+                        </span>
+                    </div>
+                    <h1 class="modal_header_text">
+                        BOULEVARD <p>RESIDENCE</p>
+                    </h1>
+
+                    @if (Model.LangCode == "en")
+                    {
+                        <p class="modal-p-txt">Leave your number, we call you</p>
+                        <div class="container">
+                            <div class="row" style="justify-content: center;">
+                                <div class="col-8 " style="justify-content: center; text-align: center; display: flex;">
+                                   @* <form asp-controller="Home" asp-action="WaitCall" class="form-flex">*@
+                                   <form action="https://realestate.elevenlab.ru/other_site_form/ajax.php" method="post" class="form-flex">
+                                        <div class="form-group ">
+                                            <input class="input-style" name="Name" type="text" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input-style" type="number" name="PhoneNumber" placeholder="+994 (000) 000 00 00">
+                                        </div>
+                                        <input type="hidden" name="Subject" value="Wait For Call">
+                                        <button type="submit" class="btn btn-dark-blue">Wait for call</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <p class="modal-p-txt">Nömrənizi buraxın, sizə zəng edək</p>
+                        <div class="konteyner">
+                            <div class="row" style="justify-content: center;">
+                                <div class="col-8 " style="justify-content: center; text-align: center; display: flex;">
+                                    <form asp-controller="Home" asp-action="WaitCall" class="form-flex">
+                                        <div class="form-group ">
+                                            <input class="input-style" name="Name" type="text" placeholder="Ad">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input-style" type="number" name="PhoneNumber" placeholder="+994 (000) 000 00 00">
+                                        </div>
+                                        <input type="hidden" name="Subject" value="Wait For Call">
+                                        <button type="submit" class="btn btn-dark-blue">Zəng gözləyin</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="modal-p-txt">Оставьте свой номер, мы вам позвоним</p>
+                        <div class="container">
+                            <div class="row" style="justify-content: center;">
+                                <div class="col-8 " style="justify-content: center; text-align: center; display: flex;">
+                                    <form asp-controller="Home" asp-action="WaitCall" class="form-flex">
+                                        <div class="form-group ">
+                                            <input class="input-style" type="text" name="Name" placeholder="Имя">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input-style" type="number" name="PhoneNumber" placeholder="+994 (000) 000 00 00">
+                                        </div>
+                                         <input type="hidden" name="Subject" value="Wait For Call">
+
+                                        <button type="submit" class="btn btn-dark-blue">Ожидать звонка</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Background End-->
+    <!-- Residential Start-->
+    <section class="residential-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="residential-grid" style="padding: 5rem 0rem;">
+                        @if (Model.LangCode == "en")
+                        {
+                            <div class="left-res col-10">
+                                <p>Residential <br> Complex near</p>
+                                <h1>BAKU BOULEVARD</h1>
+                            </div>
+                            <div class="right-res col-lg-2 col-sm-12">
+                              <p>@count apartments <br> left for sale</p>
+                                <a class="choose_apartments" asp-controller="Apartment" asp-action="Index">
+                                    <span>Choose apartment</span>
+                                    <svg class="ch-svg"
+                                     xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                                        <path d="M8.00193 11.9074C7.97363 11.8781 7.95118 11.8432 7.93587 11.8049C7.92055 11.7666 7.91267 11.7255 7.91267 11.684C7.91267 11.6425 7.92055 11.6014 7.93587 11.563C7.95118 11.5247 7.97363 11.4899 8.00193 11.4606L12.9604 6.31574L0.304344 6.31574C0.223627 6.31574 0.146216 6.28247 0.0891406 6.22325C0.0320651 6.16403 6.87747e-07 6.08371 6.91408e-07 5.99996C6.95068e-07 5.91621 0.0320651 5.83589 0.0891406 5.77667C0.146216 5.71745 0.223627 5.68419 0.304344 5.68419L12.9604 5.68419L8.00193 0.539367C7.97365 0.510028 7.95122 0.475197 7.93592 0.436864C7.92062 0.398531 7.91274 0.357445 7.91274 0.315954C7.91274 0.274462 7.92062 0.233377 7.93592 0.195043C7.95122 0.15671 7.97365 0.121879 8.00193 0.0925403C8.03021 0.0632013 8.06377 0.0399283 8.10072 0.0240502C8.13766 0.00817199 8.17726 -2.5452e-07 8.21725 -2.52772e-07C8.25724 -2.51024e-07 8.29684 0.008172 8.33378 0.0240502C8.37073 0.0399283 8.4043 0.0632013 8.43257 0.0925403L13.9107 5.77655C13.939 5.80588 13.9615 5.8407 13.9768 5.87904C13.9921 5.91737 14 5.95847 14 5.99996C14 6.04146 13.9921 6.08255 13.9768 6.12089C13.9615 6.15922 13.939 6.19405 13.9107 6.22338L8.43257 11.9074C8.40431 11.9367 8.37074 11.96 8.3338 11.9759C8.29685 11.9918 8.25725 12 8.21725 12C8.17726 12 8.13765 11.9918 8.10071 11.9759C8.06376 11.96 8.03019 11.9367 8.00193 11.9074Z"
+                                          fill="#D1C578" />
+                                    </svg>
+                                </a>
+
+                            </div>
+                        }
+                        else if (Model.LangCode == "az")
+                        {
+                            <div class="left-res col-10">
+                                <p>Yaşayış <br> Kompleksin yaxınlığında</p>
+                                <h1>BAKI BULVAR</h1>
+                            </div>
+                            <div class="right-res col-lg-2 col-sm-12">
+                                <p>@count mənzil <br> satışa qalıb</p>
+
+                                <a class="choose_apartments" asp-controller="Apartment" asp-action="Index">
+                                    <span>Mənzil seçin</span>
+                                    <svg class="ch-svg"
+                                     xmlns="http://www.w3.org/2000/svg" eni="14" hündürlük="12" viewBox="0 0 14 12" fill="heç biri">
+                                        11.8781 7.9781 7.9732 7.93587 11.84587 11.84587 11.8266 7.91267 11.01267 11.64255 7.91267 11.6425 7.92055 11.6455 11.6455 11.6455 11.6455 7.93587 11.63587 11.5637 11.5637 7.95118 11.5247 7.97363 11.4899 8.00193 11.4606L12.9604 6.31574l0.304344 6.31574c0 .223627 6.31574 0.146216 6.28247 0.0891406 6.22325C0.0320651 6.16403 6.87747e-07 6.08371 6.9079906e. 5.91621 0.0320651 5.83589 0.0891406 5.77667C0.146216 5.71745 0.223627 5.68419 0.304344 5.6841906 5.6841901.5.6841901.L. 9367C7.97365 0.510028 7.95122 0.475197 7.93592 0.436864C7.92062 0.398531 7.91274 0.357445 7.91274 0.315954C740.74.76. 233377 7.93592 0.195043C7.95122 0.15671 7.97365 0.121879 8.00193 0.0925403C8.03021 0.0632013 7908.7902. 40502C8.13766 0.00817199 8.17726 -2.5452e-07 8.21725 -2.52772 e-07C8.25724 -2.51024e-07 8.29684 0.008172 8.33378 0.0240502C8.37073 0.0399283 8.4043 0.0632013 8.4043 8.0632013 75.301. .77655C13.939 5.80588 13.9615 5.8407 13.9768 5.87904C13.9921 5.91737 14 5.95847 14 5.99996C114 69.92.51. 68 6.12089C13. 9615 6.15922 13.939 6.19405 13.9107 6.22338L8.43257 11.9074C8.40431 11.9367 8.37074 11.96 8.37074 11.96 8.33918.89.C. 8.25725 12 8.21725 12C8.17726 12 8.13765 11.9918 8.10071 11.9759C8.06376 11.96 8.03019 11.93019 11.930198.Z"
+                                        doldurun="#D1C578" />
+                                    </svg>
+                                </a>
+
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="left-res col-10">
+                                <p>Жилой <br>комплекс рядом</p>
+                                <h1>БАКИНСКИЙ БУЛЬВАР</h1>
+                            </div>
+                            <div class="right-res col-lg-2 col-sm-12">
+                                <p>@count квартир <br> осталось на продажу</p>
+
+                                <a class="choose_apartments" asp-controller="Apartment" asp-action="Index">
+                                    <span>Выбрать апартаменты</span>
+                                    <svg class="ch-svg"
+                                     xmlns="http://www.w3.org/2000/svg" eni="14" hündürlük="12" viewBox="0 0 14 12" fill="heç biri">
+                                        11.8781 7.9781 7.9732 7.93587 11.84587 11.84587 11.8266 7.91267 11.01267 11.64255 7.91267 11.6425 7.92055 11.6455 11.6455 11.6455 11.6455 7.93587 11.63587 11.5637 11.5637 7.95118 11.5247 7.97363 11.4899 8.00193 11.4606L12.9604 6.31574l0.304344 6.31574c0 .223627 6.31574 0.146216 6.28247 0.0891406 6.22325C0.0320651 6.16403 6.87747e-07 6.08371 6.9079906e. 5.91621 0.0320651 5.83589 0.0891406 5.77667C0.146216 5.71745 0.223627 5.68419 0.304344 5.6841906 5.6841901.5.6841901.L. 9367C7.97365 0.510028 7.95122 0.475197 7.93592 0.436864C7.92062 0.398531 7.91274 0.357445 7.91274 0.315954C740.74.76. 233377 7.93592 0.195043C7.95122 0.15671 7.97365 0.121879 8.00193 0.0925403C8.03021 0.0632013 7908.7902. 40502C8.13766 0.00817199 8.17726 -2.5452e-07 8.21725 -2.52772 e-07C8.25724 -2.51024e-07 8.29684 0.008172 8.33378 0.0240502C8.37073 0.0399283 8.4043 0.0632013 8.4043 8.0632013 75.301. .77655C13.939 5.80588 13.9615 5.8407 13.9768 5.87904C13.9921 5.91737 14 5.95847 14 5.99996C114 69.92.51. 68 6.12089C13. 9615 6.15922 13.939 6.19405 13.9107 6.22338L8.43257 11.9074C8.40431 11.9367 8.37074 11.96 8.37074 11.96 8.33918.89.C. 8.25725 12 8.21725 12C8.17726 12 8.13765 11.9918 8.10071 11.9759C8.06376 11.96 8.03019 11.93019 11.930198.Z"
+                                        doldurun="#D1C578" />
+                                    </svg>
+                                </a>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+                @if (Model.LangCode == "en")
+                {
+                    <div class="numbers-flex" style="padding: 3rem 0rem;">
+                        <div class="left-numbers">
+                            <div class="number-d">
+                                <h1>
+                                    1-4
+                                </h1>
+                                <p>
+                                    Apartments <br>
+                                    every floor
+                                </p>
+                            </div>
+                            <div class="number-d border-left">
+                                <h1>
+                                    3
+                                </h1>
+                                <p>
+                                    3 elevators <br>
+                                    in the block
+                                </p>
+                            </div>
+                            <div class="number-d border-around">
+                                <h1>
+                                    1-11
+                                </h1>
+                                <p>
+                                    Rooms <br>
+                                </p>
+                            </div>
+                            <div class="number-d">
+                                <h1>
+                                    4
+                                </h1>
+                                <p>
+                                    Height ceiling
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right-numbers">
+                            <div class="number-d">
+                                <h1>
+                                    4
+                                </h1>
+                                <p>
+                                    Total area
+                                </p>
+                            </div>
+                            <div class="number-d border-left">
+                                <h1>
+                                    1
+                                </h1>
+                                <p>
+                                    Walking area
+                                </p>
+                            </div>
+                            <div class="number-d border-around">
+                                <h1>
+                                    300
+                                </h1>
+                                <p>
+                                    Place for parking
+                                </p>
+                            </div>
+                            <div class="number-d">
+                                <h1>
+                                    @allCountApartment
+                                </h1>
+                                <p>
+                                    Apartments
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <div class="numbers-flex" style="padding: 3rem 0rem;">
+                        <div class="left-numbers">
+                            <div class="number-d">
+                                <h1>
+                                    1-4
+                                </h1>
+                                <p>
+                                    Mənzillər <br>
+                                    hər mərtəbə
+                                </p>
+                            </div>
+                            <div class="number-d border-left">
+                                <h1>
+                                    3
+                                </h1>
+                                <p>
+                                    3 lift <br>
+                                    blokda
+                                </p>
+                            </div>
+                            <div class="number-d border-around">
+                                <h1>
+                                    1-3
+                                </h1>
+                                <p>
+                                    Otaq <br>
+                                </p>
+                            </div>
+                            <div class="number-d">
+                                <h1>
+                                    4
+                                </h1>
+                                <p>
+                                    Tavan hündürlüyü
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right-numbers">
+                            <div class="number-d">
+                                <h1>
+                                    4
+                                </h1>
+                                <p>
+                                    Ümumi sahə
+                                </p>
+                            </div>
+                            <div class="number-d border-left">
+                                <h1>
+                                    1
+                                </h1>
+                                <p>
+                                    Gəzinti sahəsi
+                                </p>
+                            </div>
+                            <div class="number-d border-around">
+                                <h1>
+                                    300
+                                </h1>
+                                <p>
+                                    Dayanacaq üçün yer
+                                </p>
+                            </div>
+                            <div class="number-d">
+                                <h1>
+                                    @allCountApartment
+                                </h1>
+                                <p>
+                                    Mənzillər
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="numbers-flex" style="padding: 3rem 0rem;">
+                        <div class="left-numbers">
+                            <div class="number-d">
+                                <h1>
+                                    1-4
+                                </h1>
+                                <p>
+                                    Квартиры <br>
+                                    каждый этаж
+                                </p>
+                            </div>
+                            <div class="number-d border-left">
+                                <h1>
+                                    3
+                                </h1>
+                                <p>
+                                    3 лифта <br>
+                                    в блоке
+                                </p>
+                            </div>
+                            <div class="number-d border-around">
+                                <h1>
+                                    1-3
+                                </h1>
+                                <p>
+                                    Номера <br>
+                                </p>
+                            </div>
+                            <div class="number-d">
+                                <h1>
+                                    4
+                                </h1>
+                                <p>
+                                    Высота потолка
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right-numbers">
+                            <div class="number-d">
+                                <h1>
+                                    4
+                                </h1>
+                                <p>
+                                    Общая площадь
+                                </p>
+                            </div>
+                            <div class="number-d border-left">
+                                <h1>
+                                    1
+                                </h1>
+                                <p>
+                                    Прогулочная зона
+                                </p>
+                            </div>
+                            <div class="number-d border-around">
+                                <h1>
+                                    300
+                                </h1>
+                                <p>
+                                    Место для парковки
+                                </p>
+                            </div>
+                            <div class="number-d">
+                                <h1>
+                                    @allCountApartment
+                                </h1>
+                                <p>
+                                    Квартиры
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="rgt-column-txt">
+                    @foreach (var header in Model.SliderHeaders)
+                    {
+                        @foreach (var item in header.SliderHeaderTranslates)
+                        {
+                            <div class="info-res-bottom col-md-6 col-lg-5 col-sm-12">
+                                <p>
+                                    @item.Tittle
+                                </p>
+                                <span>
+                                    @item.Description
+                                </span>
+                            </div>
+                        }
+
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="slider sliderstyle">
+            @foreach (var slider in Model.Sliders)
+            {
+                <div class="gap-img">
+                    <img src="~/slidergallery/@slider.Image" alt="slider-img">
+                </div>
+            }
+        </div>
+    </section>
+    <!-- Residential End-->
+    <!-- Arch-Elegance Start-->
+    <section class="arch-elegance-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.Architecturals)
+                {
+                    @foreach (var items in item.ArchitecturalTranslates)
+                    {
+                        <div class="arch-elegance-title col-6">
+                            <h1>@items.Name</h1>
+                        </div>
+                        <div class="arch-elegance-info">
+                            <p>
+                                @items.Header
+                            </p>
+                        </div>
+                    }
+                }
+                <div class="arch-elegance-cards">
+                    @for (var i = 0; i < Math.Max(oddIdBlogs.Count, evenIdBlogs.Count); i++)
+                    {
+                        @if (i < oddIdBlogs.Count)
+                        {
+                            var item = oddIdBlogs[i];
+                            @foreach (var archblog in item.ArchitecturalBlogTranslates)
+                            {
+                                <div class="animation-element bounce-up">
+                                    <div class="arch-elegance-card subject">
+                                        <div class="arch-elegance-card-img col-lg-6 col-sm-12">
+                                            <img src="~/architecturalbloggallery/@item.Image" alt="card-img-alt">
+                                        </div>
+                                        <div class="arch-elegance-card-text card-text-design-1 col-lg-6 col-sm-12">
+                                            <h1>
+                                                @archblog.Name
+                                            </h1>
+                                            <p class="arch-elegance-card-body-text">
+                                                @archblog.Description
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        @if (i < evenIdBlogs.Count)
+                        {
+                            var item = evenIdBlogs[i];
+                            @foreach (var archblog in item.ArchitecturalBlogTranslates)
+                            {
+                                <div class="animation-element bounce-up">
+                                    <div class="arch-elegance-card subject">
+                                        <div class="arch-elegance-card-text card-text-design-1 col-lg-6 col-sm-12">
+                                            <h1>
+                                                @archblog.Name
+                                            </h1>
+                                            <p class="arch-elegance-card-body-text">
+                                                @archblog.Description
+                                            </p>
+                                        </div>
+                                        <div class="arch-elegance-card-img col-lg-6 col-sm-12">
+                                            <img src="~/architecturalbloggallery/@item.Image" alt="card-img-alt">
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Arch-Elegance End-->
+    <!--Gallery Start-->
+    <section class="gallery-secttion">
+        <div class="container">
+            <div class="gallery-between" style="padding: 2rem 0rem;">
+                <div class="gallery-title col-xl-5 col-lg-5 col-md-5 col-sm-7 col-xs-8">
+
+                    @if (Model.LangCode == "en")
+                    {
+                        <h1>
+                            CHECK OUT
+                            OUR GALLERY
+                        </h1>
+                    }
+                    else if (Model.LangCode == "az")
+                    {
+                        <h1>
+                            YOXLA
+                            BİZİM QALEREYA
+                        </h1>
+                    }
+                    else
+                    {
+                        <h1>
+                            ПРОВЕРИТЬ
+                            НАША ГАЛЕРЕЯ
+                        </h1>
+                    }
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 d-flex text-center je-items" style="align-items: center;">
+                    <!-- Tabs navs -->
+                    <ul class="nav nav-tabs mb-3" id="ex1" role="tablist" style="gap: 1rem;">
+                        @foreach (var category in Model.GalleryCategories)
+                        {
+                            @foreach (var item in category.GalleryCategoryTranslates)
+                            {
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link@(category == Model.GalleryCategories.First() ? " active" : "") tab-item"
+                               style="padding: 6px 0px; margin-left: 2rem;"
+                               id="ex1-tab-@(category.Id)"
+                               data-mdb-toggle="tab"
+                               href="#ex1-tabs-@(category.Id)"
+                               role="tab"
+                               aria-controls="ex1-tabs-@(category.Id)"
+                               aria-selected="@(category == Model.GalleryCategories.First())">
+
+                                        @item.Tittle
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                    <!-- Tabs navs -->
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab-content" id="myTabContent">
+            @foreach (var category in Model.GalleryCategories)
+            {
+                <div class="tab-pane fade @(category == Model.GalleryCategories.First() ? "show active" : "")"
+                 id="ex1-tabs-@(category.Id)"
+                 role="tabpanel"
+                 aria-labelledby="tab-@(category.Id)">
+                    <div id="carouselExampleControls@(category.Id)" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach (var galleryItem in Model.GalleryItems.Where(item => item.GalleryCategory?.Id == category.Id))
+                            {
+                                <div class="carousel-item @(galleryItem == Model.GalleryItems.First(item => item.GalleryCategory?.Id == category.Id) ? "active" : "")">
+                                    <img src="~/boulevardgallery/@galleryItem.Image" alt="Gallery Image" class="d-block w-100">
+                                </div>
+                            }
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls@(category.Id)" data-bs-slide="prev">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="40" width="40" height="40" rx="20" transform="rotate(90 40 0)" fill="black" />
+                                <path d="M28 20H12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M20 28L12 20L20 12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls@(category.Id)" data-bs-slide="next">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="40" width="40" height="40" rx="20" transform="rotate(-90 0 40)" fill="black" />
+                                <path d="M12 20H27.9999" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M20 12.0001L28 20L20 28" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- Tabs content -->
+    </section>
+    <!--Gallery End-->
+    <!--Blog Start-->
+    <section class="blog-section">
+
+        <div class="container">
+            <div class="row">
+                @foreach (var comfort in Model.Comforts)
+                {
+                    @foreach (var item in comfort.ComfortTranslates)
+                    {
+                        <div class="arch-elegance-title col-lg-5 col-md-6">
+                            <h1>@item.Name </h1>
+                        </div>
+                        <div class="arch-elegance-info">
+                            <p>
+                                @item.Header
+                            </p>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+
+        <div class="carousell-slick">
+            @foreach (var comfortBlog in Model.ComfortBlogs)
+            {
+                @foreach (var item in comfortBlog.ComfortBlogTranslates)
+                {
+                    <div>
+                        <div class="card-blog slick-opacity">
+                            <div class="card-header">
+                                <img id="zoomable-img" class="blogimg" src="~/comfortbloggallery/@comfortBlog.Image">
+                            </div>
+                            <div class="card-body-blog">
+                                <div class="card-body-blog">
+                                    <div class="card-text-blog">
+                                        <p>
+                                            @item.Description
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+
+    </section>
+    <!--Blog End-->
+    <!--Apartment Start-->
+    <section id="apartment-section" class="apartment-secttion">
+        <div class="container">
+            <div class="aparment-between" style="padding: 2rem 0rem;">
+                @if (Model.LangCode == "en")
+                {
+                    <div class="gallery-title col-lg-4 col-md-6 col-sm-4">
+                        <h1>
+                            CHOOSE
+                            APARTMENT
+                        </h1>
+                    </div>
+                    <div class="d-flex justift-content-center text-center" style="align-items: center;">
+                        <ul class="nav nav-tabs mb-3" style="gap: 1rem;">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active tab-item" style="padding: 6px 0px;  margin-left: 2rem;">3D VISUAL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Apartment" asp-action="Index" class="nav-link tab-item" style="padding: 6px 0px;  margin-left: 2rem;">PARAMETERS</a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else if (Model.LangCode == "az")
+                {
+                    <div class="gallery-title col-lg-4 col-md-6 col-sm-4">
+                        <h1>
+                            SEÇİN
+                            MƏNZİL
+                        </h1>
+                    </div>
+                    <div class="d-flex justift-content-center text-center" style="align-items: center;">
+                        <ul class="nav nav-tabs mb-3" style="gap: 1rem;">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active tab-item" style="padding: 6px 0px;  margin-left: 2rem;">3D VISUAL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Apartment" asp-action="Index" class="nav-link tab-item" style="padding: 6px 0px;  margin-left: 2rem;">PARAMETRELER</a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="gallery-title col-lg-4 col-md-6 col-sm-4">
+                        <h1>
+                            ВЫБИРАТЬ
+                            КВАРТИРА
+                        </h1>
+                    </div>
+                    <div class="d-flex justift-content-center text-center" style="align-items: center;">
+                        <ul class="nav nav-tabs mb-3" style="gap: 1rem;">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active tab-item" style="padding: 6px 0px;  margin-left: 2rem;">3Д ВИЗУАЛ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Apartment" asp-action="Index" class="nav-link tab-item" style="padding: 6px 0px;  margin-left: 2rem;">ПАРАМЕТРЫ</a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="col-12">
+            <section class="project">
+                <div class="project__buildings">
+                    <div class="project__img">
+                        <img class="img-building" src="~/assets/img/home-choose-a.png" alt="img">
+                    </div>
+
+                    <div class="building">
+                        <div class="building__svg">
+                            <svg viewBox="0 0 1440 817" fill="none">
+                                <!-- 1 ci bina start -->
+                                <a asp-controller="Floor" asp-action="Index" asp-route-sectionName="A1" asp-route-floornumber="2">
+                                    <g class="building__link" data-id="4" style="cursor: pointer;">
+
+                                    <path class="builningl-1"
+                                          d="M55 14.5L47.5 16V18L48 18.5V20H47L47.5 21.5H45.5L47.5 24L50.5 27V29.5L49.5 31.5L50.5 33L53 35.5V38V43.5L54 45V99L53.5 99.5V103.5H54V106.5L42.5 107.5L40.5 97H40L39 100.5V102.5L38 107V109.5H37L37.5 110.5H34L33.5 110H31V111L19.5 112L19 109.5H18.5L18 112H16.5V113H14V107H13.5V105H13V102.5V101H12.5V100.5H11V102.5H10.5V107L10 109.5V111V120L1 121V122.5L2.5 124.5V125L8 131H9V137.5L9.5 138.5V145.5H2L2.5 146L5.5 149V150.5L6.5 151.5H9.5V154H10V154.5V155L9.5 314H2V314.5H0V315.5L3 318V323.5H5V324.5V348L4 348.5V350.5H2.5V352.5V358.25H3.5H156V356V303H159.5V301.5H163V303H166L164.5 109L163.25 103.5V101H164.5L169 100.5V87.5V82.5L164.5 81.5V78.5L163.5 78V76.5L169 76V57L164.5 55.5V53.5L163 51.5V50.5L170 49.5V43.5H173.5V42.5L174.5 36V31.5H176V26.5L176.5 24H177.5V23H178V21.5H179V20.5H178.5V19.5H177.5L178.5 17.5L153 8V6.5H154V4L142.5 0L133.5 1.5V4.5H134.5V5L118 7.5L112 5.5L104 6.5V9.5H104.5V10L89 12L83.5 9.5L75 11.5V14H76V15L61 17L55 14.5Z"
+                                          fill="#CFC273" fill-opacity="0.5" />
+
+
+                                    <g class="building__info" id="moveinfo-A1" data-id="4">
+                                        <rect x="415" y="485" width="189" height="120" fill="#16244A"></rect>
+                                        <rect x="395" y="520" width="50" height="50" fill="#fff" class="bgrad" rx="50" ry="50"></rect>
+
+                                        <text class="st10  translate_b4_text1">
+                                            <tspan class="doteB">
+                                                A1
+                                            </tspan>
+                                        </text>
+                                        <text class="st12 translate_b4_text2">
+                                            @if (Model.LangCode == "en")
+                                            {
+                                                <tspan class="st0">
+                                                    A1 APARTMENTS
+                                                </tspan>
+                                            }
+                                            else if (Model.LangCode == "az")
+                                            {
+                                                <tspan class="st0">
+                                                    A1 Mənzillər
+                                                </tspan>
+                                            }
+                                            else
+                                            {
+                                                <tspan class="st0">
+                                                    A1 Квартиры
+                                                </tspan>
+                                            }
+                                        </text>
+                                        <text class="st0 st1 translate_b4_text3">
+                                            <tspan>
+                                                122.10-330.94
+                                            </tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                                </a>
+                                
+                                <!-- 1 ci bina end -->
+                                <!-- 2 ci bina start -->
+                                <a asp-controller="Floor" asp-action="Index" asp-route-sectionName="A2" asp-route-floornumber="2">
+                                      <g class="building__link" data-id="3" style="cursor: pointer;">
+                                    <path class="builningl-2"
+                                          d="M233.5 0L22.5 32L21.5 33.5H22.5V34.5H23V36H22.5V37H21.5V38L20.5 38.5L20 40.5V45.5H18.5V50L17.5 57.5H14V63.5L7 64.5V65.5L8.5 67.5V69.5L13 71.5V90L7.5 90.5V91.5L8.5 92.5V95L13 97V114.5H7.5V120.5L10.5 317H6.5V315.5H3.5V317H0L0.5 372H220V322V311H223V97H224.5V94.5V92L231 91V88H233.5V69H235V67V62L233.5 61V46.5V38.5V34V0Z"
+                                          fill="#CFC273" fill-opacity="0.5" />
+
+                                    <g class="building__info" id="moveinfo-A2" data-id="3">
+                                        <rect x="760" y="592" width="189" height="120" fill="#16244A"></rect>
+                                        <rect x="735" y="630" width="50" height="50" fill="#fff" class="bgrad" rx="50" ry="50"></rect>
+
+                                        <text class="st10 translate_b3_text1">
+                                            <tspan class="doteB">
+                                                A2
+                                            </tspan>
+                                        </text>
+                                        <text class="st12 translate_b3_text2">
+                                          @if (Model.LangCode == "en")
+                                            {
+                                                <tspan class="st0">
+                                                    A2 APARTMENTS
+                                                </tspan>
+                                            }
+                                            else if (Model.LangCode == "az")
+                                            {
+                                                <tspan class="st0">
+                                                    A2 Mənzillər
+                                                </tspan>
+                                            }
+                                            else
+                                            {
+                                                <tspan class="st0">
+                                                    A2 Квартиры
+                                                </tspan>
+                                            }
+                                            
+                                        </text>
+                                        <text class="st0 st1 translate_b3_text3">
+                                            <tspan>
+                                                123-246.60
+                                            </tspan>
+                                        </text>
+                                    </g>
+                                </g>
+
+                                </a>
+                              
+                                <!-- 2 ci bina end -->
+                                <!-- 3 ci bina start -->
+                                <a asp-controller="Floor" asp-action="Index" asp-route-sectionName="A3" asp-route-floornumber="2">
+                                      <g class="building__link" data-id="1" style="cursor: pointer;">
+                                    <path class="builningl-3"
+                                          d="M214 0L13.5 30.5V91.5L15.5 93V100.5H13.5V119.5H11V122.5L4.5 123.5V128.5H3L0 403.5H216.5L210.5 122.5L210 122V120H210.5V118L208 116V113.5H210.5V111L210 109V108V106.5V103L208 100.5V97.5V97L207.5 96.5L206.5 95H205.5V92.5L202.5 90.5V90L216.5 88.5V88L215.5 10L215 9V8L214 7.5V0Z"
+                                          fill="#CFC273" fill-opacity="0.5" />
+
+                                    <g class="building__info" id="moveinfo-A3" data-id="1">
+                                        <rect x="915" y="385" width="189" height="120" fill="#16244A"></rect>
+                                        <rect x="890" y="420" width="50" height="50" fill="#fff" class="bgrad" rx="50" ry="50"></rect>
+
+                                        <text class="st10 translate_b2_text1">
+                                            <tspan class="doteB">
+                                                A3
+                                            </tspan>
+                                        </text>
+                                        <text class="st12 translate_b2_text2">
+                                             @if (Model.LangCode == "en")
+                                            {
+                                                <tspan class="st0">
+                                                    A3 APARTMENTS
+                                                </tspan>
+                                            }
+                                            else if (Model.LangCode == "az")
+                                            {
+                                                <tspan class="st0">
+                                                    A3 Mənzillər
+                                                </tspan>
+                                            }
+                                            else
+                                            {
+                                                <tspan class="st0">
+                                                    A3 Квартиры
+                                                </tspan>
+                                            }
+                                        </text>
+                                        <text class="st0 st1 translate_b2_text3">
+                                            <tspan>
+                                                115.5-196.7
+                                            </tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                                </a>
+                               
+                                <!-- 3 ci bina end -->
+                                <!-- 4 ci bina start -->
+                                <a asp-controller="Floor" asp-action="Index" asp-route-sectionName="A4" asp-route-floornumber="2">
+                                     <g class="building__link" data-id="2" style="cursor: pointer;">
+                                    <path class="builningl-4"
+                                          d="M19 23L7 25V26.5H5.5V28L6.5 28.5V30.5H5.5L4.5 32L4 33V34L5.5 34.5V35.5L10 40.5L9.5 44L8.5 44.5L9.5 46V47.5L11 49.5V52L12 53V60L12.5 60.5L13.5 62.5L14 141L0 142.5L0.5 143.5L3.5 145L4 147L6 149.5V152.5L8 155.5V161.5L8.5 163.5H8V165L8.5 165.5V166.5H6V168L8.5 170V173H8L8.5 174.5L14.5 456H433.5V413.5L436.5 412L438 410.5L439 410L438 406.5L439 402H434.5V330.5V303.5H436V302.5L437 302H436L435.5 299L435 297.5H434.5V270L436 269.5L437 268.5L436.5 266.5L438 265L437 263L437.5 262V259.5L438 259V251.5L440.5 249.5L440 244.5L439 244V243L442.5 242.717V241H443.5L444 240L445.5 239L442 225.5H434.5L433 219.5H431.5V202L434 200L439 199V197.5L439.5 196.5L441.5 196L440 191.5H439H434V187H436V185L437.5 183.5H439L437.5 179.5L431.5 179V173.5L433 171.5V169.5L434 170.5L436 171.5L437.5 169.5L441.5 169V167L443.5 165L440.5 147L430.776 145.5L430.5 137H430.776V133.5L430.5 130.5L430 128L429.5 127V124.5L429 119.5H428L427 124.5V127L426.5 128V130.5L426 133.5V136.5L420.5 135.5V134H417V135.5L402.5 133L397.5 114.5L398.5 112L395.5 100.5V99.5L397 98.5L389.5 71L258 46.5L200 55L167 9V8H168V6L163.5 0L161.5 0.5L161 0L147 2V4L148 4.5V5.5L147.5 6L115 11L111.5 7.5L98.5 10V12L99.5 13V14L68 19L64 15.5L51.5 17.5V18V19.5L52 20H52.5L53 20.5V21.5H52.5H52L22.5 26L19 23Z"
+                                          fill="#CFC273" fill-opacity="0.5" />
+
+                                    <g class="building__info" id="moveinfo-A4" data-id="2">
+                                        <rect x="1005" y="473" width="189" height="120" fill="#16244A"></rect>
+                                        <rect x="980" y="510" width="50" height="50" fill="#fff" class="bgrad" rx="50" ry="50"></rect>
+
+                                        <text class="st10 translate_b1_text1">
+                                            <tspan class="doteB">
+                                                A4
+                                            </tspan>
+                                        </text>
+                                        <text class="st12 translate_b1_text2">
+                                             @if (Model.LangCode == "en")
+                                            {
+                                                <tspan class="st0">
+                                                    A4 APARTMENTS
+                                                </tspan>
+                                            }
+                                            else if (Model.LangCode == "az")
+                                            {
+                                                <tspan class="st0">
+                                                    A4 Mənzillər
+                                                </tspan>
+                                            }
+                                            else
+                                            {
+                                                <tspan class="st0">
+                                                    A4 Квартиры
+                                                </tspan>
+                                            }
+                                        </text>
+                                        <text class="st0 st1 translate_b1_text3">
+                                            <tspan>
+                                                255.8-423.5
+                                            </tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                                </a>
+                               
+                                <!-- 4 ci bina end -->
+                            </svg>
+                        </div>
+                    </div>
+            </section>
+        </div>
+        <!-- Tabs content -->
+    </section>
+    <!--Apartment End-->
+    <!--Map Location Start-->
+    <section class="map-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var infra in Model.Infrastructures)
+                {
+                    @foreach (var item in infra.InfrastructureTranslates)
+                    {
+                        <div class="arch-elegance-title">
+                            <h1>@item.Name</h1>
+                        </div>
+                        <div class="arch-elegance-info">
+                            <p>
+                                @item.Description
+                            </p>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+
+      @*  <div class="map-container">
+            <div id="map"></div>
+            <div class="br-maker">
+                <img src="~/assets/svg/br.svg" alt="">
+            </div>
+            <div class="map_filter_controls">
+                <div class="search-container">
+                    <div class="search-title">
+                        <p>SEARCH BY FILTER</p>
+                    </div>
+                </div>
+                <div class="map-checkboxs">
+                    <div class="checkbox">
+                        <input type="checkbox" value="school" class='chk-btn' name="filter" onclick="selectAllChecked();">
+                        <label for="checkbox1">School</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="park" class='chk-btn' name="filter" onclick="selectAllChecked();">
+                        <label for="Park">Park</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="pharmacy" class='chk-btn' name="filter" onclick="selectAllChecked();">
+                        <label for="Pharmacy">Pharmacy</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="supermarket" class='chk-btn' name="filter" onclick="selectAllChecked();">
+                        <label for="Supermarket">Supermarket</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="restuarant" class='chk-btn' name="filter" onclick="selectAllChecked();">
+                        <label for="Restuarant">Restuarant</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="gym" class='chk-btn' name="filter" onclick="selectAllChecked();">
+                        <label for="GYM">GYM</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="playground" class='chk-btn' name="filter" onclick="selectAllChecked();">
+                        <label for="Playground">Playground</label>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    </section>
+    <!--Map Location End-->
+</main>

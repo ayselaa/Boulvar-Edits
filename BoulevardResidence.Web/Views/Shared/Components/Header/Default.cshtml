@@ -1,0 +1,146 @@
+﻿@model LayoutVM
+
+<!--Header Start-->
+<header class="header">
+    <div class="container">
+        <div class="brand-div">
+            <a class="boulevard-logo" asp-action="Index" asp-controller="Home" style="user-select: none">
+                <img src="~/logogallery/@Model.Settings["Web Site Header Logo"]" alt="logo_img" />
+            </a>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="lef-nav-item">
+                <div id="mySidenav" class="sidenav" style="background: transparent">
+                    <div class="darkbluebg-slider">
+                        <div class="menu_nav_top">
+                            <a style="border-bottom: 0; padding: 0;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M23.8149 22.9213C23.9334 23.0398 24 23.2005 24 23.3681C24 23.5357 23.9334 23.6964 23.8149 23.8149C23.6964 23.9334 23.5357 24 23.3681 24C23.2005 24 23.0398 23.9334 22.9213 23.8149L12 12.8937L1.07874 23.8149C0.960234 23.9334 0.799505 24 0.631912 24C0.464318 24 0.303589 23.9334 0.185083 23.8149C0.0665765 23.6964 3.30366e-09 23.5357 0 23.3681C-3.30367e-09 23.2005 0.0665759 23.0398 0.185082 22.9213L11.1063 12L0.185082 1.07874C0.0665759 0.960234 0 0.799505 0 0.631912C0 0.464318 0.0665759 0.303589 0.185082 0.185082C0.303589 0.0665759 0.464318 0 0.631912 0C0.799505 0 0.960234 0.0665759 1.07874 0.185082L12 11.1063L22.9213 0.185082C22.9799 0.126404 23.0496 0.0798577 23.1263 0.0481011C23.2029 0.0163446 23.2851 1.63581e-09 23.3681 0C23.4511 -1.63581e-09 23.5332 0.0163446 23.6099 0.0481011C23.6866 0.0798577 23.7562 0.126404 23.8149 0.185082C23.8736 0.243761 23.9201 0.313422 23.9519 0.390089C23.9837 0.466756 24 0.548928 24 0.631912C24 0.714895 23.9837 0.797067 23.9519 0.873734C23.9201 0.950401 23.8736 1.02006 23.8149 1.07874L12.8937 12L23.8149 22.9213Z" fill="#585858" />
+                                </svg>
+
+                            </a>
+                            <div class="menuflex-pdf">
+                                <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_101_539)">
+                                        <path d="M20.832 20.833H12.1654C12.077 20.833 11.9922 20.8681 11.9297 20.9306C11.8672 20.9932 11.832 21.0779 11.832 21.1663C11.832 21.2547 11.8672 21.3395 11.9297 21.402C11.9922 21.4646 12.077 21.4997 12.1654 21.4997H20.832C20.9204 21.4997 21.0052 21.4646 21.0677 21.402C21.1302 21.3395 21.1654 21.2547 21.1654 21.1663C21.1654 21.0779 21.1302 20.9932 21.0677 20.9306C21.0052 20.8681 20.9204 20.833 20.832 20.833Z"
+                                              fill="#CFC273" />
+                                        <path d="M16.5014 20.3263L20.0381 16.7897C20.0927 16.7259 20.1212 16.6439 20.118 16.56C20.1147 16.4761 20.08 16.3965 20.0206 16.3372C19.9612 16.2778 19.8817 16.243 19.7978 16.2398C19.7139 16.2365 19.6318 16.2651 19.5681 16.3197L16.8347 19.0497V12.1663C16.8347 12.0779 16.7996 11.9932 16.7371 11.9306C16.6746 11.8681 16.5898 11.833 16.5014 11.833C16.413 11.833 16.3282 11.8681 16.2657 11.9306C16.2032 11.9932 16.1681 12.0779 16.1681 12.1663V19.0497L13.4381 16.3197C13.4082 16.2848 13.3714 16.2564 13.3301 16.2364C13.2887 16.2164 13.2437 16.2052 13.1978 16.2034C13.1519 16.2016 13.1061 16.2094 13.0633 16.2261C13.0205 16.2429 12.9817 16.2683 12.9492 16.3008C12.9167 16.3333 12.8913 16.3721 12.8745 16.4149C12.8578 16.4577 12.85 16.5035 12.8518 16.5494C12.8536 16.5953 12.8648 16.6403 12.8848 16.6817C12.9048 16.723 12.9332 16.7598 12.9681 16.7897L16.5014 20.3263Z"
+                                              fill="#CFC273" />
+                                    </g>
+                                    <rect x="0.5" y="0.5" width="32" height="32" rx="16" stroke="#CFC273" />
+                                    <defs>
+                                        <clipPath id="clip0_101_539">
+                                            <rect width="12" height="12" fill="white" transform="translate(10.5 10.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                @if (Model.LangCode=="en")
+                                {
+                                    <a class="download-for-menu">
+                                        Download <br>
+                                        Brochure
+                                    </a>
+                                }
+                                else if (Model.LangCode == "ru")
+                                {
+                                    <a class="download-for-menu">
+                                        Скачать <br>
+                                        Брошюра
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="download-for-menu">
+                                        Broşura <br>
+                                        Yüklə
+                                    </a>
+                                }
+                            </div>
+
+
+                        </div>
+                        <div class="menu_nav_element-div">
+                            @if (Model.LangCode == "en")
+                            {
+                                <a class="sidenav-link" asp-controller="Apartment" asp-action="Index">SELECT APARTMENT</a>
+                                <a class="sidenav-link" asp-controller="Gallery" asp-action="Index">PHOTO GALLERY</a>
+                                <a class="sidenav-link" asp-controller="ArchitecturalElegance" asp-action="Index">ARCHITECTURAL ELEGANCE</a>
+                                <a class="sidenav-link" asp-controller="Comfort" asp-action="Index">EVERYTHING FOR YOUR COMFORT</a>
+                                <a class="sidenav-link" asp-controller="Infrastructure" asp-action="Index">INFRASTRUCTURE</a>
+                                <a class="sidenav-link" asp-controller="Contact" asp-action="Index">CONTACT US</a>
+                            }
+                             else if (Model.LangCode == "ru")
+                            {
+                                <a class="sidenav-link" asp-controller="Apartment" asp-action="Index">ВЫБРАТЬ КВАРТИРУ</a>
+                                <a class="sidenav-link" asp-controller="Gallery" asp-action="Index">ФОТОГАЛЕРЕЯ</a>
+                                <a class="sidenav-link" asp-controller="ArchitecturalElegance" asp-action="Index">АРХИТЕКТУРНАЯ ЭЛЕГАНТНОСТЬ</a>
+                                <a class="sidenav-link" asp-controller="Comfort" asp-action="Index">ВСЕ ДЛЯ ВАШЕГО КОМФОРТА</a>
+                                <a class="sidenav-link" asp-controller="Infrastructure" asp-action="Index">ИНФРАСТРУКТУРА</a>
+                                <a class="sidenav-link" asp-controller="Contact" asp-action="Index">КОНТАКТ НАМИ</a>
+                            }
+
+                             else
+                            {
+                                <a class="sidenav-link" asp-controller="Apartment" asp-action="Index">MƏNZİL SEÇİN</a>
+                                <a class="sidenav-link" asp-controller="Gallery" asp-action="Index">FOTO QALEREYA</a>
+                                <a class="sidenav-link" asp-controller="ArchitecturalElegance" asp-action="Index">MEMARİYƏ ZƏRİFLİYİ</a>
+                                <a class="sidenav-link" asp-controller="Comfort" asp-action="Index">RAHATLIĞINIZ ÜÇÜN HƏR ŞEY</a>
+                                <a class="sidenav-link" asp-controller="Infrastructure" asp-action="Index">İNFRASTRUKTURA</a>
+                                <a class="sidenav-link" asp-controller="Contact" asp-action="Index">BİZİMLƏ ƏLAQƏ</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
+                <span class="menu_buttonn" onclick="openNav()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+                        <path d="M25.832 1H0.5C0.367392 1 0.240215 0.947322 0.146447 0.853554C0.0526785 0.759786 0 0.632608 0 0.5C0 0.367392 0.0526785 0.240214 0.146447 0.146446C0.240215 0.052678 0.367392 0 0.5 0H25.832C25.9646 0 26.0918 0.052678 26.1856 0.146446C26.2793 0.240214 26.332 0.367392 26.332 0.5C26.332 0.632608 26.2793 0.759786 26.1856 0.853554C26.0918 0.947322 25.9646 1 25.832 1ZM25.832 8.25H0.5C0.367392 8.25 0.240215 8.19732 0.146447 8.10355C0.0526785 8.00979 0 7.88261 0 7.75C0 7.61739 0.0526785 7.49021 0.146447 7.39645C0.240215 7.30268 0.367392 7.25 0.5 7.25H25.832C25.9646 7.25 26.0918 7.30268 26.1856 7.39645C26.2793 7.49021 26.332 7.61739 26.332 7.75C26.332 7.88261 26.2793 8.00979 26.1856 8.10355C26.0918 8.19732 25.9646 8.25 25.832 8.25ZM25.832 15.5H0.5C0.367392 15.5 0.240215 15.4473 0.146447 15.3536C0.0526785 15.2598 0 15.1326 0 15C0 14.8674 0.0526785 14.7402 0.146447 14.6464C0.240215 14.5527 0.367392 14.5 0.5 14.5H25.832C25.9646 14.5 26.0918 14.5527 26.1856 14.6464C26.2793 14.7402 26.332 14.8674 26.332 15C26.332 15.1326 26.2793 15.2598 26.1856 15.3536C26.0918 15.4473 25.9646 15.5 25.832 15.5Z" fill="#CFC273" />
+                    </svg>
+                </span>
+
+                <h6 class="phone_number">
+                    <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8822 11.0824C11.5705 10.8461 10.0877 9.70594 9.80085 9.53134C9.51405 9.35684 9.29575 9.25353 8.99535 9.52773C8.69505 9.80194 7.86245 10.3883 7.61855 10.5618C7.37465 10.7352 7.16315 10.7148 6.85765 10.4799C5.94135 9.88673 5.14145 9.14373 4.49465 8.28493C3.90845 7.47674 3.45385 6.58814 3.14629 5.64934C3.02847 5.28534 3.26255 5.15374 3.45025 5.02464C3.63785 4.89554 3.87695 4.71484 4.10215 4.53744C4.16465 4.49434 4.21475 4.44864 4.26335 4.40894C4.37435 4.30314 4.47585 4.18854 4.56665 4.06634C4.63815 3.99214 4.68795 3.90114 4.71105 3.80254C4.73415 3.70404 4.72985 3.60144 4.69835 3.50504C4.65505 3.32634 4.34255 1.58444 4.21025 0.891105C4.07795 0.197765 3.76695 0.237615 3.56725 0.194715C3.36755 0.151825 3.14988 0.0737055 2.91896 0.0241055C2.74663 -0.00911452 2.56898 -0.00798433 2.39713 0.0274057C2.22527 0.0627957 2.06288 0.131705 1.92009 0.229815C1.45468 0.494455 1.05192 0.848855 0.737418 1.27051C0.422918 1.69215 0.203568 2.17181 0.0933175 2.67896C0.0106775 3.05224 -0.0172723 3.43464 0.0102577 3.81534C0.0949677 4.68534 0.339678 5.53424 0.733098 6.32284C0.851168 6.57404 2.24538 10.4112 5.39755 12.4558C8.54975 14.5003 8.66595 14.0611 9.30405 14.1354C9.94225 14.2098 11.5021 13.7921 11.9547 13.0927C12.2907 12.659 12.4874 12.1411 12.5207 11.6022C12.3893 11.436 12.1876 11.3174 11.8822 11.0824Z" fill="#D1C578" />
+                    </svg>
+                    @Model.Settings["Header Phone"]
+                </h6>
+            </div>
+            <div class="right-nav-item">
+                <div class="choose_apartment">
+                     @if (Model.LangCode == "en")
+                    {
+                        <a class="go-aparment-section" href="#apartment-section">Choose Apartment</a>
+                    }
+                    else if (Model.LangCode == "ru")
+                    {
+                        <a class="go-aparment-section" href="#apartment-section">Выбрать квартиру</a>
+                    }
+                    else
+                    {
+                        <a class="go-aparment-section" href="#apartment-section">Mənzil Seçin</a>
+                    }
+                </div>
+
+                <div class="language-selector">
+                    <div class="selected-language" id="selected-language">
+                        EN
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" fill="none">
+                            <path d="M5.31153 5.8583L9.88116 0.766689C9.95744 0.681733 10 0.568863 10 0.451489C10 0.334116 9.95744 0.221247 9.88116 0.136291L9.876 0.130809C9.83901 0.0894813 9.7945 0.0565729 9.74516 0.0340853C9.69582 0.0115976 9.64269 9.22437e-07 9.589 9.17743e-07C9.5353 9.13049e-07 9.48217 0.0115976 9.43283 0.0340852C9.38349 0.0565729 9.33898 0.0894813 9.302 0.130809L4.99914 4.92549L0.698005 0.130808C0.661024 0.0894805 0.61651 0.0565721 0.567171 0.0340844C0.517831 0.0115968 0.464699 1.20072e-07 0.411006 1.15378e-07C0.357312 1.10684e-07 0.304179 0.0115968 0.254839 0.0340844C0.2055 0.0565721 0.160986 0.0894805 0.124005 0.130808L0.118841 0.13629C0.0425554 0.221246 -4.58347e-07 0.334115 -4.68608e-07 0.451489C-4.78869e-07 0.568862 0.0425553 0.681732 0.118841 0.766688L4.68847 5.8583C4.72866 5.90308 4.77699 5.93872 4.83054 5.96308C4.88409 5.98744 4.94174 6 5 6C5.05826 6 5.11591 5.98744 5.16946 5.96308C5.22301 5.93872 5.27134 5.90308 5.31153 5.8583Z"
+                                  fill="#CFC273" />
+                        </svg>
+                    </div>
+                      <ul class="language-options" id="language-options">
+                    <li data-lang="AZ">AZ</li>
+                    <li data-lang="EN">EN</li>
+                    <li data-lang="RU">RU</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    </div>
+</header>
+<!--Header End-->

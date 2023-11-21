@@ -1,0 +1,113 @@
+﻿@model List<GalleryItemVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="pandora-container">
+    <div class="container">
+        <div class="row">
+            <div class="pandora-banner-div">
+                <h3 class="pandora-banner-title">Gallery</h3>
+                <button class="addnewb"><a asp-action="Create" asp-controller="GalleryItem">Add new</a></button>
+            </div>
+            <div style="margin-top:3rem;">
+                <div class="container-p">
+                    <div class="row">
+                        <div class="col-12">
+                            @if (Model.Count() > 0)
+                            {
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Image</th>
+                                            <th class="text-center">Gallery Category Name</th>
+                                            <th class="text-center" scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var blog in Model)
+                                        {
+                                            
+                                                <tr data-id="@blog.Id" class="slider-row">
+                                                    <td><img style="width:27%" class="table-img" src="~/boulevardgallery/@blog.Image" /></td>
+                                                    <td class="text-center">@blog.GalleryCategoryName</td>
+                                                    <td class="p-buttons" class="text-center">
+                                                        <a class="btn btn-outline-primary" asp-action="Detail" asp-route-id="@blog.Id">Detail</a>
+                                                        <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@blog.Id">Edit</a>
+                                                        <a class="delete-blog" data-id="@blog.Id" data-toggle="tooltip" data-original-title="Remove" style="cursor: pointer;">
+                                                            <i class="fa-solid fa-trash" style="color: #c81921;" onmouseover="this.style.color='#ff0000';" onmouseout="this.style.color='#c81921';"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            
+                                        }
+                                    </tbody>
+                                </table>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            RemoveItem(".delete-blog", "/Admin/GalleryItem/Delete");
+        });
+
+        function RemoveItem(clickedElem, url) {
+            $(document).on("click", clickedElem, function (e) {
+                e.preventDefault();
+                let deleteButton = $(this);
+                let id = deleteButton.attr("data-id");
+                let data = { id: id };
+                let tbody = deleteButton.closest("tbody");
+
+                Swal.fire({
+                    icon: "warning",
+                    title: "Are you sure?",
+                    text: "This action cannot be undone.",
+                    showCancelButton: true,
+                    confirmButtonColor: "#dc3545",
+                    confirmButtonText: "Delete",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: url,
+                            type: "POST",
+                            data: data,
+                            success: function () {
+                                let rowsToDelete = tbody.find(`tr[data-id="${id}"]`);
+                                rowsToDelete.remove();
+
+                                if (tbody.children().length === 0) {
+                                    $(".table").remove();
+                                    $(".paginate-area").remove();
+                                }
+
+                                // Display SweetAlert success notification
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Success",
+                                    text: "Deleted successfully!",
+                                    position: "end",
+                                    showConfirmButton: false,
+                                    timer: 2000,
+                                });
+                            },
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+}
+
+

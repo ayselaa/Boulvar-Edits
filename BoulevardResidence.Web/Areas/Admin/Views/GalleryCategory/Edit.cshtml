@@ -1,0 +1,47 @@
+﻿@model GalleryCategoryUpdateVM
+
+@{
+     ViewData["Title"] = "Edit";
+}
+
+
+<div class="footer-menu-edit">
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> There are some validation errors. Please fix them before proceeding.
+    </div>
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> There are some validation errors. Please fix them before proceeding.
+    </div>
+}
+<div class="">
+
+</div>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+
+    @for (var i = 0; i < Model.Translates.Count; i++)
+    {
+        <div class="form-group" style="margin-top:80px">
+            <input type="hidden" id="translates[@i].LangCode" name="Translates[@i].LangCode" value="@Model.Translates[i].LangCode" />
+                <label class="stylelabel" for="translates[@i].Tittle">Title (@Model.Translates[i].LangCode):</label>
+            <input type="text" id="translates[@i].Tittle" name="Translates[@i].Tittle" class="form-control" value="@Model.Translates[i].Tittle" required>
+        </div>
+    }
+
+    <div class="form-group footeredit-flex-btn">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+</div>
+
+

@@ -1,0 +1,27 @@
+﻿@model ComfortDetailVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="sliderdetails">
+
+<h1>Everyting for your Comfort Details</h1>
+
+    <h4 class="mt-div">Translations:</h4>
+
+@foreach (var translate in Model.Translates)
+{
+        <div class="width50">
+        <h5>@translate.LangCode</h5>
+        <p>Name: @translate.Name</p>
+        <p>Header: @translate.Header</p>
+    <hr />
+    </div>
+
+}
+
+    <a class="detail-back" asp-action="Index">Back to List</a>
+
+</div>
+
+

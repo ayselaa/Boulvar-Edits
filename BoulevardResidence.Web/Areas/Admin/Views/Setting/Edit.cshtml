@@ -1,0 +1,34 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<section class="pcoded-main-container" style="margin-top:7rem">
+    <div class="pcoded-content">
+        <div class="row">
+            <div class="col-12">
+                <span class="text-danger">@ViewBag.error</span>
+                <form method="post" enctype="multipart/form-data" asp-action="Edit">
+                    @if (Model.Value.Contains(".png") || Model.Value.Contains(".jpg") || Model.Value.Contains(".jpeg"))
+                    {
+                        <div class="image"><img class="img-fluid" src="~/logogallery/@Model.Value" /></div>
+                        <div class="form-group mt-3">
+                            <input class="form-control" asp-for="LogoPhoto">
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <input class="form-control" asp-for="@Model.Value">
+                        </div>
+                    }
+                    <button type="submit" class="btn btn-success"><i class="feather mr-2 icon-check-circle"></i>Submit</button>
+                    <a asp-action="Index" class="btn btn-danger"><i class="feather mr-2 icon-check-circle"></i>Cancel</a>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+

@@ -1,0 +1,194 @@
+﻿@model BoulevardResidence.Service.Helpers.Paginate<BoulevardResidence.Domain.Entity.Apartments.Apartment>
+
+@if (Model.LangCode.ToLower() == "en")
+{
+    @if (Model.Datas.Count > 0)
+    {
+        @foreach (var item in Model.Datas)
+        {
+
+            <a class="tb-item" asp-controller="Apartment" asp-action="ApartmentDetail" asp-route-id="@item.Id">
+                <div class="table-item-info">
+                    <div class="table-item-img">
+                        @*<img src="~/apartmentplangallery/@item?.ApartmentPlan" alt="img" >*@
+                        @if (item.ApartmentPlan == null)
+                        {
+                            <img src="~/apartmentplangallery/no-photo1.jpg" alt="Default Image">
+                        }
+                        else
+                        {
+                            <img src="~/apartmentplangallery/@item.ApartmentPlan" alt="img">
+                        }
+                    </div>
+                    <div class="table-item-floor">
+                        <p>@item.SectionName</p>
+                        <span>@item.Floor Floor</span>
+
+                    </div>
+                    <div class="table-item-rooms">
+                        <span>@item.RoomsAmount Rooms</span>
+                    </div>
+                    <div class="table-item-area">
+                        <span>@item.AreaTotal M &#178;</span>
+                    </div>
+                    <div class="table-item-features">
+                        @foreach (var feat in item.ApartmentFeatures)
+                        {
+                            @foreach (var items in feat?.Feature?.FeatureTranslates)
+                            {
+                                <div class="img-fet">
+                                    <img src="~/featurelogo/@feat?.Feature?.Logo" alt="img">
+                                    <div class="tooltip-sea">@items.Name</div>
+                                </div>
+                            }
+
+                        }
+
+                    </div>
+                </div>
+            </a>
+
+
+
+        }
+        <nav aria-label="Page navigation example">
+            <ul class="pagination flex-pgnation">
+                <li class="page-item @(Model.HasPrevious ? "active" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)"></a>
+                </li>
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+
+                    <li class="page-item active @(Model.CurrentPage == i ? "disabled" : "")"><a class="page-link" asp-controller="Apartment" asp-action="Index" asp-route-page="@i">@i</a></li>
+
+                }
+                <li class="page-item @(Model.HasNext ? "active" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)"></a>
+                </li>
+            </ul>
+        </nav>
+    }
+}
+else if (Model.LangCode.ToLower() == "az")
+{
+    @if (Model.Datas.Count > 0)
+    {
+        @foreach (var item in Model.Datas)
+        {
+
+
+            <a class="tb-item" asp-controller="Apartment" asp-action="ApartmentDetail" asp-route-id="@item.Id">
+                <div class="table-item-info">
+                    <div class="table-item-img">
+                        <img src="~/apartmentplangallery/@item?.ApartmentPlan" alt="img">
+                    </div>
+                    <div class="table-item-floor">
+                        <p>@item.SectionName</p>
+                        <span>@item.Floor Mərtəbə</span>
+
+                    </div>
+                    <div class="table-item-rooms">
+                        <span>@item.RoomsAmount Otaq</span>
+                    </div>
+                    <div class="table-item-area">
+                        <span>@item.AreaTotal M &#178;</span>
+                    </div>
+                    <div class="table-item-features">
+                        @foreach (var feat in item.ApartmentFeatures)
+                        {
+                            @foreach (var items in feat?.Feature?.FeatureTranslates)
+                            {
+                                <div class="img-fet">
+                                    <img src="~/featurelogo/@feat?.Feature?.Logo" alt="img">
+                                    <div class="tooltip-sea">@items.Name</div>
+                                </div>
+                            }
+
+                        }
+
+                    </div>
+                </div>
+            </a>
+
+
+
+        }
+        <nav aria-label="Page navigation example">
+            <ul class="pagination flex-pgnation">
+                <li class="page-item @(Model.HasPrevious ? "active" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)"></a>
+                </li>
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+
+                    <li class="page-item active @(Model.CurrentPage == i ? "disabled" : "")"><a class="page-link" asp-controller="Apartment" asp-action="Index" asp-route-page="@i">@i</a></li>
+
+                }
+                <li class="page-item @(Model.HasNext ? "active" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)"></a>
+                </li>
+            </ul>
+        </nav>
+    }
+}
+else
+{
+    @if (Model.Datas.Count > 0)
+    {
+        @foreach (var item in Model.Datas)
+        {
+
+
+            <a class="tb-item" asp-controller="Apartment" asp-action="ApartmentDetail" asp-route-id="@item.Id">
+                <div class="table-item-info">
+                    <div class="table-item-img">
+                        <img src="~/apartmentplangallery/@item?.ApartmentPlan" alt="img">
+                    </div>
+                    <div class="table-item-floor">
+                        <p>@item.SectionName</p>
+                        <span>@item.Floor Floor1111</span>
+
+                    </div>
+                    <div class="table-item-rooms">
+                        <span>@item.RoomsAmount Rooms</span>
+                    </div>
+                    <div class="table-item-area">
+                        <span>@item.AreaTotal M &#178;</span>
+                    </div>
+                    <div class="table-item-features">
+                        @foreach (var feat in item.ApartmentFeatures)
+                        {
+                            @foreach (var items in feat?.Feature?.FeatureTranslates)
+                            {
+                                <div class="img-fet">
+                                    <img src="~/featurelogo/@feat?.Feature?.Logo" alt="img">
+                                    <div class="tooltip-sea">@items.Name</div>
+                                </div>
+                            }
+
+                        }
+
+                    </div>
+                </div>
+            </a>
+
+
+        }
+        <nav aria-label="Page navigation example">
+            <ul class="pagination flex-pgnation">
+                <li class="page-item @(Model.HasPrevious ? "active" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)"></a>
+                </li>
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+
+                    <li class="page-item active @(Model.CurrentPage == i ? "disabled" : "")"><a class="page-link" asp-controller="Apartment" asp-action="Index" asp-route-page="@i">@i</a></li>
+
+                }
+                <li class="page-item @(Model.HasNext ? "active" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)"></a>
+                </li>
+            </ul>
+        </nav>
+    }
+}

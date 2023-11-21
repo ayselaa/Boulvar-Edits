@@ -1,0 +1,1977 @@
+﻿@model List<BoulevardResidence.Domain.Entity.Apartments.ApartmentFloor>;
+@{
+    ViewData["Title"] = "Index";
+    var printedFloorNumbers = new HashSet<int>();
+}
+<style>
+    .slide-radio {
+        display: none; /* Radyo düğmesini gizle */
+    }
+
+        /* Radyo düğmesi kontrol edildiğinde arka plan rengini siyah yap */
+        .slide-radio:checked + label {
+            background-color: #000;
+            color: #fff; /* Yazı rengini beyaz yapabilirsiniz */
+        }
+</style>
+
+<!-- Main Start-->
+<main>
+    <!-- Header Background Start-->
+    <section class="apartment-bg">
+        <div class="container container-items">
+            <div class="apartment-over-text">
+                
+                <h1>BUILDING @Model[0].Apartment?.SectionName &middot; FLOOR @Model[0]?.Floor?.FloorNumber</h1>
+            </div>
+            <div class="back-to-page">
+                <a asp-controller="Home" asp-action="Index">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 8H1M1 8L8.125 1M1 8L8.125 15" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Header Background End-->
+    <!-- Floor Start-->
+    <section class="slider-floor">
+        <div class="container">
+            <div class="row">
+                <div class="css-slider-wrapper">
+
+                    <div class="slider-pagination">
+                        @foreach (var item in ViewBag.Floors)
+                        {
+                            var floorNumber = item?.Floor?.Id;
+
+                            if (printedFloorNumbers.Contains(floorNumber))
+                            {
+                                continue; // Eğer bu kat numarası daha önce yazdırıldıysa atla.
+                            }
+
+                            var radioId = "slider_" + floorNumber;
+                            var labelClass = "page" + floorNumber;
+
+                            var isChecked = floorNumber == ViewBag.SelectedFloor ? "checked" : "";
+                            var backgroundColor = floorNumber == ViewBag.SelectedFloor ? "background-color:#181b39;" : "";
+                            var color = floorNumber == ViewBag.SelectedFloor ? "color: white;" : "";
+
+
+                            <a asp-controller="Floor" asp-action="Index" asp-route-sectionName="@Model[0].Apartment?.SectionName" asp-route-floornumber="@floorNumber">
+                                <label for="@radioId" class="@labelClass" style="@backgroundColor @color">
+                                    <span></span> 
+                               
+                                </label>
+                            </a>
+
+
+
+                            printedFloorNumbers.Add(floorNumber); // Bu kat numarasını işaretleyin.
+                        }
+                    </div>
+
+
+
+                    <div class="sliderfloor slide@Model[0].Floor?.FloorNumber">
+                        <div class="center-item-slider">
+                            <!-- 2 ci MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 2-nin umumi bg image-->
+                                    <img class="img-building" src="~/floorplangallery/@Model[0]?.FloorPlan" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                        height: 100%;">
+
+
+
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 2 CI MERTEBE EV 1 BASLANGIC -->
+                                            @foreach (var item in Model)
+
+
+                                            {
+
+
+                                                @if (item.Apartment.Status == "AVAILABLE")
+
+
+                                                {
+
+
+                                                    <a class="hv-white" asp-controller="Apartment" asp-action="ApartmentDetail" asp-route-id="@item.Apartment.Id">
+
+
+                                                        @Html.Raw(item.Apartment.GTagPlan);
+
+
+                                                    </a>
+
+
+                                                }
+
+
+                                                else
+
+
+                                                {
+
+
+                                                    @Html.Raw(item.Apartment.NotAviableGTagPlan)
+                                                    ;
+                                                }
+
+                                            }
+
+                                            }
+
+                                            }
+                                            @*     <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_2_home1 building__link_floor pathtranslatemove_201" style="cursor: pointer;">
+                                            <path
+                                            d="M30 58.5V38.5H51V8H172V0H207.5V2.5H264.5V0H286.5H300V8H462V16.5H470.5V195.5H431V194H409V191V188H380.5V182.5H366.5V187H288.5V182.5H274.5V187.5H274H195V184H182.5V187H141H51V186H0V181.5V172H9V58.5H30Z"
+                                            fill="#CFC273" fill-opacity="0.68" />
+                                            <g class="building__info-floor" data-id="8">
+
+                                            <g id="hareketliGrup_201">
+                                            <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                            <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                            fill="#16244A" />
+                                            <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                            <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                            <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                            <text class="fillwhite slide-2A2-text1">
+                                            <tspan>
+                                            01
+                                            </tspan>
+                                            </text>
+
+                                            <text class="fillwhite slide-2A2-text2">
+                                            <tspan>
+                                            85 APARTMENTS
+                                            </tspan>
+                                            </text>
+
+                                            <text class="fillwhite slide-2A2-text3">
+                                            <tspan>
+                                            50.87-315.87
+                                            </tspan>
+                                            </text>
+
+                                            </g>
+
+                                            </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_201" >
+                                            <path
+                                            d="M30 58.5V38.5H51V8H172V0H207.5V2.5H264.5V0H286.5H300V8H462V16.5H470.5V195.5H431V194H409V191V188H380.5V182.5H366.5V187H288.5V182.5H274.5V187.5H274H195V184H182.5V187H141H51V186H0V181.5V172H9V58.5H30Z"
+                                            style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                            <path id="pathA1_0_1"
+                                            d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                            fill="#F6EDE9" />
+                                            <path id="pathA1_0_2" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                            fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+
+
+                                            <!-- 2 CI MERTEBE EV 1 SON -->
+
+
+                                            <!-- 2 CI MERTEBE EV 2 BASLANGIC -->
+
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_2_home2 building__link_floor pathtranslatemove_202" style="cursor: pointer;">
+                                            <path
+                                            d="M403 0H0.549795H0V104.5L76 179.5L89.5 166.5L95.5 172.5L102 166.5L233.5 299L227.615 304.5L233.5 310.5L220 324.5L239 344L297 400H403V0Z"
+                                            fill="#CFC273" fill-opacity="0.68" />
+
+                                            <g class="building__info-floor">
+
+                                            <g id="hareketliGrup_202">
+                                            <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                            <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                            <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                            <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                            <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                            <text class="fillwhite slide-2fillwhite2-text1">
+                                            <tspan>
+                                            02
+                                            </tspan>
+                                            </text>
+                                            <text class="fillwhite slide-2fillwhite2-text2">
+                                            <tspan>
+                                            45 APARTMENTS
+                                            </tspan>
+                                            </text>
+                                            <text class="fillwhite slide-2fillwhite2-text3">
+                                            <tspan>
+                                            50.87-315.87
+                                            </tspan>
+                                            </text>
+
+                                            </g>
+
+                                            </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_202" style="visibility: hidden;">
+                                            <path
+                                            d="M403 0H0.549795H0V104.5L76 179.5L89.5 166.5L95.5 172.5L102 166.5L233.5 299L227.615 304.5L233.5 310.5L220 324.5L239 344L297 400H403V0Z"
+                                            style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                            <path id="pathA1_1_1"
+                                            d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                            fill="#F6EDE9" />
+                                            <path id="pathA1_1_2" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                            fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+
+                                            <!-- 2 CI MERTEBE EV 2 SON -->
+
+
+                                            <!-- 2 CI MERTEBE EV 3 BASLANGIC -->
+
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_2_home3 building__link_floor pathtranslatemove_203" style="cursor: pointer;">
+                                            <path d="M193 1.5L4 0.5H0V305H10.5H19V297.5H89.5V346H119V350.5H178.5V346H193V1.5Z"
+                                            fill="#CFC273" fill-opacity="0.68" />
+
+                                            <g class="building__info-floor" data-id="8">
+
+                                            <g id="hareketliGrup_203">
+                                            <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                            <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                            <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                            <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                            <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                            <text class="fillwhite slide-2fillwhite2-text1">
+                                            <tspan>
+                                            03
+                                            </tspan>
+                                            </text>
+                                            <text class="fillwhite slide-2fillwhite2-text2">
+                                            <tspan>
+                                            85 APARTMENTS
+                                            </tspan>
+                                            </text>
+                                            <text class="fillwhite slide-2fillwhite2-text3">
+                                            <tspan>
+                                            50.87-315.87
+                                            </tspan>
+                                            </text>
+
+                                            </g>
+
+                                            </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_203" style="visibility: hidden;">
+                                            <path d="M193 1.5L4 0.5H0V305H10.5H19V297.5H89.5V346H119V350.5H178.5V346H193V1.5Z"
+                                            style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                            <path id="pathA1_2_1"
+                                            d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                            fill="#F6EDE9" />
+                                            <path id="pathA1_2_2" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                            fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+
+                                            <!-- 2 CI MERTEBE EV 3 SON -->
+
+                                            <!-- 2 CI MERTEBE EV 4 BASLANGIC -->
+
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_2_home4 building__link_floor pathtranslatemove_204" style="cursor: pointer;">
+                                            <path
+                                            d="M0.5 223.5V300.5H3.5L4 646.5H112.5V652H172.5V646.5H201.5V0.5H113.5V7.5V10.5H103V17.5H98.5V78H103V94.5H98.5V191.5H101V228.5H3.5V223.5H0.5Z"
+                                            fill="#CFC273" fill-opacity="0.68" />
+
+                                            <g class="building__info-floor">
+
+                                            <g id="hareketliGrup_204">
+                                            <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                            <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                            fill="#16244A" />
+                                            <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                            <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                            <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                            <text class="fillwhite slide-2A2-text1">
+                                            <tspan>
+                                            04
+                                            </tspan>
+                                            </text>
+
+                                            <text class="fillwhite slide-2A2-text2">
+                                            <tspan>
+                                            85 APARTMENTS
+                                            </tspan>
+                                            </text>
+
+                                            <text class="fillwhite slide-2A2-text3">
+                                            <tspan>
+                                            50.87-315.87
+                                            </tspan>
+                                            </text>
+
+                                            </g>
+
+                                            </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_204" style="visibility: hidden;">
+                                            <path
+                                            d="M0.5 223.5V300.5H3.5L4 646.5H112.5V652H172.5V646.5H201.5V0.5H113.5V7.5V10.5H103V17.5H98.5V78H103V94.5H98.5V191.5H101V228.5H3.5V223.5H0.5Z"
+                                            style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                            <path id="pathA1_3_1"
+                                            d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                            fill="#F6EDE9" />
+                                            <path id="pathA1_3_2" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                            fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+
+                                            <!-- 2 CI MERTEBE EV 4 SON -->*@
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2 CI MERTEBE END-->
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="sliderfloor slide4">
+                        <div class="center-item-slider">
+                            <!-- 4 cu MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 4-un umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/4.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                                      height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 4 Cu MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_4_home1 building__link_floor pathtranslatemove_209" style="cursor: pointer;">
+                                                <path d="M0 179.765H356.346V183H356.81H432.342H443V0H160.796V4.62121H116.774L101.946 19.4091V36.0455H27.8033V105.826H18.999L5.09728 119.689V162.205H0V179.765Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_201">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                01
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_209" style="visibility: hidden;">
+                                                <path d="M0 179.765H356.346V183H356.81H432.342H443V0H160.796V4.62121H116.774L101.946 19.4091V36.0455H27.8033V105.826H18.999L5.09728 119.689V162.205H0V179.765Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_0_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_0_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 4 Cu MERTEBE EV 1 SON -->
+                                            <!-- 4 CI MERTEBE EV 2 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_4_home2 building__link_floor pathtranslatemove_210" style="cursor: pointer;">
+                                                <path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_202">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                02
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_210" style="visibility: hidden;">
+                                                <path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path d="M0.5 91.5V2V0.5H379V378.5H290.5L213 301L227 287L174 234L186 222L156 192L141.5 206.5L90.5 155.5L76.5 167.5L0.5 91.5Z"
+                                                      fill-opacity="0.68" />
+                                                <path id="pathA1_1_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_1_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 4 CI MERTEBE EV 2 SON -->
+                                            <!-- 4 CI MERTEBE EV 3 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_4_home3 building__link_floor pathtranslatemove_211" style="cursor: pointer;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z" fill="#CFC273"
+                                                      fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_203">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                03
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_211" style="visibility: hidden;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_2_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_2_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 4 CI MERTEBE EV 3 SON -->
+                                            <!-- 4 CI MERTEBE EV 4 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_4_home4 building__link_floor pathtranslatemove_212" style="cursor: pointer;">
+
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor">
+
+                                                    <g id="hareketliGrup_204">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                04
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_212" style="visibility: hidden;">
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_3_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_3_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 4 CI MERTEBE EV 4 SON -->
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 4 cu MERTEBE END-->
+                        </div>
+                    </div>
+
+                    <div class="sliderfloor slide5">
+                        <div class="center-item-slider">
+                            <!-- 5 ci MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 5-in umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/5.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                                height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 5 Ci MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_5_home1 building__link_floor pathtranslatemove_213" style="cursor: pointer;">
+                                                <path d="M0 179.765H356.346V183H356.81H432.342H443V0H160.796V4.62121H116.774L101.946 19.4091V36.0455H27.8033V105.826H18.999L5.09728 119.689V162.205H0V179.765Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_201">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                01
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_213" style="visibility: hidden;">
+                                                <path d="M0 179.765H356.346V183H356.81H432.342H443V0H160.796V4.62121H116.774L101.946 19.4091V36.0455H27.8033V105.826H18.999L5.09728 119.689V162.205H0V179.765Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_0_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_0_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 5 Cu MERTEBE EV 1 SON -->
+                                            <!-- 5 CI MERTEBE EV 2 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_5_home2 building__link_floor pathtranslatemove_214" style="cursor: pointer;">
+                                                <path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_202">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                02
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_214" style="visibility: hidden;">
+                                                <path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path d="M0.5 91.5V2V0.5H379V378.5H290.5L213 301L227 287L174 234L186 222L156 192L141.5 206.5L90.5 155.5L76.5 167.5L0.5 91.5Z"
+                                                      fill-opacity="0.68" />
+                                                <path id="pathA1_1_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_1_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 5 CI MERTEBE EV 2 SON -->
+                                            <!-- 5 CI MERTEBE EV 3 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_5_home3 building__link_floor pathtranslatemove_215" style="cursor: pointer;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z" fill="#CFC273"
+                                                      fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_203">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                03
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_215" style="visibility: hidden;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_2_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_2_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 5 CI MERTEBE EV 3 SON -->
+                                            <!-- 5 CI MERTEBE EV 4 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_5_home4 building__link_floor pathtranslatemove_216" style="cursor: pointer;">
+
+                                                <path<path<path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                                                                          fill="#CFC273" fill-opacity="0.68" />
+
+                                                                                            <g class="building__info-floor">
+
+                                                                                                    <g id="hareketliGrup_204">
+                                                                                                            <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                                                                            <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                                                                                   fill="#16244A" />
+                                                                                                            <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                                                                            <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                                                                            <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                                                                            <text class="fillwhite slide-2A2-text1">
+                                                                                                                    <tspan>
+                                                                                                                            04
+                                                                                                                    </tspan>
+                                                                                                            </text>
+
+                                                                                                            <text class="fillwhite slide-2A2-text2">
+                                                                                                                    <tspan>
+                                                                                                                            85 APARTMENTS
+                                                                                                                    </tspan>
+                                                                                                            </text>
+
+                                                                                                            <text class="fillwhite slide-2A2-text3">
+                                                                                                                    <tspan>
+                                                                                                                            50.87-315.87
+                                                                                                                    </tspan>
+                                                                                                            </text>
+
+                                                                                                    </g>
+
+                                                                                            </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_216" style="visibility: hidden;">
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_3_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_3_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 5 CI MERTEBE EV 4 SON -->
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 5 ci MERTEBE END-->
+                        </div>
+                    </div>
+
+                    <div class="sliderfloor slide6">
+                        <div class="center-item-slider">
+                            <!-- 6 ci MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 6-in umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/6.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                                height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 6 Ci MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_6_home1 building__link_floor pathtranslatemove_217" style="cursor: pointer;">
+                                                <path<path<path d="M0 179.765H356.346V183H356.81H432.342H443V0H160.796V4.62121H116.774L101.946 19.4091V36.0455H27.8033V105.826H18.999L5.09728 119.689V162.205H0V179.765Z"
+                                                                                                          fill="#CFC273" fill-opacity="0.68" />
+                                                                                            <g class="building__info-floor" data-id="8">
+
+                                                                                                    <g id="hareketliGrup_201">
+                                                                                                            <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                                                                            <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                                                                                   fill="#16244A" />
+                                                                                                            <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                                                                            <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                                                                            <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                                                                            <text class="fillwhite slide-2A2-text1">
+                                                                                                                    <tspan>
+                                                                                                                            01
+                                                                                                                    </tspan>
+                                                                                                            </text>
+
+                                                                                                            <text class="fillwhite slide-2A2-text2">
+                                                                                                                    <tspan>
+                                                                                                                            85 APARTMENTS
+                                                                                                                    </tspan>
+                                                                                                            </text>
+
+                                                                                                            <text class="fillwhite slide-2A2-text3">
+                                                                                                                    <tspan>
+                                                                                                                            50.87-315.87
+                                                                                                                    </tspan>
+                                                                                                            </text>
+
+                                                                                                    </g>
+
+                                                                                            </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_217" style="visibility: hidden;">
+                                                <path d="M0 179.765H356.346V183H356.81H432.342H443V0H160.796V4.62121H116.774L101.946 19.4091V36.0455H27.8033V105.826H18.999L5.09728 119.689V162.205H0V179.765Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_0_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_0_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 6 Cu MERTEBE EV 1 SON -->
+                                            <!-- 6 CI MERTEBE EV 2 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_6_home2 building__link_floor pathtranslatemove_218" style="cursor: pointer;">
+                                                <path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_202">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                02
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_218" style="visibility: hidden;">
+                                                <path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path<path<path d="M0.5 91.5V2V0.5H379V378.5H290.5L213 301L227 287L174 234L186 222L156 192L141.5 206.5L90.5 155.5L76.5 167.5L0.5 91.5Z"
+                                                                                                          fill-opacity="0.68" />
+                                                                                            <path id="pathA1_1_1"
+                                                                                                          d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                                                                          fill="#F6EDE9" />
+                                                                                            <path id="pathA1_1_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                                                                          d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                                                                          fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 6 CI MERTEBE EV 2 SON -->
+                                            <!-- 6 CI MERTEBE EV 3 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_6_home3 building__link_floor pathtranslatemove_219" style="cursor: pointer;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z" fill="#CFC273"
+                                                      fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_203">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                03
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_219" style="visibility: hidden;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_2_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_2_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 6 CI MERTEBE EV 3 SON -->
+                                            <!-- 6 CI MERTEBE EV 4 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_6_home4 building__link_floor pathtranslatemove_220" style="cursor: pointer;">
+
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor">
+
+                                                    <g id="hareketliGrup_204">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                04
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_220" style="visibility: hidden;">
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_3_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_3_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 6 CI MERTEBE EV 4 SON -->
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 6 ci MERTEBE END-->
+                        </div>
+                    </div>
+
+                    <div class="sliderfloor slide7">
+                        <div class="center-item-slider">
+                            <!-- 7 ci MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 7-in umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/7.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                                height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 7 Ci MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_7_home1 building__link_floor pathtranslatemove_221" style="cursor: pointer;">
+                                                <path d="M448 182H1.5H0.5V163.5H15.5V36.5H107V19L121 5H164.5V0H286V5H448V182Z" fill="#CFC273"
+                                                      fill-opacity="0.68" />
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_201">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                01
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_221" style="visibility: hidden;">
+                                                <path d="M448 182H1.5H0.5V163.5H15.5V36.5H107V19L121 5H164.5V0H286V5H448V182Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path id="pathA1_0_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_0_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 7 Cu MERTEBE EV 1 SON -->
+                                            <!-- 7 CI MERTEBE EV 2 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_7_home2 building__link_floor pathtranslatemove_222" style="cursor: pointer;">
+                                                <path d="M353 0H0.481583H0V85.8474L72.2374 158.191L93.065 138.482L155.5 200.5L215.5 260.5L199.375 277.798L196.486 280.692L197.93 282.139L269.686 354H353V0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_202">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                02
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_222" style="visibility: hidden;">
+                                                <path d="M353 0H0.481583H0V85.8474L72.2374 158.191L93.065 138.482L155.5 200.5L215.5 260.5L199.375 277.798L196.486 280.692L197.93 282.139L269.686 354H353V0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                      fill-opacity="0.68" />
+                                                <path id="pathA1_1_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_1_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 7 CI MERTEBE EV 2 SON -->
+                                            <!-- 7 CI MERTEBE EV 3 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_7_home3 building__link_floor pathtranslatemove_223" style="cursor: pointer;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z" fill="#CFC273"
+                                                      fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_203">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                03
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_223" style="visibility: hidden;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path id="pathA1_2_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_2_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 7 CI MERTEBE EV 3 SON -->
+                                            <!-- 7 CI MERTEBE EV 4 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_7_home4 building__link_floor pathtranslatemove_224" style="cursor: pointer;">
+
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor">
+
+                                                    <g id="hareketliGrup_204">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                04
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_224" style="visibility: hidden;">
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_3_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_3_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 7 CI MERTEBE EV 4 SON -->
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 7 ci MERTEBE END-->
+                        </div>
+                    </div>
+
+                    <div class="sliderfloor slide8">
+                        <div class="center-item-slider">
+                            <!-- 8 ci MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 8-in umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/8.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                                height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 8 Ci MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_8_home1 building__link_floor pathtranslatemove_225" style="cursor: pointer;">
+                                                <path d="M448 182H1.5H0.5V163.5H15.5V36.5H107V19L121 5H164.5V0H286V5H448V182Z" fill="#CFC273"
+                                                      fill-opacity="0.68" />
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_201">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                01
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_225" style="visibility: hidden;">
+                                                <path d="M448 182H1.5H0.5V163.5H15.5V36.5H107V19L121 5H164.5V0H286V5H448V182Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path id="pathA1_0_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_0_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 8 Ci MERTEBE EV 1 SON -->
+                                            <!-- 8 Ci MERTEBE EV 2 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_8_home2 building__link_floor pathtranslatemove_226" style="cursor: pointer;">
+                                                <path d="M353 0H0.481583H0V85.8474L72.2374 158.191L93.065 138.482L155.5 200.5L215.5 260.5L199.375 277.798L196.486 280.692L197.93 282.139L269.686 354H353V0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_202">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                02
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_226" style="visibility: hidden;">
+                                                <path d="M353 0H0.481583H0V85.8474L72.2374 158.191L93.065 138.482L155.5 200.5L215.5 260.5L199.375 277.798L196.486 280.692L197.93 282.139L269.686 354H353V0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path<path<path d="M366.5 0H0.5H0V89L75 164L79.5 159.5L207.5 287.5L207 288L204 291L205.5 292.5L280 367H366.5V0Z"
+                                                                                                          fill-opacity="0.68" />
+                                                                                            <path id="pathA1_1_1"
+                                                                                                          d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                                                                          fill="#F6EDE9" />
+                                                                                            <path id="pathA1_1_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                                                                          d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                                                                          fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 8 CI MERTEBE EV 2 SON -->
+                                            <!-- 8 CI MERTEBE EV 3 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_8_home3 building__link_floor pathtranslatemove_227" style="cursor: pointer;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z" fill="#CFC273"
+                                                      fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_203">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                03
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_227" style="visibility: hidden;">
+                                                <path d="M193 1L4 0H0V304.5H10.5H19V297H89.5V345.5H119V350H178.5V345.5H193V1Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path id="pathA1_2_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_2_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 8 CI MERTEBE EV 3 SON -->
+                                            <!-- 8 CI MERTEBE EV 4 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_8_home4 building__link_floor pathtranslatemove_228" style="cursor: pointer;">
+
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor">
+
+                                                    <g id="hareketliGrup_204">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                04
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_228" style="visibility: hidden;">
+                                                <path d="M0 223V300H3L3.5 646H112V651.5H172V646H201V0H113V7V10H102.5V17H98V77.5H102.5V94H98V191H100.5V228H3V223H0Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_3_1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_3_2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 8 CI MERTEBE EV 4 SON -->
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 8 ci MERTEBE END-->
+                        </div>
+                    </div>
+
+                    <div class="sliderfloor slide9">
+                        <div class="center-item-slider">
+                            <!-- 9 cu MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 9-un umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/9.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                          height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 9 Cu MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_9_home1 building__link_floor pathtranslatemove_229" style="cursor: pointer;">
+                                                <path d="M413 34H436.5H441.5V183.5V494H413V489.5H376.5V494H362V529H269.5L204.5 464L236 432.5L218 414.5L220.5 412L194.5 386L191.5 389L141 338.5L144 335.5L118 309.5L115 312.5L97 294.5L66 325.5L0.5 260V166.5H37V146.5H40.5V110H37V34H112.5V38H149.5V34H165.5V0H274V34H290.5V38H326.5V34H377V38H413V34Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_201">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                01
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_229" style="visibility: hidden;">
+                                                <path d="M413 34H436.5H441.5V183.5V494H413V489.5H376.5V494H362V529H269.5L204.5 464L236 432.5L218 414.5L220.5 412L194.5 386L191.5 389L141 338.5L144 335.5L118 309.5L115 312.5L97 294.5L66 325.5L0.5 260V166.5H37V146.5H40.5V110H37V34H112.5V38H149.5V34H165.5V0H274V34H290.5V38H326.5V34H377V38H413V34Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path id="pathA1_floor9_ev1-1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_floor9_ev1-2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 9 Cu MERTEBE EV 1 SON -->
+                                            <!-- 9 Cu MERTEBE EV 2 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_9_home2 building__link_floor pathtranslatemove_230" style="cursor: pointer;">
+                                                <path d="M93.5 264.5H4H0V624H19.5V621H74V624H115V622H169V624H210V621H265V624H279.5H288V0.5H264V3H209V0.5H187V184.5H180.5V219.5H97V215.5H93.5V264.5Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_202">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                02
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_230" style="visibility: hidden;">
+                                                <path d="M93.5 264.5H4H0V624H19.5V621H74V624H115V622H169V624H210V621H265V624H279.5H288V0.5H264V3H209V0.5H187V184.5H180.5V219.5H97V215.5H93.5V264.5Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_floor9_ev2-1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_floor9_ev2-2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 9 Cu MERTEBE EV 2 SON -->
+
+
+
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 9 cu MERTEBE END-->
+                        </div>
+                    </div>
+
+                    <div class="sliderfloor slide10">
+                        <div class="center-item-slider">
+                            <!-- 10 cu MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 10-un umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/10.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                            height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+                                            <!-- 10 Cu MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC-->
+                                            <g class="A1-floor_10_home1 building__link_floor pathtranslatemove_231"
+                                               style="cursor: pointer;">
+                                                <path d="M393 0V166L391.5 432H364.5V419H327V432H302L270 415.5L275 405L241.5 388L236 399L205.5 383.5L178.5 356.5L186.5 348.5L160.5 322.5L152.5 330.5L102 280L110 272L83 245L74 254L48.5 228L33.5 195.5L44 190.5L27.5 156.5L16 161.5L0 129V97.5H13V60H0V0H61V11.5H99V0H150V11.5H188V0H240V11.5H278V0H327V11.5H365V0H393Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+                                                <g class="building__info-floor">
+
+                                                    <g id="hareketliGrup_269">
+                                                        <line x1="2.5" y1="153.832" x2="2.50002" y2="0.999863" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="153.29" rx="2.5" ry="2.70979" transform="rotate(-180 2.5 153.29)"
+                                                                 fill="#16244A" />
+                                                        <line x1="2" y1="0.5" x2="29" y2="0.500005" stroke="#16244A" />
+
+
+                                                        <rect x="40" y="-45" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="15" y="-20" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+
+                                                        <text class="fillwhite slide-2A2-text1">
+                                                            <tspan>
+                                                                01
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+
+                                                        <text class="fillwhite slide-2A2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+                                            <g class="block_floor pathtranslatemove_231" style="visibility: hidden;">
+                                                <path d="M393 0V166L391.5 432H364.5V419H327V432H302L270 415.5L275 405L241.5 388L236 399L205.5 383.5L178.5 356.5L186.5 348.5L160.5 322.5L152.5 330.5L102 280L110 272L83 245L74 254L48.5 228L33.5 195.5L44 190.5L27.5 156.5L16 161.5L0 129V97.5H13V60H0V0H61V11.5H99V0H150V11.5H188V0H240V11.5H278V0H327V11.5H365V0H393Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path id="pathA1_floor9_ev1-1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_floor9_ev1-2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 10 Cu MERTEBE EV 1 SON -->
+                                            <!-- 10 Cu MERTEBE EV 2 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_10_home2 building__link_floor pathtranslatemove_232"
+                                               style="cursor: pointer;">
+                                                <path d="M93.5 264.5H4H0V624H19.5V621H74V624H115V622H169V624H210V621H265V624H279.5H288V0.5H264V3H209V0.5H187V184.5H180.5V219.5H97V215.5H93.5V264.5Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_270">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                02
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                                85 APARTMENTS
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                                                                50.87-315.87
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_232" style="visibility: hidden;">
+                                                <path d="M93.5 264.5H4H0V624H19.5V621H74V624H115V622H169V624H210V621H265V624H279.5H288V0.5H264V3H209V0.5H187V184.5H180.5V219.5H97V215.5H93.5V264.5Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+                                                <path id="pathA1_floor9_ev2-1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_floor9_ev2-2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 10 Cu MERTEBE EV 2 SON -->
+
+
+
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 10 cu MERTEBE END-->
+                        </div>
+                    </div>
+
+               @*     <div class="sliderfloor slide11">
+                        <div class="center-item-slider">
+                            <!-- 11 ci MERTEBE START-->
+                            <!-- 11 ci MERTEBE START-->
+                            <div class="project__buildings buildings-css">
+                                <div class="project__img">
+                                    <!-- Metebe 11-in umumi bg image-->
+                                    <img class="img-building" src="./assets/img/mertebelerA1/11.png" alt="img">
+                                </div>
+                                <div class="building">
+
+                                    <span class="top-street a2top-street">GULBALA ALIYEV</span>
+                                    <span class="bottom-street a2bottom-street">GULBALA ALIYEV</span>
+                                    <span class="right-street a2right-street">GULBALA ALIYEV</span>
+                                    <span class="left-street a2left-street">GULBALA ALIYEV</span>
+
+                                    <div class="building__svgg" style="width: 100%;
+                                    height: 100%;">
+                                        <svg style="width: 100%;" viewBox="0 0 1440 817" fill="none">
+
+
+                                            <!-- 11 Ci MERTEBE EV 1 BASLANGIC -->
+                                            <!-- Satisda olan erazi BASLANGİC (css -> visibilty:visible)-->
+                                            <g class="A1-floor_11_home2 building__link_floor pathtranslatemove_250"
+                                               style="cursor: pointer;">
+                                                <path d="M97 240H8.5H0V608H19.5V605.075H74V608H115V606.05H169V608H210V605.075H265V608H279.5H288V0H264V2.43785H209V0H187V179.426H180.5V213.556H97V240Z"
+                                                      fill="#CFC273" fill-opacity="0.68" />
+
+                                                <g class="building__info-floor" data-id="8">
+
+                                                    <g id="hareketliGrup_270">
+                                                        <line x1="2.5" y1="2.16797" x2="2.49999" y2="155" stroke="#16244A" />
+                                                        <ellipse cx="2.5" cy="2.70979" rx="2.5" ry="2.70979" fill="#16244A" />
+                                                        <line x1="29" y1="155.5" x2="2" y2="155.5" stroke="#16244A" />
+
+                                                        <rect x="30" y="110" width="200" height="100" fill="#16244A"></rect>
+                                                        <rect x="10" y="135" width="50" height="50" class="bgrad-floor" rx="50" ry="50"></rect>
+                                                        <text class="fillwhite slide-2fillwhite2-text1">
+                                                            <tspan>
+                                                                2
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text2">
+                                                            <tspan>
+                                                               
+                                                                A4-11-19
+                                                            </tspan>
+                                                        </text>
+                                                        <text class="fillwhite slide-2fillwhite2-text3">
+                                                            <tspan>
+                               
+                                                             332.62
+                                                            </tspan>
+                                                        </text>
+
+                                                    </g>
+
+                                                </g>
+                                            </g>
+                                            <!-- Satisda olan erazi Son-->
+                                            <!-- Satil'mis erazi BASLANGİC  (css -> visibilty:hidden) -->
+
+                                            <g class="block_floor pathtranslatemove_250" style="visibility: hidden;">
+                                                <path d="M97 240H8.5H0V608H19.5V605.075H74V608H115V606.05H169V608H210V605.075H265V608H279.5H288V0H264V2.43785H209V0H187V179.426H180.5V213.556H97V240Z"
+                                                      style="fill: rgb(249, 240, 236);" fill-opacity="0.68" />
+
+                                                <path id="pathA1_floor9_ev2-1"
+                                                      d="M51.5 25.75C51.5 11.5287 39.9713 0 25.75 0C11.5287 0 0 11.5287 0 25.75C0 39.9713 11.5287 51.5 25.75 51.5C39.9713 51.5 51.5 39.9713 51.5 25.75Z"
+                                                      fill="#F6EDE9" />
+                                                <path id="pathA1_floor9_ev2-2" fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M19 23.053V21.75C19 19.9598 19.7112 18.2429 20.977 16.977C22.2429 15.7112 23.9598 15 25.75 15C27.5402 15 29.2571 15.7112 30.523 16.977C31.7888 18.2429 32.5 19.9598 32.5 21.75V23.053C32.727 23.069 32.94 23.089 33.142 23.117C34.042 23.237 34.8 23.497 35.402 24.098C36.004 24.7 36.262 25.458 36.384 26.358C36.5 27.225 36.5 28.328 36.5 29.695V29.805C36.5 31.172 36.5 32.275 36.384 33.142C36.262 34.042 36.004 34.8 35.402 35.402C34.8 36.004 34.042 36.262 33.142 36.384C32.275 36.5 31.172 36.5 29.805 36.5H21.695C20.328 36.5 19.225 36.5 18.358 36.384C17.458 36.262 16.7 36.004 16.098 35.402C15.496 34.8 15.238 34.042 15.117 33.142C15 32.275 15 31.172 15 29.805V29.695C15 28.328 15 27.225 15.117 26.358C15.237 25.458 15.497 24.7 16.098 24.098C16.7 23.496 17.458 23.238 18.358 23.117C18.5712 23.0884 18.7853 23.0671 19 23.053ZM20.5 21.75C20.5 20.3576 21.0531 19.0223 22.0377 18.0377C23.0223 17.0531 24.3576 16.5 25.75 16.5C27.1424 16.5 28.4777 17.0531 29.4623 18.0377C30.4469 19.0223 31 20.3576 31 21.75V23.003C30.627 23 30.228 23 29.805 23H21.695C21.272 23 20.874 23 20.5 23.003V21.75ZM17.159 25.159C17.436 24.882 17.824 24.702 18.559 24.603C19.313 24.502 20.315 24.5 21.75 24.5H29.75C31.185 24.5 32.186 24.502 32.942 24.603C33.676 24.702 34.064 24.883 34.341 25.159C34.618 25.436 34.798 25.824 34.897 26.559C34.998 27.314 35 28.315 35 29.75C35 31.185 34.998 32.186 34.897 32.942C34.798 33.676 34.617 34.064 34.341 34.341C34.064 34.618 33.676 34.798 32.941 34.897C32.186 34.998 31.185 35 29.75 35H21.75C20.315 35 19.313 34.998 18.558 34.897C17.824 34.798 17.436 34.617 17.159 34.341C16.882 34.064 16.702 33.676 16.603 32.941C16.502 32.186 16.5 31.185 16.5 29.75C16.5 28.315 16.502 27.313 16.603 26.558C16.702 25.824 16.883 25.436 17.159 25.159Z"
+                                                      fill="#16244A" />
+
+
+                                            </g>
+                                            <!-- Satilmis erazi Son-->
+                                            <!-- 11 Ci MERTEBE EV 1 SON -->
+
+
+
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 11 cu MERTEBE END-->
+                        </div>
+                    </div>*@
+
+                </div>
+            </div>
+    </section>
+    <!-- Floor End-->
+
+</main>
+<!-- Main End-->

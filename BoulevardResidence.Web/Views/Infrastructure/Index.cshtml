@@ -1,0 +1,107 @@
+﻿@*@model List<BoulevardResidence.Domain.Entity.Infrastructures.Infrastructure>*@
+@model BoulevardResidence.Service.DTOs.Infrastructures.InfrastructureVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section class="apartment-bg">
+        <div class="container container-items">
+            @if (Model.LangCode == "en")
+            {
+                <div class="apartment-over-text">
+                    <h1>INFRASTRUCTURE</h1>
+                </div>
+            }
+            else if (Model.LangCode == "az")
+            {
+                <div class="apartment-over-text">
+                    <h1>İnfrastruktur</h1>
+                </div>
+            }
+            else
+            {
+                <div class="apartment-over-text">
+                    <h1>Инфраструктура</h1>
+                </div>
+            }
+
+            <div class="back-to-page">
+                <a asp-controller="Home" asp-action="Index">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 8H1M1 8L8.125 1M1 8L8.125 15" stroke="white" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--Map Location Start-->
+    <section class="map-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.Infrastructures)
+                {
+                    @foreach (var items in item.InfrastructureTranslates)
+                    {
+                        <div class="arch-elegance-title">
+                            <h1>@items.Name</h1>
+                        </div>
+                        <div class="arch-elegance-info">
+                            <p>
+                                @items.Description
+                            </p>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        @*        <div class="map-container">
+        <div id="map"></div>
+        <div class="br-maker">
+        <img src="./assets/svg/br.svg" alt="">
+        </div>
+        <div class="map_filter_controls">
+        <div class="search-container">
+        <div class="search-title">
+        <p>SEARCH BY FILTER</p>
+        </div>
+        </div>
+        <div class="map-checkboxs">
+        <div class="checkbox">
+        <input type="checkbox" value="school" class='chk-btn' name="filter" onclick="selectAllChecked();">
+        <label for="checkbox1">School</label>
+        </div>
+        <div class="checkbox">
+        <input type="checkbox" value="park" class='chk-btn' name="filter" onclick="selectAllChecked();">
+        <label for="Park">Park</label>
+        </div>
+        <div class="checkbox">
+        <input type="checkbox" value="pharmacy" class='chk-btn' name="filter" onclick="selectAllChecked();">
+        <label for="Pharmacy">Pharmacy</label>
+        </div>
+        <div class="checkbox">
+        <input type="checkbox" value="supermarket" class='chk-btn' name="filter" onclick="selectAllChecked();">
+        <label for="Supermarket">Supermarket</label>
+        </div>
+        <div class="checkbox">
+        <input type="checkbox" value="restuarant" class='chk-btn' name="filter" onclick="selectAllChecked();">
+        <label for="Restuarant">Restuarant</label>
+        </div>
+        <div class="checkbox">
+        <input type="checkbox" value="gym" class='chk-btn' name="filter" onclick="selectAllChecked();">
+        <label for="GYM">GYM</label>
+        </div>
+        <div class="checkbox">
+        <input type="checkbox" value="playground" class='chk-btn' name="filter" onclick="selectAllChecked();">
+        <label for="Playground">Playground</label>
+        </div>
+        </div>
+        </div>
+        </div>*@
+
+    </section>
+    <!--Map Location End-->
+</main>
